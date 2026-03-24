@@ -103,14 +103,14 @@
         @yield('content')
     </main>
 
-    <section class="bg-white py-32 px-8 border-t border-slate-100 relative overflow-hidden">
+    <section class="bg-white py-8 px-8 border-t border-slate-100 relative overflow-hidden">
     <div class="absolute top-10 left-10 text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50">
         SERVICES
     </div>
 
     <div class="max-w-[1600px] mx-auto text-center relative z-10">
         <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-600">Our Expertise</span>
+            <span class="text-[15px] font-black uppercase tracking-[0.3em] text-yellow-600">Our Expertise</span>
         </div>
 
         <h2 class="text-slate-900 text-5xl md:text-6xl font-black uppercase tracking-tight mb-24 leading-none">
@@ -181,7 +181,7 @@
         GROW
     </div>
 
-    <div class="max-w-[1600px] mx-auto text-center relative z-10">
+    <div class="max-w-[1600px] mx-auto text-center relative z-20">
         <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
             <span class="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-600">Our Network</span>
         </div>
@@ -190,7 +190,7 @@
             Collaboration <span class="text-yellow-500">Opportunities</span>
         </h2>
 
-        <div class="relative h-[600px] flex items-center justify-center">
+        <div class="relative h-[500px] flex items-center justify-center">
 
             <template x-for="(collab, index) in collaborations" :key="index">
                 <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[3.5rem] bg-white border border-slate-100 p-8 shadow-xl overflow-hidden"
@@ -232,6 +232,98 @@
         </div>
     </div>
 </section>
+
+<footer class="bg-black text-white pt-20 pb-10 px-8 border-t border-white/10">
+    <div class="max-w-[1600px] mx-auto">
+                <div class="w-full h-[3px] bg-white mb-8"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 justify-items-center text-center md:text-left">
+
+            <div class="w-full max-w-[250px]">
+                <h4 class="text-sm font-black uppercase tracking-widest mb-6">Logistics Solutions</h4>
+                <ul class="space-y-3 text-xs font-medium text-gray-400">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Pickup & Delivery</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Sea Freight</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Air Freight</a></li>
+                </ul>
+                <h4 class="text-sm font-black uppercase tracking-widest mt-10 mb-6">Warehousing Solution</h4>
+                <ul class="text-xs font-medium text-gray-400">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="w-full max-w-[250px] flex flex-col items-center md:items-start">
+                <div>
+                    <h4 class="text-sm font-black uppercase tracking-widest mb-6">Company</h4>
+                    <ul class="space-y-3 text-xs font-medium text-gray-400">
+                        <li><a href="#" class="hover:text-yellow-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="mt-10">
+                    <h4 class="text-sm font-black uppercase tracking-widest mb-6">Support</h4>
+                    <ul class="space-y-3 text-xs font-medium text-gray-400">
+                        <li><a href="#" class="hover:text-yellow-400 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition">Documents</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w-full max-w-[300px] flex flex-col items-center md:items-end">
+                <h4 class="text-sm font-black uppercase tracking-widest mb-6">ARKOD SMART LOGITECH</h4>
+                <div class="flex gap-4">
+                    <div class="flex gap-6">
+    <a href="#" class="text-white hover:text-yellow-400 transition-colors duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+    </a>
+
+    <a href="#" class="text-white hover:text-yellow-400 transition-colors duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+    </a>
+
+    <a href="#" class="text-white hover:text-yellow-400 transition-colors duration-300">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+    </a>
+</div>
+                </div>
+                <div class="mt-8 text-[10px] text-gray-500 text-center md:text-right font-medium leading-relaxed">
+                    Innovative Solutions for Logistics <br> Efficiency & Innovation With Smart Logistics
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-[3px] bg-white mb-8"></div>
+
+        <div class="flex flex-col items-center">
+            <p class="text-[10px] font-black tracking-[0.5em] mb-10 text-white/60">© ARKOD 2026. ALL RIGHTS RESERVED</p>
+
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 border border-white/20 rounded-full"><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                    <span class="text-sm font-bold tracking-wider">+60 18-911 6168</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="p-2 border border-white/20 rounded-full"><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                    <span class="text-sm font-bold tracking-wider">082-384 999</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="p-2 border border-white/20 rounded-full"><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <span class="text-sm font-bold tracking-wider">customersupport@arkod.com.my</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

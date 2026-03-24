@@ -31,7 +31,7 @@
     Smart Tech
 </h1>
 
-            <p class="text-gray-400 text-lg md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-4 border-yellow-400 pl-8 transition-all duration-1000 delay-500"
+            <p class="text-white-400 text-lg md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-4 border-yellow-400 pl-8 transition-all duration-1000 delay-500"
                :class="loaded ? 'opacity-100' : 'opacity-0'">
                 Behind every shipment is a promise we made to a customer. <br>
                 <span class="text-white">As your dedicated logistics partner, we treat your cargo as if it were our own.</span>
