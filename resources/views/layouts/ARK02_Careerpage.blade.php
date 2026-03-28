@@ -131,136 +131,142 @@
         </div>
     </nav>
 
-    <main class="w-full">
-        @yield('content')
+    <main class="bg-white text-black min-h-screen">
+        <section class="py-12 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+
+                <h1 class="text-3xl md:text-5xl font-black text-black mb-10 tracking-tight uppercase">
+                    Create your place at <br> <span class="text-yellow-500">ARKOD SMART LOGITECH</span>
+                </h1>
+
+                <div class="max-w-9xl mx-auto mb-12">
+                    <p class="text-base md:text-xl text-gray-900 leading-relaxed font-semibold">
+                        It's an exciting time to be at Arkod. As the world rapidly changes, if you believe that digital business is the future, and everybody deserves access to unbiased and actionable logistic solution. And you understand that the future of logistic is digital and mobile, Be part of an iconic and dynamic organisation that touches the lives of every Malaysian.
+                    </p>
+                </div>
+
+                <div class="mb-11">
+                    <button class="bg-yellow-400 hover:bg-black hover:text-white text-black font-black py-4 px-12 rounded-lg text-sm uppercase tracking-widest transition-all shadow-xl">
+                        See all opportunities
+                    </button>
+                </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-12 items-end">
+
+        <div class="flex flex-col items-center group md:translate-y-10">
+            <div class="h-64 w-full flex items-center justify-center mb-6">
+                <img src="{{ asset('images/Career_2.png') }}" alt="Health" class="max-h-full w-auto object-contain transition-transform group-hover:scale-105">
+            </div>
+            <h3 class="text-lg font-black text-black uppercase tracking-tighter text-center leading-tight">Your health and Wellbeing</h3>
+            <div class="w-48 h-1.5 bg-yellow-400 mt-4 group-hover:w-60 transition-all duration-300"></div>
+        </div>
+
+        <div class="flex flex-col items-center group">
+            <div class="h-80 w-full flex items-center justify-center mb-6">
+                <img src="{{ asset('images/Career_1.png') }}" alt="Future" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110">
+            </div>
+            <h3 class="text-lg font-black text-black uppercase tracking-tighter text-center leading-tight">Your future and finance</h3>
+            <div class="w-48 h-1.5 bg-yellow-400 mt-4 group-hover:w-60 transition-all duration-300"></div>
+        </div>
+
+        <div class="flex flex-col items-center group md:translate-y-10">
+            <div class="h-64 w-full flex items-center justify-center mb-6">
+                <img src="{{ asset('images/Career_3.png') }}" alt="Family" class="max-h-full w-auto object-contain transition-transform group-hover:scale-105">
+            </div>
+            <h3 class="text-lg font-black text-black uppercase tracking-tighter text-center leading-tight">Family team</h3>
+            <div class="w-48 h-1.5 bg-yellow-400 mt-4 group-hover:w-60 transition-all duration-300"></div>
+        </div>
+    </div>
+</div>
+
+        </section>
+        <div class="flex justify-center my-16">
+    <div class="w-[80%] h-[3px] bg-black"></div>
+</div>
     </main>
 
-<section class="bg-white py-8 px-8 border-t border-slate-100 relative overflow-hidden">
-    <div class="absolute top-10 left-10 text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50">
-        SERVICES
+<!--The pic section or section 2 !-->
+   <section class="py-12 bg-white font-montserrat">
+    <div class="max-w-7xl mx-auto px-6 mb-40 text-center">
+        <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
+            Why <span class="text-[#F99D1C]">Choose</span> Us?
+        </h2>
+        <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
     </div>
 
-    <div class="max-w-[1600px] mx-auto text-center relative z-10">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-            <span class="text-1 xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Expertise</span>
+   <div class="relative flex flex-col md:flex-row items-center bg-[#FFCC00] w-full rounded-r-[300px] min-h-[450px] mb-60">
+        <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-start">
+            <img src="{{ asset('images/Office_1.png') }}"
+                 class="w-[85%] md:w-[70%] shadow-2xl relative left-[5%] lg:left-[20%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg">
         </div>
 
-        <h2 class="text-slate-900 text-5xl md:text-6xl font-black uppercase tracking-tight mb-24 leading-none">
-            Solutions <span class="text-yellow-500">Tailored</span> <br> For Your Business
-        </h2>
+        <div class="w-full md:w-1/2 px-12 py-16 lg:pl-10 lg:pr-40 z-10">
+            <h3 class="text-4xl lg:text-6xl font-black mb-6 text-black leading-[1.1] uppercase tracking-tighter">
+                <span class="text-white">Comfortable and</span><br> <span class="text-black">Friendly workspace</span>
+            </h3>
+            <p class="font-bold text-2xl text-black leading-relaxed">
+                We foster a professional and collaborative working environment that supports continuous learning, teamwork, and performance excellence.
+            </p>
+        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            @php
-                $services = [
-                    ['name' => 'Delivery', 'img' => 'Truck_X-removebg-preview.png', 'desc' => 'Fast and reliable logistics solutions.'],
-                    ['name' => 'Car Shipment', 'img' => 'car.png', 'desc' => 'Secure vehicle transport across borders.'],
-                    ['name' => 'Custom ', 'img' => 'box_2.png', 'desc' => 'Tailored packaging and handling.'],
-                    ['name' => 'Forwarding', 'img' => 'logistic_3.png', 'desc' => 'Efficiency through tech-driven routes.'],
-                ];
-            @endphp
+    </div>
 
-            @foreach($services as $s)
-            <div class="group relative p-12 bg-white border border-slate-100 rounded-[3rem] transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] hover:border-yellow-400">
+    <div class="relative flex flex-col md:flex-row-reverse items-center bg-[#F99D1C] w-full rounded-l-[300px] min-h-[450px] mb-60">
 
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-slate-100 group-hover:bg-yellow-400 transition-colors duration-500 rounded-b-full"></div>
+        <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-end">
+            <img src="{{ asset('images/Office_2.png') }}"
+                 class="w-[85%] md:w-[80%] shadow-2xl relative right-[5%] lg:right-[25%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg">
+        </div>
 
-                <div class="absolute top-8 right-10 text-slate-450 text-2xl font-black group-hover:text-yellow-50 transition-colors duration-500">
-                    0{{ $loop->iteration }}
-                </div>
+        <div class="w-full md:w-2/3 px-12 py-16 lg:pr-20 lg:pl-40 z-10 text-right md:text-left">
+            <h3 class="text-4xl lg:text-6xl font-black mb-6 text-black leading-[1.1] uppercase tracking-tighter">
+                <span class="text-white">Honest and</span><br> <span class="text-black">Open Communications</span>
+            </h3>
+            <p class="font-bold text-2xl text-black leading-relaxed">
+                We promote transparent communication and encourage open dialogue at all levels of the organization.
+            </p>
+        </div>
 
-                <div class="relative w-32 h-32 mx-auto mb-10">
-                    <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
-                    <img src="{{ asset('images/' . $s['img']) }}"
-                         alt="{{ $s['name'] }}"
-                         class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
-                </div>
+    </div>
+<div class="mt-60">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+            <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
+                Job <span class="text-[#F99D1C]">Opportunities</span> At Arkod
+            </h2>
+            <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
+        </div>
 
-                <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
-                    {{ $s['name'] }}
-                </h3>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-10">
 
-                <p class="text-slate-400 text-M font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {{ $s['desc'] }}
-                </p>
+                @php
+                    $jobs = [
+                        ['name' => 'Sales Manager', 'img' => 'sales_manager.png'],
+                        ['name' => 'Sales Executive', 'img' => 'sales_executive.png'],
+                        ['name' => 'Office Admin Assistant', 'img' => 'admin_assistant.png'],
+                        ['name' => 'Tech Manager', 'img' => 'tech_manager.png'],
+                        ['name' => 'Marketing Manager', 'img' => 'marketing_manager.png'],
+                        ['name' => 'Digital Marketing', 'img' => 'digital_marketing.png'],
+                        ['name' => 'Customer Service', 'img' => 'customer_service.png'],
+                        ['name' => 'Graphic Designer', 'img' => 'graphic_designer.png'],
+                        ['name' => 'IT Administrator', 'img' => 'it_admin.png'],
+                        ['name' => 'Internship', 'img' => 'internship.png'],
+                    ];
+                @endphp
 
-                <div class="mt-8 flex justify-center">
-                    <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500">
-                        <svg class="w-5 h-5 text-slate-300 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
+                @foreach($jobs as $job)
+                <div class="group flex flex-col items-center bg-white p-6 rounded-xl border-2 border-gray-100 shadow-lg hover:shadow-2xl hover:border-[#FFCC00] transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-20 h-20 md:w-28 md:h-28 mb-4 bg-gray-50 rounded-lg p-2 flex items-center justify-center">
+                        <img src="{{ asset('images/icons/' . $job['img']) }}" alt="{{ $job['name'] }}" class="w-full h-full object-contain">
                     </div>
+                    <h4 class="text-center font-black text-sm md:text-base uppercase leading-tight text-black group-hover:text-[#F99D1C] transition-colors">
+                        {{ $job['name'] }}
+                    </h4>
                 </div>
+                @endforeach
+
             </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="bg-white py-8 px-8 border-y border-black/5 relative overflow-hidden"
-         x-data="{
-            active: 1, // Start with the central card active
-            collaborations: [
-                { title: 'Partnerships', type: 'Global Trade', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
-                { title: 'Affiliate Programmes', type: 'Technology', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
-                { title: 'Car Shipping', type: 'Logistics', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
-            ],
-            loop() {
-                setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000)
-            }
-         }" x-init="loop()">
-
-    <div class="absolute top-10 right-10 text-[16rem] font-black text-slate-100 select-none -z-10 tracking-tighter opacity-70">
-        GROW
-    </div>
-
-    <div class="max-w-[1600px] mx-auto text-center relative z-20">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-            <span class="text-1xl md:text-3xl font-black uppercase tracking-[0.4em]] text-yellow-600">Our Network</span>
-        </div>
-
-        <h2 class="text-slate-900 text-5xl md:text-6xl font-black uppercase tracking-tight mb-28 leading-none max-w-4xl mx-auto">
-            Collaboration <span class="text-yellow-500">Opportunities</span>
-        </h2>
-
-        <div class="relative h-[500px] flex items-center justify-center">
-
-            <template x-for="(collab, index) in collaborations" :key="index">
-                <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[3.5rem] bg-white border border-slate-100 p-8 shadow-xl overflow-hidden"
-                     @click="active = index"
-                     :class="{
-                        'z-30 scale-100 opacity-100 translate-x-0': active === index,
-                        'z-20 scale-85 opacity-30 -translate-x-1/2 md:-translate-x-[60%] blur-[2px]': (active - 1 + collaborations.length) % collaborations.length === index,
-                        'z-20 scale-85 opacity-30 translate-x-1/2 md:translate-x-[60%] blur-[2px]': (active + 1) % collaborations.length === index,
-                        'opacity-0 scale-50 z-10': Math.abs(active - index) > 1 && Math.abs(active - index) < collaborations.length - 1
-                     }"
-                     :style="active === index ? 'box-shadow: 0 40px 100px -20px rgba(0,0,0,0.1)' : ''">
-
-                    <div class="absolute top-0 left-0 w-full h-2 group-hover:opacity-100 transition-opacity duration-300"
-                         :class="active === index ? collab.color : 'bg-slate-100'"></div>
-
-                    <div class="relative w-[300px] md:w-[600px] lg:w-[850px] aspect-video rounded-[3rem] overflow-hidden">
-                        <img :src="collab.img"
-                             :alt="collab.title"
-                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-12 flex flex-col justify-end transition-opacity duration-500"
-                             :class="active === index ? 'opacity-100' : 'opacity-0'">
-                            <span class="text-yellow-400 font-black text-xs uppercase tracking-[0.3em] mb-3 block" x-text="collab.type"></span>
-                            <h3 class="text-white text-3xl md:text-4xl font-black uppercase tracking-wider mb-2" x-text="collab.title"></h3>
-
-                            <a href="#" class="inline-flex items-center gap-4 text-white hover:text-yellow-400 font-black uppercase text-xs tracking-widest mt-6 group/link">
-                                <span class="w-12 h-[2px] bg-yellow-400 group-hover/link:w-20 transition-all duration-500"></span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-6 right-14 text-slate-100 text-6xl font-black transition-colors duration-500 group-hover:text-yellow-50"
-                    :class="active === index ? 'text-yellow-50' : ''">
-                    <span x-text="'0' + (index + 1s)"></span>
-                    </div>
-                </div>
-            </template>
-
         </div>
     </div>
 </section>
@@ -356,6 +362,5 @@
         </div>
     </div>
 </footer>
-
-</body>
+    </body>
 </html>

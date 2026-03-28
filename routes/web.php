@@ -9,3 +9,19 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('ARK02_Homepage');
 });
+
+Route::get('/career', function () {
+    return view('layouts.ARK02_Careerpage');
+});
+
+
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'zh', 'ms'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+});
+
