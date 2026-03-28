@@ -145,11 +145,11 @@
                     </p>
                 </div>
 
-                <div class="mb-11">
-                    <button class="bg-yellow-400 hover:bg-black hover:text-white text-black font-black py-4 px-12 rounded-lg text-sm uppercase tracking-widest transition-all shadow-xl">
-                        See all opportunities
-                    </button>
-                </div>
+                    <div class="mb-11">
+    <a href="#job-section" class="inline-block bg-yellow-400 hover:bg-black hover:text-white text-black font-black py-4 px-12 rounded-lg text-sm uppercase tracking-widest transition-all shadow-xl">
+        See all opportunities
+    </a>
+</div>
 
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-12 items-end">
@@ -186,19 +186,43 @@
 </div>
     </main>
 
-<!--The pic section or section 2 !-->
-   <section class="py-12 bg-white font-montserrat">
-    <div class="max-w-7xl mx-auto px-6 mb-40 text-center">
+<style>
+    /* Floating Animation for Dots */
+    @keyframes float {
+        0% { transform: translate(0, 0); }
+        50% { transform: translate(15px, -20px); }
+        100% { transform: translate(0, 0); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+        animation: float 8s ease-in-out infinite 2s;
+    }
+
+    #job-section {
+    /* Adjust '150px' until it looks perfectly centered to you */
+    scroll-margin-top: 150px;
+}
+
+</style>
+
+<section class="py-24 bg-white font-montserrat overflow-hidden relative">
+
+    <div class="max-w-7xl mx-auto px-6 mb-40 text-center relative z-10">
         <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
             Why <span class="text-[#F99D1C]">Choose</span> Us?
         </h2>
         <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
     </div>
 
-   <div class="relative flex flex-col md:flex-row items-center bg-[#FFCC00] w-full rounded-r-[300px] min-h-[450px] mb-60">
+    <div class="relative flex flex-col md:flex-row items-center bg-[#FFCC00] w-full rounded-r-[300px] min-h-[450px] mb-60">
+        <div class="absolute right-20 top-10 w-32 h-32 bg-[#F99D1C] rounded-full opacity-50 animate-float"></div>
+        <div class="absolute right-60 bottom-10 w-16 h-16 bg-white rounded-full opacity-40 animate-float-delayed"></div>
+
         <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-start">
             <img src="{{ asset('images/Office_1.png') }}"
-                 class="w-[85%] md:w-[70%] shadow-2xl relative left-[5%] lg:left-[20%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg">
+                 class="w-[85%] md:w-[70%] shadow-2xl relative left-[5%] lg:left-[20%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
         </div>
 
         <div class="w-full md:w-1/2 px-12 py-16 lg:pl-10 lg:pr-40 z-10">
@@ -209,14 +233,15 @@
                 We foster a professional and collaborative working environment that supports continuous learning, teamwork, and performance excellence.
             </p>
         </div>
-
     </div>
 
-    <div class="relative flex flex-col md:flex-row-reverse items-center bg-[#F99D1C] w-full rounded-l-[300px] min-h-[450px] mb-60">
+    <div class="relative flex flex-col md:flex-row-reverse items-center bg-[#F99D1C] w-full rounded-l-[300px] min-h-[450px] mb-32">
+        <div class="absolute left-20 top-10 w-24 h-24 bg-[#FFCC00] rounded-full opacity-60 animate-float-delayed"></div>
+        <div class="absolute left-40 bottom-20 w-12 h-12 bg-white rounded-full opacity-30 animate-float"></div>
 
         <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-end">
             <img src="{{ asset('images/Office_2.png') }}"
-                 class="w-[85%] md:w-[80%] shadow-2xl relative right-[5%] lg:right-[25%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg">
+                 class="w-[85%] md:w-[80%] shadow-2xl relative right-[5%] lg:right-[25%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
         </div>
 
         <div class="w-full md:w-2/3 px-12 py-16 lg:pr-20 lg:pl-40 z-10 text-right md:text-left">
@@ -229,21 +254,29 @@
         </div>
 
     </div>
-<div class="mt-60">
-        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
-            <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
-                Job <span class="text-[#F99D1C]">Opportunities</span> At Arkod
-            </h2>
+
+    <div class="flex justify-center my-32">
+        <div class="w-[80%] h-[3px] bg-black"></div>
+    </div>
+
+    <div class="relative">
+        <div class="absolute -left-10 top-0 w-40 h-40 bg-[#FFCC00] rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute -right-10 bottom-0 w-40 h-40 bg-[#F99D1C] rounded-full opacity-10 blur-3xl"></div>
+
+        <div id="job-section" class="relative mt-10">
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
+            Job <span class="text-[#F99D1C]">Opportunities</span> At Arkod
+        </h2>
             <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-10">
-
                 @php
                     $jobs = [
-                        ['name' => 'Sales Manager', 'img' => 'sales_manager.png'],
-                        ['name' => 'Sales Executive', 'img' => 'sales_executive.png'],
+                        ['name' => 'Sales Manager', 'img' => 'Salesmanager.png'],
+                        ['name' => 'Sales Executive', 'img' => 'Sales_Executive.png'],
                         ['name' => 'Office Admin Assistant', 'img' => 'admin_assistant.png'],
                         ['name' => 'Tech Manager', 'img' => 'tech_manager.png'],
                         ['name' => 'Marketing Manager', 'img' => 'marketing_manager.png'],
@@ -256,16 +289,24 @@
                 @endphp
 
                 @foreach($jobs as $job)
-                <div class="group flex flex-col items-center bg-white p-6 rounded-xl border-2 border-gray-100 shadow-lg hover:shadow-2xl hover:border-[#FFCC00] transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="w-20 h-20 md:w-28 md:h-28 mb-4 bg-gray-50 rounded-lg p-2 flex items-center justify-center">
-                        <img src="{{ asset('images/icons/' . $job['img']) }}" alt="{{ $job['name'] }}" class="w-full h-full object-contain">
+                <div class="group flex flex-col items-center bg-white p-6 rounded-xl border-2 border-gray-100 shadow-lg
+                            hover:shadow-2xl hover:border-[#FFCC00] hover:-translate-y-3 hover:scale-105
+                            transition-all duration-500 cursor-pointer">
+
+                    <div class="w-20 h-20 md:w-28 md:h-28 mb-4 bg-gray-50 rounded-full p-4 flex items-center justify-center
+                                group-hover:bg-[#FFF9E6] transition-colors duration-500 shadow-inner">
+                        <img src="{{ asset('images/' . $job['img']) }}" alt="{{ $job['name'] }}"
+                             class="w-full h-full object-contain group-hover:rotate-6 transition-transform duration-500">
                     </div>
-                    <h4 class="text-center font-black text-sm md:text-base uppercase leading-tight text-black group-hover:text-[#F99D1C] transition-colors">
+
+                    <h4 class="text-center font-black text-sm md:text-base uppercase leading-tight text-black
+                               group-hover:text-[#F99D1C] transition-colors duration-500">
                         {{ $job['name'] }}
                     </h4>
+
+                    <div class="w-0 group-hover:w-10 h-1 bg-[#F99D1C] mt-2 transition-all duration-500"></div>
                 </div>
                 @endforeach
-
             </div>
         </div>
     </div>
