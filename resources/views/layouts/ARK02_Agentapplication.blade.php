@@ -131,5 +131,37 @@
         </div>
     </nav>
 
+<section class="relative min-h-[80vh] flex items-center justify-center py-20 bg-white overflow-hidden">
+    <div class="max-w-[1600px] mx-auto px-6 relative w-full">
+
+        <div class="absolute left-10 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
+            <img src="{{ asset('images/box1-removebg-preview.png') }}" alt="Box Left" class="w-[400px] h-auto drop-shadow-xl rotate-[-10deg]">
+        </div>
+
+        <div class="absolute right-10 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
+            <img src="{{ asset('images/Screenshot_2026-03-28_171207-removebg-preview.png') }}" alt="Box Right" class="w-[400px] h-auto drop-shadow-xl rotate-[5deg]">
+        </div>
+
+        <div class="relative z-10 text-center max-w-3xl mx-auto">
+            <h4 class="text-black font-bold text-lg mb-4">Become an Arkod Agent</h4>
+
+            <h1 class="text-7xl md:text-6sxl font-[900] text-black leading-none tracking-tight mb-8">
+                Turn your time <br> <span class="block">into opportunity</span>
+
+            </h1>
+
+            <p class="text-black text-lg md:text-xl leading mb-12 font-medium px-4">
+                “By partnering with ARKOD’s smart logistics platform, you gain access to new earning opportunities while delivering greater value to your customers.”
+            </p>
+
+            <div class="flex justify-center">
+                <a href="#join" class="bg-[#FFD700] hover:bg-black hover:text-white text-black font-bold px-16 py-4 rounded-full text-base transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-none transform hover:-translate-y-1 border-2 border-black">
+                    Join Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
