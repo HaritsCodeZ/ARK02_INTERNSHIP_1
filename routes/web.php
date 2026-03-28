@@ -14,6 +14,10 @@ Route::get('/career', function () {
     return view('layouts.ARK02_Careerpage');
 });
 
+Route::get('/agentapp', function () {
+    return view('layouts.ARK02_Agentapplication');
+});
+
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
