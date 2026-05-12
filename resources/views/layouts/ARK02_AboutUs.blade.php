@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | Agent Application</title>
+    <title>ARKOD | About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -130,3 +130,232 @@
             </div>
         </div>
     </nav>
+
+<!-- START: PROVEN LOGISTICS SECTION -->
+<!-- HEIGHT CONTROL: Changed min-h to 450px and lg:h to 600px -->
+<section class="relative min-h-[450px] lg:h-[600px] flex items-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/mts-analysis-2022.jpg') }}" alt="Logistics Background" class="w-full h-full object-cover object-center">
+        <!-- Overlay: Increased opacity slightly for better text contrast on shorter sections -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/40 to-[#0a0a0a]/90"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="max-w-[1600px] mx-auto px-6 w-full relative z-10 flex justify-end">
+        <div class="max-w-4xl text-right md:text-left lg:ml-auto">
+
+            <!-- Headline Group: Reduced margins for smaller height -->
+            <div x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)" class="mb-8">
+                <h2 x-show="shown"
+                    x-transition:enter="transition ease-out duration-1000"
+                    x-transition:enter-start="opacity-0 translate-y-8"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="text-4xl md:text-5xl font-black tracking-tighter leading-tight mb-4">
+                    PROVEN LOGISTICS<br>
+                    <span class="text-yellow-400 uppercase">Excellence in Motion</span>
+                </h2>
+
+                <p x-show="shown"
+                    x-transition:enter="transition ease-out duration-1000 delay-300"
+                    class="text-gray-300 text-base md:text-lg font-medium max-w-xl ml-auto md:ml-0 opacity-90">
+                    Experience the efficiency of our completed shipments and projects.
+                </p>
+            </div>
+
+            <!-- KPI Metrics Grid: Optimized spacing -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- Containers Shipped -->
+                <div class="flex items-center md:flex-col md:items-start gap-3">
+                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-white">100+</div>
+                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Containers Shipped</div>
+                    </div>
+                </div>
+
+                <!-- Delivery Time -->
+                <div class="flex items-center md:flex-col md:items-start gap-3">
+                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-white">_ DAYS</div>
+                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Avg Delivery Time</div>
+                    </div>
+                </div>
+
+                <!-- Partners -->
+                <div class="flex items-center md:flex-col md:items-start gap-3">
+                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black text-white">50+</div>
+                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Partners Worldwide</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="flex space-x-2 justify-end md:justify-start">
+                <div class="h-1 w-6 bg-yellow-400 rounded-full"></div>
+                <div class="h-1 w-1 bg-white/30 rounded-full"></div>
+                <div class="h-1 w-1 bg-white/30 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- START: SUCCESS STORIES SECTION -->
+<section class="py-32 bg-[#fcfcfc] font-montserrat overflow-hidden relative">
+
+    <!-- ARCHITECTURAL BACKGROUND ELEMENTS -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03] select-none z-0">
+        <div class="absolute top-20 -left-20 text-[20vw] font-black leading-none uppercase rotate-90">LOGISTICS</div>
+        <div class="absolute bottom-0 -right-20 text-[20vw] font-black leading-none uppercase -rotate-90">SUCCESS</div>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+
+        <div class="text-center mb-32 relative" x-data="{ shown: false }" x-intersect.once="shown = true">
+    <div class="inline-flex items-center gap-4 mb-6" x-show="shown" x-transition:enter="transition ease-out duration-700">
+        <span class="h-[1px] w-12 bg-yellow-400"></span>
+        <span class="text-yellow-600 font-black text-xs uppercase tracking-[0.6em]">Portfolio</span>
+        <span class="h-[1px] w-12 bg-yellow-400"></span>
+    </div>
+
+    <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none mb-6"
+        x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-100">
+        Our Completed <br>
+        <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-black to-yellow-500">
+            Success Stories
+        </span>
+    </h2>
+
+    <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8" x-show="shown" x-transition:enter="transition scale-x-0 duration-500 delay-500"></div>
+
+    <p class="text-black text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed"
+       x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-300">
+        Every shipment managed highlights our reliability and unwavering commitment to client success.
+    </p>
+</div>
+
+        <!-- Stories Container -->
+        <div class="relative space-y-32">
+
+            <!-- STORY 1: AZTECH -->
+            <div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
+                <div class="absolute -top-10 -left-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">01</div>
+
+                <div class="w-full lg:w-3/5 relative z-10">
+                    <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+                        <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
+                            <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
+                                <img src="{{ asset('images/content_1.jpeg') }}" alt="Aztech Electrics"
+                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 py-8">
+                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Logistics Excellence</div>
+                    <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
+                        Aztech Electrics Relies on Arkod Smart Logitech for Smooth Deliveries
+                    </h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
+                        Aztech Electrical & Aircond Services was satisfied with the service provided by Arkod Smart Logitech and praised the team for their professionalism and step-by-step delivery process.
+                    </p>
+                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
+                        <span>Read More</span>
+                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- STORY 2: CAR SHIPPING -->
+            <div class="group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
+                <div class="absolute -top-10 -right-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? '-translate-x-5' : ''">02</div>
+
+                <div class="w-full lg:w-3/5 relative z-10">
+                    <div class="relative p-2 border border-black/5 rounded-tr-[120px] rounded-br-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+                        <div class="relative p-4 border-[16px] border-yellow-400 border-l-0 rounded-tr-[110px] rounded-br-[110px]">
+                            <div class="overflow-hidden rounded-tr-[85px] rounded-br-[85px] shadow-2xl relative group">
+                                <img src="{{ asset('images/content_2.jpg') }}" alt="Car Shipping"
+                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
+                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Specialized Transport</div>
+                    <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
+                        Car Shipping By Arkod
+                    </h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
+                        A customer had a delightful car shipping experience with Arkod Smart Logitech. Shipping a car can be a complex process, so it's important to choose a reputable and reliable company to handle the transportation.
+                    </p>
+                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
+                        <span>Read More</span>
+                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- STORY 3: CODLIGENCE (RESTORING FULL CONTENT) -->
+            <div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
+                <div class="absolute -top-10 -left-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">03</div>
+
+                <div class="w-full lg:w-3/5 relative z-10">
+                    <div class="relative p-2 border border-black/5 rounded-bl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+                        <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-t-0 rounded-bl-[110px]">
+                            <div class="overflow-hidden rounded-bl-[85px] shadow-2xl relative group">
+                                <img src="{{ asset('images/content_3.jpg') }}" alt="Furniture Delivery"
+                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                            </div>
+                            <!-- Bottom S-Path connector -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 py-8">
+                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Corporate Logistics</div>
+                    <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
+                        How Arkod Smart Logitech Delivered Perfectly Handled Furniture to Codligence Sdn Bhd
+                    </h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
+                        Upon delivery, we were delighted to hear that Codligence Sdn. Bhd. was satisfied with the quality of service provided by Arkod Smart Logistics.
+                    </p>
+                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
+                        <span>Read More</span>
+                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION FOOTER: Final CTA -->
+        <div class="mt-40 p-12 bg-[#0a0a0a] rounded-[40px] relative overflow-hidden group shadow-2xl">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-[150px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div>
+                    <h4 class="text-white text-3xl font-black uppercase tracking-tighter mb-2">Ready to ship with the best?</h4>
+                    <p class="text-gray-400 text-sm">Join our list of successful partners and experience smart logistics.</p>
+                </div>
+                <a href="#" class="bg-yellow-400 text-black px-10 py-5 font-black uppercase text-sm hover:bg-white transition-all transform hover:scale-105 shadow-xl">Start Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: SUCCESS STORIES SECTION -->

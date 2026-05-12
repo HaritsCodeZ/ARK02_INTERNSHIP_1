@@ -22,7 +22,6 @@ Route::get('/aboutus', function () {
     return view('layouts.ARK02_Aboutus');
 });
 
-
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
