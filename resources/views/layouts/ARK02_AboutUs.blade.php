@@ -216,9 +216,15 @@
 </section>
 
 <!-- START: SUCCESS STORIES SECTION -->
-<section class="py-32 bg-[#fcfcfc] font-montserrat overflow-hidden relative">
+<section class="py-32 bg-[#fcfcfc] font-montserrat overflow-hidden relative"
+         x-data="{
+             modal1Open: false,
+             modal2Open: false,
+             modal3Open: false,
+             modal4Open: false,
+             modal5Open: false
+         }">
 
-    <!-- ARCHITECTURAL BACKGROUND ELEMENTS -->
     <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03] select-none z-0">
         <div class="absolute top-20 -left-20 text-[20vw] font-black leading-none uppercase rotate-90">LOGISTICS</div>
         <div class="absolute bottom-0 -right-20 text-[20vw] font-black leading-none uppercase -rotate-90">SUCCESS</div>
@@ -227,135 +233,521 @@
     <div class="max-w-[1400px] mx-auto px-6 relative z-10">
 
         <div class="text-center mb-32 relative" x-data="{ shown: false }" x-intersect.once="shown = true">
-    <div class="inline-flex items-center gap-4 mb-6" x-show="shown" x-transition:enter="transition ease-out duration-700">
-        <span class="h-[1px] w-12 bg-yellow-400"></span>
-        <span class="text-yellow-600 font-black text-xs uppercase tracking-[0.6em]">Portfolio</span>
-        <span class="h-[1px] w-12 bg-yellow-400"></span>
+            <div class="inline-flex items-center gap-4 mb-6" x-show="shown" x-transition:enter="transition ease-out duration-700">
+                <span class="h-[1px] w-12 bg-yellow-400"></span>
+                <span class="text-yellow-600 font-black text-xs uppercase tracking-[0.6em]">Portfolio</span>
+                <span class="h-[1px] w-12 bg-yellow-400"></span>
+            </div>
+
+            <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none mb-6"
+                x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-100">
+                Our Completed <br>
+                <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-black to-yellow-500">
+                    Success Stories
+                </span>
+            </h2>
+
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8" x-show="shown" x-transition:enter="transition scale-x-0 duration-500 delay-500"></div>
+
+            <p class="text-black text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed"
+               x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-300">
+                Every shipment managed highlights our reliability and unwavering commitment to client success.
+            </p>
+        </div>
+
+       <div class="relative space-y-32">
+
+    <!-- STORY 01 -->
+<div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative"
+     x-data="{ active: false }"
+     @mouseenter="active = true"
+     @mouseleave="active = false">
+
+    <div class="absolute -top-10 -left-55 text-[12rem] font-black text-black/[0.25] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">01</div>
+
+    <div class="w-full lg:w-3/5 relative z-10">
+        <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+            <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
+                <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
+                    <img src="{{ asset('images/therealcontent1aboutpipes.jpeg') }}" alt="The 3 Pipes"
+                        class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter leading-none mb-6"
-        x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-100">
-        Our Completed <br>
-        <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-black to-yellow-500">
-            Success Stories
-        </span>
-    </h2>
+    <div class="w-full lg:w-2/5 py-8">
+        <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Logistics Excellence</div>
+        <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
+            Dominating The Horizon: Engineering Beyond Boundaries
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
+            From Manila to Kuching, we don’t just move cargo—we transport the massive infrastructure that shapes tomorrow.
+        </p>
 
-    <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8" x-show="shown" x-transition:enter="transition scale-x-0 duration-500 delay-500"></div>
-
-    <p class="text-black text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed"
-       x-show="shown" x-transition:enter="transition ease-out duration-1000 delay-300">
-        Every shipment managed highlights our reliability and unwavering commitment to client success.
-    </p>
+        <button @click="modal1Open = true; document.body.style.overflow = 'hidden'"
+                class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest cursor-pointer focus:outline-none">
+            <span>Read More</span>
+            <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+        </button>
+    </div>
 </div>
 
-        <!-- Stories Container -->
-        <div class="relative space-y-32">
+<!-- STORY 02 -->
+<div class="group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24 relative"
+     x-data="{ active: false }"
+     @mouseenter="active = true"
+     @mouseleave="active = false">
 
-            <!-- STORY 1: AZTECH -->
-            <div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
-                <div class="absolute -top-10 -left-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">01</div>
+    <div class="absolute -top-10 -right-55 text-[12rem] font-black text-black/[0.25] leading-none z-0 transition-all duration-700" :class="active ? '-translate-x-5' : ''">02</div>
 
-                <div class="w-full lg:w-3/5 relative z-10">
-                    <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
-                        <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
-                            <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
-                                <img src="{{ asset('images/content_1.jpeg') }}" alt="Aztech Electrics"
-                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
-                            </div>
-                        </div>
-                    </div>
+    <div class="w-full lg:w-3/5 relative z-10">
+        <div class="relative p-2 border border-black/5 rounded-tr-[120px] rounded-br-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+            <div class="relative p-4 border-[16px] border-yellow-400 border-l-0 rounded-tr-[110px] rounded-br-[110px]">
+                <div class="overflow-hidden rounded-tr-[85px] rounded-br-[85px] shadow-2xl relative group">
+                    <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Car Shipping"
+                        class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
                 </div>
-
-                <div class="w-full lg:w-2/5 py-8">
-                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Logistics Excellence</div>
-                    <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
-                        Aztech Electrics Relies on Arkod Smart Logitech for Smooth Deliveries
-                    </h3>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
-                        Aztech Electrical & Aircond Services was satisfied with the service provided by Arkod Smart Logitech and praised the team for their professionalism and step-by-step delivery process.
-                    </p>
-                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
-                        <span>Read More</span>
-                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- STORY 2: CAR SHIPPING -->
-            <div class="group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
-                <div class="absolute -top-10 -right-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? '-translate-x-5' : ''">02</div>
-
-                <div class="w-full lg:w-3/5 relative z-10">
-                    <div class="relative p-2 border border-black/5 rounded-tr-[120px] rounded-br-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
-                        <div class="relative p-4 border-[16px] border-yellow-400 border-l-0 rounded-tr-[110px] rounded-br-[110px]">
-                            <div class="overflow-hidden rounded-tr-[85px] rounded-br-[85px] shadow-2xl relative group">
-                                <img src="{{ asset('images/content_2.jpg') }}" alt="Car Shipping"
-                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
-                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Specialized Transport</div>
-                    <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
-                        Car Shipping By Arkod
-                    </h3>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
-                        A customer had a delightful car shipping experience with Arkod Smart Logitech. Shipping a car can be a complex process, so it's important to choose a reputable and reliable company to handle the transportation.
-                    </p>
-                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
-                        <span>Read More</span>
-                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- STORY 3: CODLIGENCE (RESTORING FULL CONTENT) -->
-            <div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative" x-data="{ active: false }" @mouseenter="active = true" @mouseleave="active = false">
-                <div class="absolute -top-10 -left-10 text-[12rem] font-black text-black/[0.04] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">03</div>
-
-                <div class="w-full lg:w-3/5 relative z-10">
-                    <div class="relative p-2 border border-black/5 rounded-bl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
-                        <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-t-0 rounded-bl-[110px]">
-                            <div class="overflow-hidden rounded-bl-[85px] shadow-2xl relative group">
-                                <img src="{{ asset('images/content_3.jpg') }}" alt="Furniture Delivery"
-                                     class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
-                            </div>
-                            <!-- Bottom S-Path connector -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full lg:w-2/5 py-8">
-                    <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Corporate Logistics</div>
-                    <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
-                        How Arkod Smart Logitech Delivered Perfectly Handled Furniture to Codligence Sdn Bhd
-                    </h3>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
-                        Upon delivery, we were delighted to hear that Codligence Sdn. Bhd. was satisfied with the quality of service provided by Arkod Smart Logistics.
-                    </p>
-                    <a href="#" class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest">
-                        <span>Read More</span>
-                        <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- SECTION FOOTER: Final CTA -->
-        <div class="mt-40 p-12 bg-[#0a0a0a] rounded-[40px] relative overflow-hidden group shadow-2xl">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-[150px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
-            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-                <div>
-                    <h4 class="text-white text-3xl font-black uppercase tracking-tighter mb-2">Ready to ship with the best?</h4>
-                    <p class="text-gray-400 text-sm">Join our list of successful partners and experience smart logistics.</p>
-                </div>
-                <a href="#" class="bg-yellow-400 text-black px-10 py-5 font-black uppercase text-sm hover:bg-white transition-all transform hover:scale-105 shadow-xl">Start Your Project</a>
             </div>
         </div>
     </div>
+
+    <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
+        <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Specialized Transport</div>
+        <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
+            Bridging Oceans, Securing Valuables
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
+            From the shores of Sarawak to the heart of the capital, Arkod Smart Logitech specializes in handling high-value automotive transportation and specialized mixed-cargo consolidations.
+        </p>
+
+        <button @click="modal2Open = true; document.body.style.overflow = 'hidden'"
+                class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest cursor-pointer focus:outline-none">
+            <span>Read More</span>
+            <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+        </button>
+    </div>
+</div>
+
+<!-- STORY 03 -->
+<div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative"
+     x-data="{ active: false }"
+     @mouseenter="active = true"
+     @mouseleave="active = false">
+
+    <div class="absolute -top-10 -left-55 text-[12rem] font-black text-black/[0.25] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">03</div>
+
+    <div class="w-full lg:w-3/5 relative z-10">
+        <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+            <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
+                <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
+                    <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Premium Vehicle Transport"
+                        class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-2/5 py-8">
+        <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Elite Automotive Care</div>
+        <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
+            Next-Level Automotive Transit:
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
+           When it comes to moving elite automotive engineering, standard transport simply won't suffice.
+        </p>
+
+        <button @click="modal3Open = true; document.body.style.overflow = 'hidden'"
+                class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest cursor-pointer focus:outline-none">
+            <span>Read More</span>
+            <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+        </button>
+    </div>
+</div>
+
+<!-- STORY 04 -->
+<div class="group flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24 relative"
+     x-data="{ active: false }"
+     @mouseenter="active = true"
+     @mouseleave="active = false">
+
+    <div class="absolute -top-10 -right-55 text-[12rem] font-black text-black/[0.25] leading-none z-0 transition-all duration-700" :class="active ? '-translate-x-5' : ''">04</div>
+
+    <div class="w-full lg:w-3/5 relative z-10">
+        <div class="relative p-2 border border-black/5 rounded-tr-[120px] rounded-br-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+            <div class="relative p-4 border-[16px] border-yellow-400 border-l-0 rounded-tr-[110px] rounded-br-[110px]">
+                <div class="overflow-hidden rounded-tr-[85px] rounded-br-[85px] shadow-2xl relative group">
+                    <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Inter-state Cargo Consolidations"
+                        class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
+        <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Mixed Cargo Solutions</div>
+        <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
+            Smart Consolidations: Maximizing Efficiency Across Channels
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
+            We seamlessly fuse multi-tiered retail cargo and commercial commodities safely into singular trans-ocean routes to heavily slash logistical footprints.
+        </p>
+
+        <button @click="modal4Open = true; document.body.style.overflow = 'hidden'"
+                class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest cursor-pointer focus:outline-none">
+            <span>Read More</span>
+            <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+        </button>
+    </div>
+</div>
+
+<!-- STORY 05 -->
+<div class="group flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative"
+     x-data="{ active: false }"
+     @mouseenter="active = true"
+     @mouseleave="active = false">
+
+    <div class="absolute -top-10 -left-55 text-[12rem] font-black text-black/[0.25] leading-none z-0 transition-all duration-700" :class="active ? 'translate-x-5' : ''">05</div>
+
+    <div class="w-full lg:w-3/5 relative z-10">
+        <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
+            <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
+                <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
+                    <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Supply Chain Operations"
+                        class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full lg:w-2/5 py-8">
+        <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Strategic Frameworks</div>
+        <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
+            Unlocking Potential: Scalable End-to-End Networks
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
+            From customs clearance to port dispatching, we optimize tracking matrices to deliver visibility across highly unpredictable maritime corridors.
+        </p>
+
+        <button @click="modal5Open = true; document.body.style.overflow = 'hidden'"
+                class="group/btn inline-flex items-center gap-3 text-black font-black text-sm uppercase tracking-widest cursor-pointer focus:outline-none">
+            <span>Read More</span>
+            <span class="w-8 h-[2px] bg-yellow-400 transition-all group-hover/btn:w-12"></span>
+        </button>
+    </div>
+</div>
+
+    <!-- CALL TO ACTION BANNER -->
+    <div class="mt-40 p-12 bg-[#0a0a0a] rounded-[40px] relative overflow-hidden group shadow-2xl">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-[150px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div>
+                <h4 class="text-white text-3xl font-black uppercase tracking-tighter mb-2">Ready to ship with the best?</h4>
+                <p class="text-gray-400 text-sm">Join our list of successful partners and experience smart logistics.</p>
+            </div>
+            <a href="#" class="bg-yellow-400 text-black px-10 py-5 font-black uppercase text-sm hover:bg-white transition-all transform hover:scale-105 shadow-xl">Start Your Project</a>
+        </div>
+    </div>
+</div>
+
+    <!-- MODAL 1 -->
+    <div x-show="modal1Open"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10 backdrop-blur-xl bg-black/40"
+         style="display: none;"
+         @keydown.escape.window="modal1Open = false; document.body.style.overflow = 'auto'">
+
+        <div @click.away="modal1Open = false; document.body.style.overflow = 'auto'"
+             x-show="modal1Open"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="relative w-full max-w-6xl bg-white/80 backdrop-blur-md border border-white/40 shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[85vh]">
+
+            <button @click="modal1Open = false; document.body.style.overflow = 'auto'"
+                    class="absolute top-4 right-4 z-50 bg-black text-white p-3 rounded-full hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
+                <img src="{{ asset('images/therealcontent1aboutpipes.jpeg') }}" alt="Project Pipe Logistics" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-8 sm:p-12 overflow-y-auto flex flex-col justify-between bg-white/40">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Flash Report</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">MANILA — KUCHING</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
+                        Dominating The Horizon: Engineering Beyond Boundaries
+                    </h2>
+                    <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
+                        <p class="text-lg font-bold text-gray-950">From Manila to Kuching, we don’t just move cargo—we transport the massive infrastructure that shapes tomorrow.</p>
+                        <p>Featured here is the seamless logistical execution of our monumental <strong class="text-black">3500x3500x2000 mm wall pipe</strong> shipment, precision-engineered and securely transported via specialized open-top containers.</p>
+                        <p>This critical milestone stands as a testament to our capacity for handling extreme-scale industrial demands, and it directly paves the way for our next major undertaking: anchoring the upcoming infrastructure development project in <span class="bg-yellow-300 px-1 font-bold text-black">Serian, Sarawak</span>.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
+                    <span>ARKOD SMART LOGITECH</span>
+                    <span>SUCCESSFUL DELIVERY © 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2 -->
+    <div x-show="modal2Open"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10 backdrop-blur-xl bg-black/40"
+         style="display: none;"
+         @keydown.escape.window="modal2Open = false; document.body.style.overflow = 'auto'">
+
+        <div @click.away="modal2Open = false; document.body.style.overflow = 'auto'"
+             x-show="modal2Open"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="relative w-full max-w-6xl bg-white/80 backdrop-blur-md border border-white/40 shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[85vh]">
+
+            <button @click="modal2Open = false; document.body.style.overflow = 'auto'"
+                    class="absolute top-4 right-4 z-50 bg-black text-white p-3 rounded-full hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
+                <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Car Shipping Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
+            </div>
+
+           <div class="w-full lg:w-1/2 p-8 sm:p-12 overflow-y-auto flex flex-col justify-between bg-white/40">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">KUCHING — KUALA LUMPUR</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
+                        Bridging Oceans, Securing Valuables: <br>
+                    </h2>
+                    <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
+                        <p class="text-lg font-bold text-gray-950">
+                            From the shores of Sarawak to the heart of the capital, Arkod Smart Logitech specializes in handling high-value automotive transportation and specialized mixed-cargo consolidations.
+                        </p>
+                        <p>
+                            Featured here is our flawless end-to-end execution of a premium Toyota Camry transit from Kuching to Kuala Lumpur, securely bound alongside commercial batches of specialized palm sugar syrup.
+                        </p>
+                        <p>
+                            Utilizing state-of-the-art blocking, bracing, and climate-defying insulation barriers within our specialized container units, we eliminate the risks of trans-sea relocation—proving once again that whether it is luxury engineering or bulk liquid commodities, your assets arrive in mint, pristine condition.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
+                    <span>ARKOD SMART LOGITECH</span>
+                    <span>SECURE TRANSIT © 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3 -->
+    <div x-show="modal3Open"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10 backdrop-blur-xl bg-black/40"
+         style="display: none;"
+         @keydown.escape.window="modal3Open = false; document.body.style.overflow = 'auto'">
+
+        <div @click.away="modal3Open = false; document.body.style.overflow = 'auto'"
+             x-show="modal3Open"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="relative w-full max-w-6xl bg-white/80 backdrop-blur-md border border-white/40 shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[85vh]">
+
+            <button @click="modal3Open = false; document.body.style.overflow = 'auto'"
+                    class="absolute top-4 right-4 z-50 bg-black text-white p-3 rounded-full hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
+                <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Furniture Delivery Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
+            </div>
+
+             <div class="w-full lg:w-1/2 p-8 sm:p-12 overflow-y-auto flex flex-col justify-between bg-white/40">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">KUCHING — KUALA LUMPUR</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
+                       DOMINATING CROSS-BORDER HIGH-PERFORMANCE LOGISTICS <br>
+                    </h2>
+                    <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
+                        <p class="text-lg font-bold text-gray-950">
+                            From the shores of Sarawak to the heart of the capital, Arkod Smart Logitech specializes in handling high-value automotive transportation and specialized mixed-cargo consolidations.
+                        </p>
+                        <p>
+                            Featured here is our flawless end-to-end execution of a premium Toyota Camry transit from Kuching to Kuala Lumpur, securely bound alongside commercial batches of specialized palm sugar syrup.
+                        </p>
+                        <p>
+                            Utilizing state-of-the-art blocking, bracing, and climate-defying insulation barriers within our specialized container units, we eliminate the risks of trans-sea relocation—proving once again that whether it is luxury engineering or bulk liquid commodities, your assets arrive in mint, pristine condition.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
+                    <span>ARKOD SMART LOGITECH</span>
+                    <span>SECURE TRANSIT © 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4 -->
+    <div x-show="modal4Open"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10 backdrop-blur-xl bg-black/40"
+         style="display: none;"
+         @keydown.escape.window="modal4Open = false; document.body.style.overflow = 'auto'">
+
+        <div @click.away="modal4Open = false; document.body.style.overflow = 'auto'"
+             x-show="modal4Open"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="relative w-full max-w-6xl bg-white/80 backdrop-blur-md border border-white/40 shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[85vh]">
+
+            <button @click="modal4Open = false; document.body.style.overflow = 'auto'"
+                    class="absolute top-4 right-4 z-50 bg-black text-white p-3 rounded-full hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
+                <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Automotive Transit Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-8 sm:p-12 overflow-y-auto flex flex-col justify-between bg-white/40">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">KUCHING — KUALA LUMPUR</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
+                        Smart Consolidations: Maximizing Efficiency Across Channels
+                    </h2>
+                    <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
+                        <p class="text-lg font-bold text-gray-950">
+                            We seamlessly fuse multi-tiered retail cargo and commercial commodities safely into singular trans-ocean routes to heavily slash logistical footprints.
+                        </p>
+                        <p>
+                            Featured here is our flawless end-to-end execution of a premium automotive asset transit, securely buffered utilizing advanced industrial-grade constraints.
+                        </p>
+                        <p>
+                            Utilizing state-of-the-art blocking, bracing, and climate-defying insulation barriers within our specialized container units, we safely eliminate the standard multi-modal risks of trans-sea relocation.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
+                    <span>ARKOD SMART LOGITECH</span>
+                    <span>SECURE TRANSIT © 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 05 -->
+    <div x-show="modal5Open"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10 backdrop-blur-xl bg-black/40"
+         style="display: none;"
+         @keydown.escape.window="modal5Open = false; document.body.style.overflow = 'auto'">
+
+        <div @click.away="modal5Open = false; document.body.style.overflow = 'auto'"
+             x-show="modal5Open"
+             x-transition:enter="transition ease-out duration-300 transform"
+             x-transition:enter-start="opacity-0 translate-y-12 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 translate-y-12 scale-95"
+             class="relative w-full max-w-6xl bg-white/80 backdrop-blur-md border border-white/40 shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[85vh]">
+
+            <button @click="modal5Open = false; document.body.style.overflow = 'auto'"
+                    class="absolute top-4 right-4 z-50 bg-black text-white p-3 rounded-full hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
+                <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Infrastructure Project Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
+            </div>
+
+            <div class="w-full lg:w-1/2 p-8 sm:p-12 overflow-y-auto flex flex-col justify-between bg-white/40">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">GLOBAL PORT ROUTING</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
+                        Unlocking Potential: Scalable End-to-End Networks
+                    </h2>
+                    <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
+                        <p class="text-lg font-bold text-gray-950">
+                            From customs clearance to port dispatching, we optimize tracking matrices to deliver visibility across highly unpredictable maritime corridors.
+                        </p>
+                        <p>
+                            By combining specialized algorithmic tracking pipelines and localized storage hubs, we protect fragile supply chains from unannounced border interruptions.
+                        </p>
+                        <p>
+                            Whether dealing with dense industrial mechanisms or time-sensitive container handoffs, our systematic checkpoints keep your logistics operations moving forward with unparalleled predictability.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
+                    <span>ARKOD SMART LOGITECH</span>
+                    <span>SECURE TRANSIT © 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 <!-- END: SUCCESS STORIES SECTION -->
