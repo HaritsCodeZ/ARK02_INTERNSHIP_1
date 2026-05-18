@@ -219,50 +219,281 @@
                 </div>
 
                 <!-- Right Side: Our Excellence Stats -->
-                <div class="lg:col-span-7">
-                    <h3 class="text-black text-2xl font-bold uppercase tracking-wider mb-10 text-center lg:text-left">Our Excellence</h3>
+<div class="lg:col-span-7">
+    <h3 class="text-black text-2xl font-bold uppercase tracking-wider mb-10 text-center lg:text-left">Our Excellence</h3>
 
-                    <div class="grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 gap-6">
 
-                        <!-- Stat 1 -->
-                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-2xl text-black shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
-                            <div class="w-16 h-16 bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
-                                🚢
+        <!-- Stat 1 -->
+        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
+            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform text-5xl">
+                🚢
+            </div>
+            <div class="text-6xl font-black text-center">5</div>
+            <div class="text-2xl font-bold text-center mt-1">Years Experience</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
+            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">
+                ⭐
+            </div>
+            <div class="text-6xl font-black text-center">100%</div>
+            <div class="text-2xl font-bold text-center mt-1">Trusted by Clients</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
+            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform text-5xl">
+                ⏱️
+            </div>
+            <div class="text-6xl font-black text-center">On Time</div>
+            <div class="text-2xl font-bold text-center mt-1">Delivery</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
+            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">
+                🚛
+            </div>
+            <div class="text-6xl font-black text-center">50+</div>
+            <div class="text-2xl font-bold text-center mt-1">Deliveries</div>
+        </div>
+
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== END OF NEW SECTION ===================== -->
+
+            <!-- ===================== NEW SECTION: REVIEWS & RATING (PREMIUM) ===================== -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 text-[#0a0a0a]">
+        <div class="max-w-[1600px] mx-auto px-6 md:px-8">
+
+            <!-- Header -->
+            <div class="flex flex-col items-center text-center mb-16">
+                <span class="text-yellow-400 text-sm font-black uppercase tracking-[0.2em] mb-3">✦ CUSTOMER STORIES ✦</span>
+                <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 text-black">Reviews and Rating</h2>
+
+                <!-- Premium Rating Banner -->
+                <div class="inline-flex items-center gap-6 bg-white shadow-xl border border-yellow-400/20 rounded-3xl px-12 py-7">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-inner">
+                        ARKOD
+                    </div>
+                    <div class="text-left">
+                        <div class="flex text-yellow-400 text-5xl leading-none mb-1">★★★★☆</div>
+                        <p class="text-3xl font-black text-black tracking-tighter">4.6 out of 5</p>
+                        <p class="text-sm text-gray-500 mt-1">Based on Real Customer Reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="relative" x-data="testimonialCarousel()">
+                <div class="overflow-hidden rounded-3xl">
+                    <div class="flex transition-transform duration-700 ease-out"
+                         :style="{ transform: `translateX(-${current * (100 / 3)}%)` }">
+
+                        <template x-for="(review, index) in reviews" :key="index">
+                            <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-white border border-yellow-400/10 rounded-3xl p-9 shadow-xl h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+
+                                    <div class="flex items-start justify-between mb-8">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-14 h-14 rounded-2xl overflow-hidden ring-4 ring-yellow-400/20">
+                                                <img :src="review.avatar" :alt="review.name" class="w-full h-full object-cover">
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-xl" x-text="review.name"></h4>
+                                                <p class="text-sm text-gray-500" x-text="review.date"></p>
+                                            </div>
+                                        </div>
+                                        <!-- Company Logo -->
+                                        <img src="{{ asset('images/Company Logo.png') }}"
+                                             alt="Arkod"
+                                             class="h-12 w-12 object-contain">
+                                    </div>
+
+                                    <!-- Gold Stars -->
+                                    <div class="text-yellow-400 text-4xl mb-6 tracking-wider">★★★★★</div>
+
+                                    <p class="text-gray-700 leading-relaxed text-[15.8px] italic" x-text="review.text"></p>
+                                </div>
                             </div>
-                            <div class="text-5xl font-black">5</div>
-                            <div class="text-xl font-bold">Years Experience</div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows - Premium Style -->
+                <button @click="prev()"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">
+                    ←
+                </button>
+
+                <button @click="next()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">
+                    →
+                </button>
+            </div>
+
+            <!-- Trust Footer -->
+            <div class="text-center mt-16">
+                <p class="text-gray-500 font-medium">❤️ Trusted by hundreds of Malaysian customers</p>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== END OF REVIEWS SECTION ===================== -->
+
+    <!-- ===================== NEW SECTION: WE ARE EVERYWHERE ===================== -->
+    <section class="py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6 md:px-8">
+
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 text-sm font-black tracking-[0.2em]">NATIONWIDE COVERAGE</span>
+                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter mt-4">
+                    WE ARE <span class="text-yellow-400">EVERYWHERE</span>
+                </h2>
+                <p class="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
+                    Connecting Peninsular Malaysia with Sabah & Sarawak through reliable car shipping
+                </p>
+            </div>
+
+            <!-- Map Container -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="bg-zinc-900/50 backdrop-blur-xl border border-yellow-400/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+
+                    <div class="grid md:grid-cols-12 gap-12 items-center">
+
+                        <!-- Malaysia Map -->
+                        <div class="md:col-span-7 relative flex justify-center">
+                            <div class="relative">
+                                <!-- You can replace this with a real SVG or high-quality map image -->
+                                <img src="{{ asset('images/malaysia-map.png') }}"
+                                     alt="Malaysia Map"
+                                     class="w-full max-w-[520px] drop-shadow-2xl">
+
+                                <!-- Peninsular Malaysia Marker -->
+                                <div class="absolute top-[38%] left-[28%]">
+                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
+                                    </div>
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
+                                        Peninsular Malaysia
+                                    </div>
+                                </div>
+
+                                <!-- Sarawak Marker -->
+                                <div class="absolute top-[52%] right-[38%]">
+                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
+                                    </div>
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
+                                        Sarawak
+                                    </div>
+                                </div>
+
+                                <!-- Sabah Marker -->
+                                <div class="absolute top-[35%] right-[22%]">
+                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
+                                    </div>
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
+                                        Sabah
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Stat 2 -->
-                        <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 rounded-2xl text-white shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                👍
-                            </div>
-                            <div class="text-5xl font-black">100%</div>
-                            <div class="text-xl font-bold">Trusted by Clients</div>
-                        </div>
+                        <!-- Right Side Info -->
+                        <div class="md:col-span-5 space-y-8">
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
+                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🇲🇾</div>
+                                    <div>
+                                        <h4 class="font-bold text-xl">Peninsular Malaysia</h4>
+                                        <p class="text-gray-400">KL • Johor • Penang • Melaka • All major cities</p>
+                                    </div>
+                                </div>
 
-                        <!-- Stat 3 -->
-                        <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 rounded-2xl text-white shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-                                ⏱️
-                            </div>
-                            <div class="text-5xl font-black">On Time</div>
-                            <div class="text-xl font-bold">Delivery</div>
-                        </div>
+                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
+                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🏝️</div>
+                                    <div>
+                                        <h4 class="font-bold text-xl">Sarawak</h4>
+                                        <p class="text-gray-400">Kuching • Sibu • Miri • Bintulu</p>
+                                    </div>
+                                </div>
 
-                        <!-- Stat 4 -->
-                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-2xl text-black shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
-                            <div class="w-16 h-16 bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                🚗
+                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
+                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🌴</div>
+                                    <div>
+                                        <h4 class="font-bold text-xl">Sabah</h4>
+                                        <p class="text-gray-400">Kota Kinabalu • Sandakan • Tawau</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-5xl font-black">1000+</div>
-                            <div class="text-xl font-bold">Successful Deliveries</div>
-                        </div>
 
+                            <div class="pt-6 border-t border-white/10">
+                                <p class="text-yellow-400 font-medium text-center md:text-left">
+                                    ✅ Reliable shipping across all of Malaysia
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ===================== END OF NEW SECTION ===================== -->
+    <!-- ===================== END OF WE ARE EVERYWHERE SECTION ===================== -->
+
+    <script>
+        function testimonialCarousel() {
+            return {
+                current: 0,
+                reviews: [
+                    {
+                        name: "Estanah Tun",
+                        date: "24 September 2025",
+                        avatar: "https://i.pravatar.cc/150?u=estanah",
+                        text: "Terbaiklah servis yang mereka bagi ini. Kereta sy memang selamat sampai. Boleh order lagi ini!"
+                    },
+                    {
+                        name: "Alif Aiman",
+                        date: "2 March 2025",
+                        avatar: "https://i.pravatar.cc/150?u=alif",
+                        text: "Suka saya cara dorang buat kerja delivery ini. Kemas dan cepat. Friendly lagi tu!"
+                    },
+                    {
+                        name: "Emmenuell",
+                        date: "24 September 2025",
+                        avatar: "https://i.pravatar.cc/150?u=emmanuel",
+                        text: "Package dorang ini juga terbaik dengan harga. Kereta sampai, sekali dengan servis. Lawa do!"
+                    },
+                    {
+                        name: "Farah Amira",
+                        date: "15 April 2025",
+                        avatar: "https://i.pravatar.cc/150?u=farah",
+                        text: "My SUV arrived in perfect condition. Very professional team. Highly recommended!"
+                    },
+                    {
+                        name: "Mohd Razak",
+                        date: "8 May 2025",
+                        avatar: "https://i.pravatar.cc/150?u=razak",
+                        text: "Fast response and transparent pricing. My Honda Civic reached safely. Will use again."
+                    },
+                    {
+                        name: "Siti Nurhaliza",
+                        date: "10 October 2025",
+                        avatar: "https://i.pravatar.cc/150?u=siti",
+                        text: "Best car shipping service. My EV car was handled with extra care. Thank you Arkod!"
+                    }
+                ],
+                next() {
+                    this.current = (this.current + 1) % Math.ceil(this.reviews.length / 3);
+                },
+                prev() {
+                    this.current = (this.current - 1 + Math.ceil(this.reviews.length / 3)) % Math.ceil(this.reviews.length / 3);
+                }
+            }
+        }
+    </script>
