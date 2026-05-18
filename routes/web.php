@@ -22,6 +22,10 @@ Route::get('/aboutus', function () {
     return view('layouts.ARK02_Aboutus');
 });
 
+Route::get('/servicecarshipping', function () {
+    return view('layouts.ARK02_ServicesCarShipping');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 

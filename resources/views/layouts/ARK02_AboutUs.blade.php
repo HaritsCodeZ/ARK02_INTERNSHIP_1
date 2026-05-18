@@ -71,7 +71,7 @@
                             <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
                         <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                            <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Shipping Schedule</a>
+                            <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Car Shipping</a>
                         </div>
                     </div>
 
@@ -133,83 +133,77 @@
 
 <!-- START: PROVEN LOGISTICS SECTION -->
 <!-- HEIGHT CONTROL: Changed min-h to 450px and lg:h to 600px -->
-<section class="relative min-h-[450px] lg:h-[600px] flex items-center overflow-hidden">
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/mts-analysis-2022.jpg') }}" alt="Logistics Background" class="w-full h-full object-cover object-center">
-        <!-- Overlay: Increased opacity slightly for better text contrast on shorter sections -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/40 to-[#0a0a0a]/90"></div>
-    </div>
+<section class="relative min-h-[450px] lg:h-[600px] flex items-center overflow-hidden" x-data="heroSlider()">
 
-    <!-- Content Container -->
+    <!-- Slides Container -->
+<div class="absolute inset-0 z-0">
+    <template x-for="(slide, index) in slides" :key="index">
+        <div :class="{
+                'opacity-100': current === index,
+                'opacity-0 pointer-events-none': current !== index
+             }"
+             class="absolute inset-0 transition-opacity duration-700 ease-in-out">
+
+            <img :src="slide.image"
+                 :alt="slide.title"
+                 :class="slide.imagePosition || 'object-center'"
+                 class="w-full h-full object-cover transition-all duration-1000">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/85 via-[#0a0a0a]/55 to-[#0a0a0a]/85"></div>
+
+            <!-- Extra vignette for Gawai -->
+            <div x-show="current === 1" class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/75"></div>
+        </div>
+    </template>
+</div>
+
+    <!-- Content -->
     <div class="max-w-[1600px] mx-auto px-6 w-full relative z-10 flex justify-end">
         <div class="max-w-4xl text-right md:text-left lg:ml-auto">
 
-            <!-- Headline Group: Reduced margins for smaller height -->
-            <div x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)" class="mb-8">
-                <h2 x-show="shown"
-                    x-transition:enter="transition ease-out duration-1000"
-                    x-transition:enter-start="opacity-0 translate-y-8"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    class="text-4xl md:text-5xl font-black tracking-tighter leading-tight mb-4">
-                    PROVEN LOGISTICS<br>
-                    <span class="text-yellow-400 uppercase">Excellence in Motion</span>
-                </h2>
+            <!-- Unique Content per Slide -->
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="current === index"
+                     x-transition:enter="transition ease-out duration-700"
+                     x-transition:enter-start="opacity-0 translate-y-8"
+                     x-transition:enter-end="opacity-100 translate-y-0"
+                     class="mb-8">
 
-                <p x-show="shown"
-                    x-transition:enter="transition ease-out duration-1000 delay-300"
-                    class="text-gray-300 text-base md:text-lg font-medium max-w-xl ml-auto md:ml-0 opacity-90">
-                    Experience the efficiency of our completed shipments and projects.
-                </p>
-            </div>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter leading-tight mb-4">
+                        <span x-text="slide.title"></span><br>
+                        <span class="text-yellow-400 uppercase" x-text="slide.subtitle"></span>
+                    </h2>
 
-            <!-- KPI Metrics Grid: Optimized spacing -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <!-- Containers Shipped -->
-                <div class="flex items-center md:flex-col md:items-start gap-3">
-                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
-                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-black text-white">100+</div>
-                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Containers Shipped</div>
-                    </div>
+                    <p class="text-gray-200 text-base md:text-lg font-medium max-w-xl ml-auto md:ml-0 opacity-95"
+                       x-text="slide.description"></p>
                 </div>
+            </template>
 
-                <!-- Delivery Time -->
-                <div class="flex items-center md:flex-col md:items-start gap-3">
-                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
-                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-black text-white">_ DAYS</div>
-                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Avg Delivery Time</div>
-                    </div>
+            <!-- KPI Section - Can be different per slide -->
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="current === index" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <template x-for="(kpi, i) in slide.kpis" :key="i">
+                        <div class="flex items-center md:flex-col md:items-start gap-3">
+                            <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
+                                <span x-html="kpi.icon"></span>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-black text-white" x-text="kpi.number"></div>
+                                <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest" x-text="kpi.label"></div>
+                            </div>
+                        </div>
+                    </template>
                 </div>
+            </template>
 
-                <!-- Partners -->
-                <div class="flex items-center md:flex-col md:items-start gap-3">
-                    <div class="p-2 bg-yellow-400/10 border border-yellow-400/20 rounded-lg">
-                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-black text-white">50+</div>
-                        <div class="text-[11px] font-bold text-yellow-400 uppercase tracking-widest">Partners Worldwide</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pagination Dots -->
+            <!-- Navigation Dots -->
             <div class="flex space-x-2 justify-end md:justify-start">
-                <div class="h-1 w-6 bg-yellow-400 rounded-full"></div>
-                <div class="h-1 w-1 bg-white/30 rounded-full"></div>
-                <div class="h-1 w-1 bg-white/30 rounded-full"></div>
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button @click="goTo(index)"
+                            :class="current === index ? 'bg-yellow-400 w-8' : 'bg-white/30 w-2'"
+                            class="h-1 rounded-full transition-all duration-300 hover:bg-yellow-400"></button>
+                </template>
             </div>
         </div>
     </div>
@@ -377,7 +371,7 @@
         <div class="relative p-2 border border-black/5 rounded-tr-[120px] rounded-br-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
             <div class="relative p-4 border-[16px] border-yellow-400 border-l-0 rounded-tr-[110px] rounded-br-[110px]">
                 <div class="overflow-hidden rounded-tr-[85px] rounded-br-[85px] shadow-2xl relative group">
-                    <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Inter-state Cargo Consolidations"
+                    <img src="{{ asset('images/therealcontent4redbull.jpeg') }}" alt="Inter-state Cargo Consolidations"
                         class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
                 </div>
             </div>
@@ -387,10 +381,10 @@
     <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
         <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Mixed Cargo Solutions</div>
         <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
-            Smart Consolidations: Maximizing Efficiency Across Channels
+            To Be Determined
         </h3>
         <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
-            We seamlessly fuse multi-tiered retail cargo and commercial commodities safely into singular trans-ocean routes to heavily slash logistical footprints.
+            To be Determined
         </p>
 
         <button @click="modal4Open = true; document.body.style.overflow = 'hidden'"
@@ -413,7 +407,7 @@
         <div class="relative p-2 border border-black/5 rounded-tl-[120px] bg-white shadow-sm transition-transform duration-500" :class="active ? '-translate-y-3' : ''">
             <div class="relative p-4 border-[16px] border-yellow-400 border-r-0 border-b-0 rounded-tl-[110px]">
                 <div class="overflow-hidden rounded-tl-[85px] shadow-2xl relative group">
-                    <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Supply Chain Operations"
+                    <img src="{{ asset('images/therealcontent5containers.jpeg') }}" alt="Supply Chain Operations"
                         class="w-full aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-110">
                 </div>
             </div>
@@ -423,10 +417,10 @@
     <div class="w-full lg:w-2/5 py-8">
         <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Strategic Frameworks</div>
         <h3 class="text-3xl font-black text-black leading-tight mb-6 transition-colors group-hover:text-yellow-600">
-            Unlocking Potential: Scalable End-to-End Networks
+            Energizing The Digital Grid
         </h3>
         <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-l-4 border-yellow-400 pl-6">
-            From customs clearance to port dispatching, we optimize tracking matrices to deliver visibility across highly unpredictable maritime corridors.
+           When the continuity of digital enterprise hangs in the balance, transport precision is everything. Our strategic Kuala Lumpur to Kota Kinabalu deployment showcases Arkod Smart Logitech’s
         </p>
 
         <button @click="modal5Open = true; document.body.style.overflow = 'hidden'"
@@ -609,13 +603,13 @@
                     </h2>
                     <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
                         <p class="text-lg font-bold text-gray-950">
-                            From the shores of Sarawak to the heart of the capital, Arkod Smart Logitech specializes in handling high-value automotive transportation and specialized mixed-cargo consolidations.
+                            When it comes to moving elite automotive engineering, standard transport simply won't suffice.
                         </p>
                         <p>
-                            Featured here is our flawless end-to-end execution of a premium Toyota Camry transit from Kuching to Kuala Lumpur, securely bound alongside commercial batches of specialized palm sugar syrup.
+                            Our latest successfully completed milestone showcases the flawless execution of a Full Container Load (FCL) transit, delivering a high-performance, used Toyota Supra from Kuching straight to Kuala Lumpur. From precision terminal handling to secure container tracking,
                         </p>
                         <p>
-                            Utilizing state-of-the-art blocking, bracing, and climate-defying insulation barriers within our specialized container units, we eliminate the risks of trans-sea relocation—proving once again that whether it is luxury engineering or bulk liquid commodities, your assets arrive in mint, pristine condition.
+                            Arkod Smart Logitech utilizes rigid specialized rigging frameworks and custom bracing architectures designed to protect premium sports assets from the slightest cosmetic or structural shifting. We bridge the South China Sea with one absolute standard: zero compromise, total security, and pristine arrival condition.
                         </p>
                     </div>
                 </div>
@@ -655,7 +649,7 @@
             </button>
 
             <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
-                <img src="{{ asset('images/therealcontent2aboutcar.jpeg') }}" alt="Automotive Transit Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <img src="{{ asset('images/therealcontent4redbull.jpeg') }}" alt="Automotive Transit Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
                 <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
             </div>
 
@@ -666,17 +660,17 @@
                         <span class="text-xs text-gray-500 font-bold tracking-wider">KUCHING — KUALA LUMPUR</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
-                        Smart Consolidations: Maximizing Efficiency Across Channels
+                        To be Determined...
                     </h2>
                     <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
                         <p class="text-lg font-bold text-gray-950">
-                            We seamlessly fuse multi-tiered retail cargo and commercial commodities safely into singular trans-ocean routes to heavily slash logistical footprints.
+                            To be Determined...
                         </p>
                         <p>
-                            Featured here is our flawless end-to-end execution of a premium automotive asset transit, securely buffered utilizing advanced industrial-grade constraints.
+                             To be Determined...
                         </p>
                         <p>
-                            Utilizing state-of-the-art blocking, bracing, and climate-defying insulation barriers within our specialized container units, we safely eliminate the standard multi-modal risks of trans-sea relocation.
+                            To be Determined...
                         </p>
                     </div>
                 </div>
@@ -716,7 +710,7 @@
             </button>
 
             <div class="w-full lg:w-1/2 bg-black relative min-h-[250px] lg:min-h-full">
-                <img src="{{ asset('images/therealcontent3aboutsupra.jpeg') }}" alt="Infrastructure Project Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
+                <img src="{{ asset('images/therealcontent5containers.jpeg') }}" alt="Infrastructure Project Details" class="w-full h-full object-cover absolute inset-0 opacity-90">
                 <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/10"></div>
             </div>
 
@@ -724,20 +718,18 @@
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
-                        <span class="text-xs text-gray-500 font-bold tracking-wider">GLOBAL PORT ROUTING</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">KUALA LUMPUR - KOTA KINABALU</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
-                        Unlocking Potential: Scalable End-to-End Networks
+                        UNCOMPROMISING LOGISTICS FOR CRITICAL TECHNOLOGY
                     </h2>
                     <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
-                        <p class="text-lg font-bold text-gray-950">
-                            From customs clearance to port dispatching, we optimize tracking matrices to deliver visibility across highly unpredictable maritime corridors.
+                        <p class="text-lg font-bold text-gray-950">Our strategic Kuala Lumpur to Kota Kinabalu deployment showcases Arkod Smart Logitech’s capacity to securely handle dense, high-sensitivity technological infrastructure
+                        <p>
+                            Safely distributing complete industrial UPS machines, high-capacity battery banks, and heavy server cabinet racks. Packed with advanced weather-sealed moisture barriers, industrial pallet anchoring systems, and heavy-duty poly-strapping configurations,
                         </p>
                         <p>
-                            By combining specialized algorithmic tracking pipelines and localized storage hubs, we protect fragile supply chains from unannounced border interruptions.
-                        </p>
-                        <p>
-                            Whether dealing with dense industrial mechanisms or time-sensitive container handoffs, our systematic checkpoints keep your logistics operations moving forward with unparalleled predictability.
+                            We safeguard delicate internal electronic components against complex sea-route vibrations and humidity. From tech hubs to regional data centers, we deliver the power that keeps East Malaysia running.
                         </p>
                     </div>
                 </div>
@@ -751,3 +743,144 @@
 
 </section>
 <!-- END: SUCCESS STORIES SECTION -->
+<footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="w-full h-[2px] bg-white mb-12"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Logistics Solutions</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Pickup & Delivery</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Sea Freight</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Air Freight</a></li>
+                </ul>
+                <h4 class="text-[24px] font-bold mt-12 mb-5">Warehousing Solution</h4>
+                <ul class="text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Company</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Partners</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cookies, Legal & Privacy Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Policies</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Shipping Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cancellation & Refund Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms & Policies</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-start lg:items-end lg:text-right">
+                <div class="mb-14">
+                    <h4 class="text-[24px] font-bold mb-5">Support</h4>
+                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                        <li><a href="#" class="hover:text-yellow-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Documents</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start lg:items-end">
+                    <h4 class="text-[24px] font-bold mb-4 tracking-tight uppercase">ARKOD SMART LOGITECH</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-9 h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-[2px] bg-white mb-8"></div>
+
+        <div class="flex flex-col items-center justify-center space-y-8">
+            <p class="text-[14px] font-bold tracking-[0.3em] uppercase">© ARKOD 2026. ALL RIGHTS RESERVED</p>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.75.46 3.4 1.26 4.83L2 22l5.3-1.26c1.37.75 2.93 1.17 4.58 1.17a10 10 0 0010-10c0-5.52-4.48-10-10-10zm5.97 14.24c-.24.68-1.22 1.25-1.7 1.33-.43.07-.98.11-2.91-.68-2.47-1.01-4.06-3.53-4.18-3.7-.12-.16-1-1.33-1-2.54 0-1.21.63-1.8 1.21-1.8s.5.12.75.12c.24 0 .44-.04.63.4.19.46.65 1.59.71 1.71.06.12.1.26.02.42-.08.16-.12.26-.25.42-.12.16-.27.36-.39.48-.13.13-.27.27-.12.52.16.25.7 1.15 1.5 1.86.64.58 1.18.76 1.44.89.26.13.41.11.57-.07s.66-.77.83-1.04c.17-.26.34-.22.58-.13s1.51.71 1.77.84.44.19.51.3c.06.11.06.66-.18 1.34z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">+60 18-911 6168</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">082-384 999</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span class="text-[17px] font-bold text-white lowercase tracking-tight">customersupport@arkod.com.my</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- HERO SLIDESHOW SCRIPT -->
+<script>
+function heroSlider() {
+    return {
+        current: 0,
+
+        slides: [
+            {
+                image: "{{ asset('images/mts-analysis-2022.jpg') }}",
+                imagePosition: "object-center",           // First slide stays centered
+                title: "PROVEN LOGISTICS",
+                subtitle: "Excellence in Motion",
+                description: "Experience the efficiency of our completed shipments and projects.",
+                kpis: [
+                    { icon: '🚛', number: 'VARIOUS', label: 'Belongings Shipped' },
+                    { icon: '⚡', number: 'EFFICIENT', label: 'Handling Management' },
+                    { icon: '🤝', number: 'PARTNERED', label: 'Various Companies' }
+                ]
+            },
+            {
+                image: "{{ asset('images/slideshow2gawai.jpeg') }}",
+                imagePosition: "object-top",
+                title: "GAWAI SPECIAL",
+                subtitle: "Seamless Delivery",
+                description: "Reliable logistics support for your festive celebrations and beyond.",
+                kpis: [
+                    { icon: '🎉', number: 'FESTIVE', label: 'Gawai Deliveries' },
+                    { icon: '⏱️', number: 'FAST', label: 'Same Week Delivery' },
+                    { icon: '🛡️', number: 'SECURE', label: 'Protected Cargo' }
+                ]
+            }
+            // Add more slides here easily...
+        ],
+
+        init() {
+            setInterval(() => this.next(), 6500);
+        },
+
+        next() {
+            this.current = (this.current + 1) % this.slides.length;
+        },
+
+        goTo(index) {
+            this.current = index;
+        }
+    }
+}
+</script>
+</body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | Agent Application</title>
+    <title>ARKOD | Car Shipping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -130,3 +130,139 @@
             </div>
         </div>
     </nav>
+
+    <section>
+
+    <div class="relative min-h-[10vh] md:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/carshipping pic.png') }}"
+             alt="ARKOD Logistics"
+             class="w-full h-full object-cover transition-all duration-[4000ms] ease-out"
+             :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
+    </div>
+
+    <div class="relative z-20 max-w-[1600px] mx-auto px-6 md:px-8 w-full mt-10 md:mt-20">
+        <div class="max-w-8xl text-center lg:text-left">
+            <div class="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-yellow-400/20 rounded-full bg-yellow-400/5 backdrop-blur-md transition-all duration-1000 mx-auto lg:mx-0"
+                 x-show="loaded" x-transition:enter="opacity-0 -translate-x-10">
+                <span class="text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em]">Arkod Smart Logitech SDN. BHD</span>
+            </div>
+
+            <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.1] tracking-tighter mb-10 transition-all duration-1000 delay-300"
+                :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                Your Car, <br class="hidden sm:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+                    Anywhere,
+                </span>
+                <br>
+                Anytime,
+            </h1>
+
+            <p class="text-gray-300 text-sm md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-4 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500"
+               :class="loaded ? 'opacity-100' : 'opacity-0'">
+                From luxury sedans to daily drivers, we treat your vehicle with the absolute highest standard of care. <br class="hidden md:block">
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 md:gap-10 transition-all duration-1000 delay-700"
+                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+
+                <a href="#" class="w-full sm:w-auto text-center relative overflow-hidden bg-yellow-400 hover:bg-white text-black px-12 py-5 md:px-16 md:py-6 rounded-sm text-lg md:text-lg font-black uppercase tracking-[0.3em] transition-all duration-500 group shadow-lg">
+                    <span class="relative z-10">See More</span>
+                    <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+
+                <button class="flex items-center gap-4 group">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-yellow-400 group-hover:border-yellow-400 transition-all duration-500">
+                        <svg class="w-4 h-4 text-white group-hover:text-black fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="text-white text-[10px] md:text-[11px] font-black uppercase tracking-widest group-hover:text-yellow-400 transition-colors">Contact Us</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-0 right-20 z-20 hidden lg:flex flex-col items-center gap-6">
+        <span class="text-white/20 text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] rotate-180">Scroll to dive</span>
+        <div class="w-[1px] h-32 bg-gradient-to-t from-yellow-400 to-transparent"></div>
+    </div>
+</div>
+
+    </div> <!-- End of Hero Section -->
+
+       </div> <!-- End of Hero Section -->
+
+    <!-- ===================== NEW SECTION: WHAT WE DO + OUR EXCELLENCE (WHITE BACKGROUND) ===================== -->
+    <section class="py-20 bg-white text-[#0a0a0a]">
+        <div class="max-w-[1600px] mx-auto px-6 md:px-8">
+
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+
+                <!-- Left Side: WHAT WE DO -->
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 px-5 py-2 border border-yellow-400/50 rounded-full bg-yellow-400/10 mb-6">
+                        <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">WHAT WE DO</span>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight tracking-tighter mb-8 text-black">
+                        Delivering Excellence,<br>
+                        <span class="text-yellow-400">Mile after mile</span>
+                    </h2>
+
+                    <div class="h-px w-24 bg-yellow-400 mb-8"></div>
+
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        “We’ve successfully delivered thousands of vehicles with precision and care. Our commitment to reliability, safety, and efficiency ensures every shipment meets the highest standards—no matter the distance.”
+                    </p>
+                </div>
+
+                <!-- Right Side: Our Excellence Stats -->
+                <div class="lg:col-span-7">
+                    <h3 class="text-black text-2xl font-bold uppercase tracking-wider mb-10 text-center lg:text-left">Our Excellence</h3>
+
+                    <div class="grid grid-cols-2 gap-6">
+
+                        <!-- Stat 1 -->
+                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-2xl text-black shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-16 h-16 bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+                                🚢
+                            </div>
+                            <div class="text-5xl font-black">5</div>
+                            <div class="text-xl font-bold">Years Experience</div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 rounded-2xl text-white shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                👍
+                            </div>
+                            <div class="text-5xl font-black">100%</div>
+                            <div class="text-xl font-bold">Trusted by Clients</div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 rounded-2xl text-white shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
+                                ⏱️
+                            </div>
+                            <div class="text-5xl font-black">On Time</div>
+                            <div class="text-xl font-bold">Delivery</div>
+                        </div>
+
+                        <!-- Stat 4 -->
+                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-2xl text-black shadow-md hover:shadow-xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-16 h-16 bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                🚗
+                            </div>
+                            <div class="text-5xl font-black">1000+</div>
+                            <div class="text-xl font-bold">Successful Deliveries</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== END OF NEW SECTION ===================== -->
