@@ -72,6 +72,8 @@
                         </button>
                         <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
                             <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Car Shipping</a>
+                            <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Delivery Shipping</a>
+                            <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Custom Shipping</a>
                         </div>
                     </div>
 
@@ -131,169 +133,131 @@
         </div>
     </nav>
 
-    <section>
+    <section class="relative min-h-[10vh] md:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
 
-    <div class="relative min-h-[10vh] md:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('images/carshipping pic.png') }}" alt="ARKOD Logistics" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
+        </div>
 
-    <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/carshipping pic.png') }}"
-             alt="ARKOD Logistics"
-             class="w-full h-full object-cover transition-all duration-[4000ms] ease-out"
-             :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
+        <div class="relative z-20 max-w-[1600px] mx-auto px-6 md:px-8 w-full mt-10 md:mt-20">
+            <div class="max-w-8xl text-center lg:text-left">
 
-        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
-    </div>
+                <div class="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-yellow-400/20 rounded-full bg-yellow-400/5 backdrop-blur-md transition-all duration-1000 mx-auto lg:mx-0" x-show="loaded" x-transition:enter="opacity-0 -translate-x-10">
+                    <span class="text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em]">Arkod Smart Logitech SDN. BHD</span>
+                </div>
 
-    <div class="relative z-20 max-w-[1600px] mx-auto px-6 md:px-8 w-full mt-10 md:mt-20">
-        <div class="max-w-8xl text-center lg:text-left">
-            <div class="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-yellow-400/20 rounded-full bg-yellow-400/5 backdrop-blur-md transition-all duration-1000 mx-auto lg:mx-0"
-                 x-show="loaded" x-transition:enter="opacity-0 -translate-x-10">
-                <span class="text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em]">Arkod Smart Logitech SDN. BHD</span>
-            </div>
+                <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.1] tracking-tighter mb-10 transition-all duration-1000 delay-300" :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
+                    Your Car, <br class="hidden sm:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Anywhere,</span>
+                    <br>Anytime,
+                </h1>
 
-            <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.1] tracking-tighter mb-10 transition-all duration-1000 delay-300"
-                :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                Your Car, <br class="hidden sm:block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-                    Anywhere,
-                </span>
-                <br>
-                Anytime,
-            </h1>
+                <p class="text-gray-300 text-sm md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-4 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500" :class="loaded ? 'opacity-100' : 'opacity-0'">
+                    From luxury sedans to daily drivers, we treat your vehicle with the absolute highest standard of care.
+                </p>
 
-            <p class="text-gray-300 text-sm md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-4 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500"
-               :class="loaded ? 'opacity-100' : 'opacity-0'">
-                From luxury sedans to daily drivers, we treat your vehicle with the absolute highest standard of care. <br class="hidden md:block">
-            </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 md:gap-10 transition-all duration-1000 delay-700" :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+                    <a href="#" class="w-full sm:w-auto text-center relative overflow-hidden bg-yellow-400 hover:bg-white text-black px-12 py-5 md:px-16 md:py-6 rounded-sm text-lg md:text-lg font-black uppercase tracking-[0.3em] transition-all duration-500 group shadow-lg">
+                        <span class="relative z-10">See More</span>
+                        <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </a>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 md:gap-10 transition-all duration-1000 delay-700"
-                 :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+                    <button class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-yellow-400 group-hover:border-yellow-400 transition-all duration-500">
+                            <svg class="w-4 h-4 text-white group-hover:text-black fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="text-white text-[10px] md:text-[11px] font-black uppercase tracking-widest group-hover:text-yellow-400 transition-colors">Contact Us</span>
+                    </button>
+                </div>
 
-                <a href="#" class="w-full sm:w-auto text-center relative overflow-hidden bg-yellow-400 hover:bg-white text-black px-12 py-5 md:px-16 md:py-6 rounded-sm text-lg md:text-lg font-black uppercase tracking-[0.3em] transition-all duration-500 group shadow-lg">
-                    <span class="relative z-10">See More</span>
-                    <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                </a>
-
-                <button class="flex items-center gap-4 group">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-yellow-400 group-hover:border-yellow-400 transition-all duration-500">
-                        <svg class="w-4 h-4 text-white group-hover:text-black fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <span class="text-white text-[10px] md:text-[11px] font-black uppercase tracking-widest group-hover:text-yellow-400 transition-colors">Contact Us</span>
-                </button>
             </div>
         </div>
-    </div>
 
-    <div class="absolute bottom-0 right-20 z-20 hidden lg:flex flex-col items-center gap-6">
-        <span class="text-white/20 text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] rotate-180">Scroll to dive</span>
-        <div class="w-[1px] h-32 bg-gradient-to-t from-yellow-400 to-transparent"></div>
-    </div>
-</div>
+        <div class="absolute bottom-0 right-20 z-20 hidden lg:flex flex-col items-center gap-6">
+            <span class="text-white/20 text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] rotate-180">Scroll to dive</span>
+            <div class="w-[1px] h-32 bg-gradient-to-t from-yellow-400 to-transparent"></div>
+        </div>
+    </section>
 
-    </div> <!-- End of Hero Section -->
-
-       </div> <!-- End of Hero Section -->
-
-    <!-- ===================== NEW SECTION: WHAT WE DO + OUR EXCELLENCE (WHITE BACKGROUND) ===================== -->
     <section class="py-20 bg-white text-[#0a0a0a]">
         <div class="max-w-[1600px] mx-auto px-6 md:px-8">
-
             <div class="grid lg:grid-cols-12 gap-16 items-center">
 
-                <!-- Left Side: WHAT WE DO -->
                 <div class="lg:col-span-5">
                     <div class="inline-flex items-center gap-2 px-5 py-2 border border-yellow-400/50 rounded-full bg-yellow-400/10 mb-6">
                         <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">WHAT WE DO</span>
                     </div>
-
                     <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight tracking-tighter mb-8 text-black">
                         Delivering Excellence,<br>
                         <span class="text-yellow-400">Mile after mile</span>
                     </h2>
-
                     <div class="h-px w-24 bg-yellow-400 mb-8"></div>
-
                     <p class="text-gray-700 text-lg leading-relaxed">
                         “We’ve successfully delivered thousands of vehicles with precision and care. Our commitment to reliability, safety, and efficiency ensures every shipment meets the highest standards—no matter the distance.”
                     </p>
                 </div>
 
-                <!-- Right Side: Our Excellence Stats -->
-<div class="lg:col-span-7">
-    <h3 class="text-black text-2xl font-bold uppercase tracking-wider mb-10 text-center lg:text-left">Our Excellence</h3>
+                <div class="lg:col-span-7">
+                    <h3 class="text-black text-2xl font-bold uppercase tracking-wider mb-10 text-center lg:text-left">Our Excellence</h3>
+                    <div class="grid grid-cols-2 gap-6">
 
-    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform text-5xl">🚢</div>
+                            <div class="text-6xl font-black text-center">5</div>
+                            <div class="text-2xl font-bold text-center mt-1">Years Experience</div>
+                        </div>
 
-        <!-- Stat 1 -->
-        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
-            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform text-5xl">
-                🚢
-            </div>
-            <div class="text-6xl font-black text-center">5</div>
-            <div class="text-2xl font-bold text-center mt-1">Years Experience</div>
-        </div>
+                        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
+                            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">⭐</div>
+                            <div class="text-6xl font-black text-center">100%</div>
+                            <div class="text-2xl font-bold text-center mt-1">Trusted by Clients</div>
+                        </div>
 
-        <!-- Stat 2 -->
-        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
-            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">
-                ⭐
-            </div>
-            <div class="text-6xl font-black text-center">100%</div>
-            <div class="text-2xl font-bold text-center mt-1">Trusted by Clients</div>
-        </div>
+                        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
+                            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform text-5xl">⏱️</div>
+                            <div class="text-6xl font-black text-center">On Time</div>
+                            <div class="text-2xl font-bold text-center mt-1">Delivery</div>
+                        </div>
 
-        <!-- Stat 3 -->
-        <div class="bg-gradient-to-br from-zinc-900 to-black p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
-            <div class="w-20 h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform text-5xl">
-                ⏱️
-            </div>
-            <div class="text-6xl font-black text-center">On Time</div>
-            <div class="text-2xl font-bold text-center mt-1">Delivery</div>
-        </div>
+                        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
+                            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">🚛</div>
+                            <div class="text-6xl font-black text-center">50+</div>
+                            <div class="text-2xl font-bold text-center mt-1">Deliveries</div>
+                        </div>
 
-        <!-- Stat 4 -->
-        <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
-            <div class="w-20 h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-5xl">
-                🚛
-            </div>
-            <div class="text-6xl font-black text-center">50+</div>
-            <div class="text-2xl font-bold text-center mt-1">Deliveries</div>
-        </div>
+                    </div>
+                </div>
 
-    </div>
-</div>
             </div>
         </div>
     </section>
-    <!-- ===================== END OF NEW SECTION ===================== -->
 
-            <!-- ===================== NEW SECTION: REVIEWS & RATING (PREMIUM) ===================== -->
     <section class="py-20 bg-gradient-to-b from-white to-gray-50 text-[#0a0a0a]">
         <div class="max-w-[1600px] mx-auto px-6 md:px-8">
 
-            <!-- Header -->
             <div class="flex flex-col items-center text-center mb-16">
-                <span class="text-yellow-400 text-sm font-black uppercase tracking-[0.2em] mb-3">✦ CUSTOMER STORIES ✦</span>
-                <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 text-black">Reviews and Rating</h2>
+    <span class="text-yellow-400 text-sm font-black uppercase tracking-[0.2em] mb-3">✦ CUSTOMER STORIES ✦</span>
+    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 text-black">Reviews and Rating</h2>
 
-                <!-- Premium Rating Banner -->
-                <div class="inline-flex items-center gap-6 bg-white shadow-xl border border-yellow-400/20 rounded-3xl px-12 py-7">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-inner">
-                        ARKOD
-                    </div>
-                    <div class="text-left">
-                        <div class="flex text-yellow-400 text-5xl leading-none mb-1">★★★★☆</div>
-                        <p class="text-3xl font-black text-black tracking-tighter">4.6 out of 5</p>
-                        <p class="text-sm text-gray-500 mt-1">Based on Real Customer Reviews</p>
-                    </div>
-                </div>
-            </div>
+    <div class="inline-flex items-center gap-6 bg-white shadow-xl border border-yellow-400/20 rounded-3xl px-10 py-6">
+        <div class="w-16 h-16 flex-shrink-0">
+            <img src="{{ asset('images/reviewiconrating.png') }}"
+                 alt="Rating Medal"
+                 class="w-full h-full object-contain">
+        </div>
 
-            <!-- Carousel -->
+        <div class="text-left">
+            <div class="flex text-yellow-400 text-4xl leading-none mb-1">★★★★☆</div>
+            <p class="text-3xl font-black text-black tracking-tighter">4.6 out of 5</p>
+            <p class="text-sm text-gray-500 mt-0.5">Based on Real Customer Reviews</p>
+        </div>
+    </div>
+</div>
+
             <div class="relative" x-data="testimonialCarousel()">
                 <div class="overflow-hidden rounded-3xl">
-                    <div class="flex transition-transform duration-700 ease-out"
-                         :style="{ transform: `translateX(-${current * (100 / 3)}%)` }">
+                    <div class="flex transition-transform duration-700 ease-out" :style="{ transform: `translateX(-${current * (100 / 3)}%)` }">
 
                         <template x-for="(review, index) in reviews" :key="index">
                             <div class="w-full md:w-1/3 flex-shrink-0 px-4">
@@ -309,144 +273,296 @@
                                                 <p class="text-sm text-gray-500" x-text="review.date"></p>
                                             </div>
                                         </div>
-                                        <!-- Company Logo -->
-                                        <img src="{{ asset('images/Company Logo.png') }}"
-                                             alt="Arkod"
-                                             class="h-12 w-12 object-contain">
+                                        <img src="{{ asset('images/Company Logo.png') }}" alt="Arkod" class="h-12 w-12 object-contain">
                                     </div>
 
-                                    <!-- Gold Stars -->
                                     <div class="text-yellow-400 text-4xl mb-6 tracking-wider">★★★★★</div>
-
                                     <p class="text-gray-700 leading-relaxed text-[15.8px] italic" x-text="review.text"></p>
                                 </div>
                             </div>
                         </template>
+
                     </div>
                 </div>
 
-                <!-- Navigation Arrows - Premium Style -->
-                <button @click="prev()"
-                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">
-                    ←
-                </button>
-
-                <button @click="next()"
-                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">
-                    →
-                </button>
+                <button @click="prev()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">←</button>
+                <button @click="next()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl flex items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">→</button>
             </div>
 
-            <!-- Trust Footer -->
             <div class="text-center mt-16">
-                <p class="text-gray-500 font-medium">❤️ Trusted by hundreds of Malaysian customers</p>
+                <p class="text-gray-500 font-medium">❤️ Trusted by hundreds of Malaysian customers ❤️</p>
             </div>
         </div>
     </section>
-    <!-- ===================== END OF REVIEWS SECTION ===================== -->
 
-    <!-- ===================== NEW SECTION: WE ARE EVERYWHERE ===================== -->
-    <section class="py-24 bg-[#0a0a0a] text-white relative overflow-hidden">
+    <section class="py-24 bg-yellow-400 text-black relative overflow-hidden">
         <div class="max-w-[1600px] mx-auto px-6 md:px-8">
 
             <div class="text-center mb-16">
-                <span class="text-yellow-400 text-sm font-black tracking-[0.2em]">NATIONWIDE COVERAGE</span>
-                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter mt-4">
-                    WE ARE <span class="text-yellow-400">EVERYWHERE</span>
-                </h2>
-                <p class="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">
-                    Connecting Peninsular Malaysia with Sabah & Sarawak through reliable car shipping
-                </p>
+                <span class="inline-block px-6 py-2.5 bg-black text-yellow-400 text-sm font-black tracking-[0.3em] rounded-full mb-4">NATIONWIDE COVERAGE</span>
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-black">WE ARE <span class="text-black">EVERYWHERE</span></h2>
+                <p class="text-black/120 mt-5 text-lg max-w-2xl mx-auto">Connecting Peninsular Malaysia with Sabah & Sarawak through reliable car shipping</p>
             </div>
 
-            <!-- Map Container -->
-            <div class="relative max-w-5xl mx-auto">
-                <div class="bg-zinc-900/50 backdrop-blur-xl border border-yellow-400/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div class="bg-black rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
 
-                    <div class="grid md:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-8 relative flex justify-center items-center py-6">
+                        <div class="relative w-full max-w-[700px] lg:max-w-[950px] transition-all duration-500">
 
-                        <!-- Malaysia Map -->
-                        <div class="md:col-span-7 relative flex justify-center">
-                            <div class="relative">
-                                <!-- You can replace this with a real SVG or high-quality map image -->
-                                <img src="{{ asset('images/malaysia-map.png') }}"
-                                     alt="Malaysia Map"
-                                     class="w-full max-w-[520px] drop-shadow-2xl">
+                            <img src="{{ asset('images/map_route-removebg-preview.png') }}" alt="Malaysia Map" class="w-full h-auto drop-shadow-[0_10px_30px_rgba(250,204,21,0.15)] object-contain">
 
-                                <!-- Peninsular Malaysia Marker -->
-                                <div class="absolute top-[38%] left-[28%]">
-                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
-                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
-                                    </div>
-                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
-                                        Peninsular Malaysia
-                                    </div>
+                            <div class="absolute top-[39%] left-[21%] group">
+                                <div class="w-9 h-9 bg-yellow-400 hover:bg-white border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
+                                    <div class="w-3 h-3 bg-black rounded-full"></div>
                                 </div>
-
-                                <!-- Sarawak Marker -->
-                                <div class="absolute top-[52%] right-[38%]">
-                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
-                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
-                                    </div>
-                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
-                                        Sarawak
-                                    </div>
+                                <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-white text-sm font-bold px-5 py-2 rounded-2xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
+                                    Peninsular Malaysia
+                                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-black rotate-45"></div>
                                 </div>
+                            </div>
 
-                                <!-- Sabah Marker -->
-                                <div class="absolute top-[35%] right-[22%]">
-                                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
-                                        <div class="w-2.5 h-2.5 bg-black rounded-full animate-ping"></div>
-                                    </div>
-                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-bold px-4 py-1.5 rounded-xl whitespace-nowrap shadow-xl">
-                                        Sabah
-                                    </div>
+                            <div class="absolute top-[68%] right-[44%] group">
+                                <div class="w-9 h-9 bg-yellow-400 hover:bg-white border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
+                                    <div class="w-3 h-3 bg-black rounded-full"></div>
                                 </div>
+                                <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-white text-sm font-bold px-5 py-2 rounded-2xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
+                                    Sarawak
+                                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-black rotate-45"></div>
+                                </div>
+                            </div>
+
+                            <div class="absolute top-[39%] right-[20%] group">
+                                <div class="w-9 h-9 bg-yellow-400 hover:bg-white border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
+                                    <div class="w-3 h-3 bg-black rounded-full"></div>
+                                </div>
+                                <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-white text-sm font-bold px-5 py-2 rounded-2xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
+                                    Sabah
+                                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-black rotate-45"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 space-y-5 flex flex-col justify-center">
+
+                        <div class="bg-zinc-900 rounded-2xl p-5 flex items-center gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
+                            <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
+                                <img src="{{ asset('images/Kl.png') }}" alt="Peninsular Malaysia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-white group-hover:text-black">Peninsular Malaysia</h4>
+                                <p class="text-gray-400 group-hover:text-black/70 text-sm mt-1">Kuala Lumpur • Johor • Penang • All major cities</p>
                             </div>
                         </div>
 
-                        <!-- Right Side Info -->
-                        <div class="md:col-span-5 space-y-8">
-                            <div class="space-y-6">
-                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
-                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🇲🇾</div>
-                                    <div>
-                                        <h4 class="font-bold text-xl">Peninsular Malaysia</h4>
-                                        <p class="text-gray-400">KL • Johor • Penang • Melaka • All major cities</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
-                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🏝️</div>
-                                    <div>
-                                        <h4 class="font-bold text-xl">Sarawak</h4>
-                                        <p class="text-gray-400">Kuching • Sibu • Miri • Bintulu</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-5 bg-white/5 border border-yellow-400/10 rounded-2xl p-6 hover:bg-yellow-400/5 transition-all">
-                                    <div class="w-12 h-12 bg-yellow-400 text-black rounded-2xl flex items-center justify-center text-2xl font-bold">🌴</div>
-                                    <div>
-                                        <h4 class="font-bold text-xl">Sabah</h4>
-                                        <p class="text-gray-400">Kota Kinabalu • Sandakan • Tawau</p>
-                                    </div>
-                                </div>
+                        <div class="bg-zinc-900 rounded-2xl p-5 flex items-center gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
+                            <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
+                                <img src="{{ asset('images/Sarawak.png') }}" alt="Sarawak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             </div>
-
-                            <div class="pt-6 border-t border-white/10">
-                                <p class="text-yellow-400 font-medium text-center md:text-left">
-                                    ✅ Reliable shipping across all of Malaysia
-                                </p>
+                            <div>
+                                <h4 class="font-bold text-xl text-white group-hover:text-black">Sarawak</h4>
+                                <p class="text-gray-400 group-hover:text-black/70 text-sm mt-1">Kuching • Sibu • Miri • Bintulu</p>
                             </div>
+                        </div>
+
+                        <div class="bg-zinc-900 rounded-2xl p-5 flex items-center gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
+                            <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
+                                <img src="{{ asset('images/Sabah.png') }}" alt="Sabah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-white group-hover:text-black">Sabah</h4>
+                                <p class="text-gray-400 group-hover:text-black/70 text-sm mt-1">Kota Kinabalu</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-white/20 text-center">
+                    <div class="inline-flex items-center gap-3 text-yellow-400">
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                        <span class="font-semibold tracking-wider">Reliable RoRo &amp; Container Shipping Across Malaysia</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>f
+
+    <section class="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 text-[#0a0a0a]">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-8">
+
+        <div class="flex flex-col items-center text-center mb-16">
+            <span class="text-yellow-500 text-sm font-black uppercase tracking-[0.25em] mb-3">
+                ✦ FLEXIBLE LOGISTICS SOLUTIONS ✦
+            </span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-black max-w-4xl">
+                CHOOSE YOUR SHIPPING MODE
+            </h2>
+            <div class="h-1 w-20 bg-yellow-400 rounded-full mt-6 mb-4"></div>
+            <p class="text-gray-500 text-lg max-w-2xl font-medium">
+                Tailored maritime transit options connecting Peninsular and East Malaysia ports safely.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+            <div class="bg-zinc-950 text-white rounded-3xl p-6 md:p-8 border-2 border-yellow-400 flex flex-col justify-between shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group">
+                <div class="absolute top-0 right-0 bg-yellow-400 text-black font-black text-[10px] tracking-widest uppercase py-1.5 px-6 rounded-bl-xl z-20">
+                    SPECIAL HANDLING
+                </div>
+
+                <div>
+                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-yellow-400/30 ">
+                        <img src="{{ asset('images/DEDICATED S70.png') }}"
+                             alt="Dedicated Container Fleet"
+                             class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-yellow-400 text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">PREMIUM TRANSIT</span>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-yellow-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 01</span>
+                        <h3 class="text-2xl font-black uppercase tracking-tight">Dedicated Container</h3>
+                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">Exclusive single-use sealed container for maximum security and premium vehicles.</p>
+                    </div>
+
+                    <div class="h-px bg-white/10 my-4"></div>
+
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Premium Petrol Cars &amp; Luxury Sedans</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">High-Value Electric Vehicles (EV Car)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Classic &amp; Vintage Collectibles</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-6 bg-yellow-400/5 rounded-xl p-4 border border-yellow-400/10">
+                    <p class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Zero risk of shared space friction. Secure point-to-point locks on all terminal connections.</p>
+                </div>
             </div>
+
+            <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 text-white rounded-3xl p-6 md:p-8 border border-white/10 flex flex-col justify-between shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group">
+                <div>
+                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-white/10  ">
+                        <img src="{{ asset('images/AUTOSHARE.png') }}"
+                             alt="Shared Container Fleet"
+                             class="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-white text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">SHARED ALLOCATION</span>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-gray-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 02</span>
+                        <h3 class="text-2xl font-black uppercase tracking-tight">Auto Share Container</h3>
+                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">Affordable shared container vehicle shipping combining professional handling with pooled space efficiency.</p>
+                    </div>
+
+                    <div class="h-px bg-white/10 my-4"></div>
+
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Standard Passenger Cars</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Light Commercial Vehicles &amp; SUVs</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Mini Vans &amp; Multi-Purpose Vehicles (MPV)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Modern Electric Vehicles (EV Car)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Cost-optimized structural consolidation. Premium frame lashing protocols inside every cargo block.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 text-white rounded-3xl p-6 md:p-8 border border-white/10 flex flex-col justify-between shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group">
+                <div>
+                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-white/10 bg-zinc-900 shadow-inner">
+                        <img src="{{ asset('images/ROROshipping.png') }}"
+                             alt="RORO Vessel Deck"
+                             class="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-white text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">ECONOMY VESSEL</span>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-gray-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 03</span>
+                        <h3 class="text-2xl font-black uppercase tracking-tight">RORO Shipping</h3>
+                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">The standard economy baseline choice for quick port-to-port regional automotive transit operations.</p>
+                    </div>
+
+                    <div class="h-px bg-white/10 my-4"></div>
+
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Standard Daily Passenger Cars</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Light Commercial Fleets</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✔</span>
+                            <span class="text-gray-200 text-xs font-semibold">Fleet Shipments &amp; Dealership Logistics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white/5 rounded-xl p-4 border border-white/5">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">Direct drive-on loading deck integration. Fastest terminal turnaround processing timelines.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
-    <!-- ===================== END OF WE ARE EVERYWHERE SECTION ===================== -->
+
+        <div class="mt-16 bg-zinc-950 text-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
+            <div class="flex items-center gap-4">
+                <span class="text-yellow-400 text-3xl">🛡️</span>
+                <div class="text-left">
+                    <p class="text-sm font-black uppercase tracking-wider">All Transits Insured &amp; Documented</p>
+                    <p class="text-xs text-gray-400 mt-0.5">Rates vary relative to international bunker fuel indices and dynamic terminal congestion indices.</p>
+                </div>
+            </div>
+            <a href="#" class="text-xs font-black uppercase tracking-widest text-yellow-400 hover:text-white border-b-2 border-yellow-400 hover:border-white pb-1 transition-colors">
+                Read Booking Terms &amp; Conditions →
+            </a>
+        </div>
+
+    </div>
+</section>
 
     <script>
+        /**
+         * State Controller Function handling initialization
+         * and cycle routines for Review & Feedback blocks.
+         */
         function testimonialCarousel() {
             return {
                 current: 0,
@@ -497,3 +613,6 @@
             }
         }
     </script>
+
+</body>
+</html>
