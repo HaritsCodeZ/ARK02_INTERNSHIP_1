@@ -550,7 +550,7 @@
                     <p class="text-xs text-gray-400 mt-0.5">Rates vary relative to international bunker fuel indices and dynamic terminal congestion indices.</p>
                 </div>
             </div>
-            <a href="#" class="text-xs font-black uppercase tracking-widest text-yellow-400 hover:text-white border-b-2 border-yellow-400 hover:border-white pb-1 transition-colors">
+            <a href="/termscars" class="text-xs font-black uppercase tracking-widest text-yellow-400 hover:text-white border-b-2 border-yellow-400 hover:border-white pb-1 transition-colors">
                 Read Booking Terms &amp; Conditions →
             </a>
         </div>
