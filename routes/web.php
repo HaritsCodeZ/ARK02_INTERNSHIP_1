@@ -30,6 +30,10 @@ Route::get('/termscars', function () {
     return view('layouts.ARK02_TermsCars');
 });
 
+Route::get('/servicesdeliveryshipping', function () {
+    return view('layouts.ARK02_ServicesDeliveryShipping');
+});
+
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;

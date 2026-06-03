@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | Car Shipping</title>
+    <title>ARKOD | Delivery Shipping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -119,10 +119,6 @@
                                 English <span class="text-[8px] opacity-50">EN</span>
                             </a>
 
-                            <a href="{{ url('lang/zh') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
-                                中文 <span class="text-[8px] opacity-50">ZH</span>
-                            </a>
-
                             <a href="{{ url('lang/ms') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
                                 Melayu <span class="text-[8px] opacity-50">MS</span>
                             </a>
@@ -136,7 +132,7 @@
     <section class="relative min-h-[10vh] md:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
 
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset('images/carshipping pic.png') }}" alt="ARKOD Logistics" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
+            <img src="{{ asset('images/DeliveryShippings.png') }}" alt="ARKOD Logistics" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
             <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
         </div>
 
@@ -148,13 +144,13 @@
                 </div>
 
                 <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.1] tracking-tighter mb-10 transition-all duration-1000 delay-300" :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                    Your Car, <br class="hidden sm:block">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Anywhere,</span>
-                    <br>Anytime,
+                    Your Goods, <br class="hidden sm:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Sorted,</span>
+                    <br>Delivered,
                 </h1>
 
                 <p class="text-gray-300 text-sm md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-4 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500" :class="loaded ? 'opacity-100' : 'opacity-0'">
-                    From luxury sedans to daily drivers, we treat your vehicle with the absolute highest standard of care.
+                    From individual parcels to full container loads, our global network and local expertise ensure your delivery is handled with absolute precision.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 md:gap-10 transition-all duration-1000 delay-700" :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
@@ -186,15 +182,15 @@
 
                 <div class="lg:col-span-5">
                     <div class="inline-flex items-center gap-2 px-5 py-2 border border-yellow-400/50 rounded-full bg-yellow-400/10 mb-6">
-                        <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">WHAT WE DO</span>
+                        <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">OUR CAPABILITIES</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight tracking-tighter mb-8 text-black">
-                        Delivering Excellence,<br>
-                        <span class="text-yellow-400">Mile after mile</span>
+                        HYPER-FAST <span class="text-yellow-400">DELIVERY</span><br>
+                         WITHOUT THE <span class="text-yellow-400">FRICTION</span><br>
                     </h2>
                     <div class="h-px w-24 bg-yellow-400 mb-8"></div>
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        “We’ve successfully delivered thousands of vehicles with precision and care. Our commitment to reliability, safety, and efficiency ensures every shipment meets the highest standards—no matter the distance.”
+                        “In a world that moves fast, your shipping should move faster. We leverage intelligent routing and automated sorting to ensure your packages clear customs, bypass delays, and reach your clients in record time”
                     </p>
                 </div>
 
@@ -383,180 +379,14 @@
                 <div class="mt-12 pt-8 border-t border-white/20 text-center">
                     <div class="inline-flex items-center gap-3 text-yellow-400">
                         <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-                        <span class="font-semibold tracking-wider">Reliable RoRo &amp; Container Shipping Across Malaysia</span>
+                        <span class="font-semibold tracking-wider">Reliable Shipping Across Malaysia</span>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>f
-
-    <section class="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 text-[#0a0a0a]">
-    <div class="max-w-[1600px] mx-auto px-6 md:px-8">
-
-        <div class="flex flex-col items-center text-center mb-16">
-            <span class="text-yellow-500 text-sm font-black uppercase tracking-[0.25em] mb-3">
-                ✦ FLEXIBLE LOGISTICS SOLUTIONS ✦
-            </span>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-black max-w-4xl">
-                CHOOSE YOUR SHIPPING MODE
-            </h2>
-            <div class="h-1 w-20 bg-yellow-400 rounded-full mt-6 mb-4"></div>
-            <p class="text-gray-500 text-lg max-w-2xl font-medium">
-                Tailored maritime transit options connecting Peninsular and East Malaysia ports safely.
-            </p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-
-            <div class="bg-zinc-950 text-white rounded-3xl p-6 md:p-8 border-2 border-yellow-400 flex flex-col justify-between shadow-2xl relative overflow-hidden transform hover:-translate-y-2 transition-all duration-500 group">
-                <div class="absolute top-0 right-0 bg-yellow-400 text-black font-black text-[10px] tracking-widest uppercase py-1.5 px-6 rounded-bl-xl z-20">
-                    SPECIAL HANDLING
-                </div>
-
-                <div>
-                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-yellow-400/30 ">
-                        <img src="{{ asset('images/DEDICATED S70.png') }}"
-                             alt="Dedicated Container Fleet"
-                             class="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-yellow-400 text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">PREMIUM TRANSIT</span>
-                    </div>
-
-                    <div class="mb-6">
-                        <span class="text-yellow-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 01</span>
-                        <h3 class="text-2xl font-black uppercase tracking-tight">Dedicated Container</h3>
-                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">Exclusive single-use sealed container for maximum security and premium vehicles.</p>
-                    </div>
-
-                    <div class="h-px bg-white/10 my-4"></div>
-
-                    <div class="space-y-3">
-                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Premium Petrol Cars &amp; Luxury Sedans</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">High-Value Electric Vehicles (EV Car)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Classic &amp; Vintage Collectibles</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-yellow-400/5 rounded-xl p-4 border border-yellow-400/10">
-                    <p class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
-                    <p class="text-xs text-gray-400 leading-relaxed">Zero risk of shared space friction. Secure point-to-point locks on all terminal connections.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 text-white rounded-3xl p-6 md:p-8 border border-white/10 flex flex-col justify-between shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group">
-                <div>
-                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-white/10  ">
-                        <img src="{{ asset('images/AUTOSHARE.png') }}"
-                             alt="Shared Container Fleet"
-                             class="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-white text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">SHARED ALLOCATION</span>
-                    </div>
-
-                    <div class="mb-6">
-                        <span class="text-gray-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 02</span>
-                        <h3 class="text-2xl font-black uppercase tracking-tight">Auto Share Container</h3>
-                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">Affordable shared container vehicle shipping combining professional handling with pooled space efficiency.</p>
-                    </div>
-
-                    <div class="h-px bg-white/10 my-4"></div>
-
-                    <div class="space-y-3">
-                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Standard Passenger Cars</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Light Commercial Vehicles &amp; SUVs</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Mini Vans &amp; Multi-Purpose Vehicles (MPV)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Modern Electric Vehicles (EV Car)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
-                    <p class="text-xs text-gray-400 leading-relaxed">Cost-optimized structural consolidation. Premium frame lashing protocols inside every cargo block.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 text-white rounded-3xl p-6 md:p-8 border border-white/10 flex flex-col justify-between shadow-2xl transform hover:-translate-y-2 transition-all duration-500 group">
-                <div>
-                    <div class="relative w-full h-48 rounded-2xl overflow-hidden mb-6 border border-white/10 bg-zinc-900 shadow-inner">
-                        <img src="{{ asset('images/ROROshipping.png') }}"
-                             alt="RORO Vessel Deck"
-                             class="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-white text-black text-[10px] font-black tracking-widest px-3 py-1 rounded-sm uppercase">ECONOMY VESSEL</span>
-                    </div>
-
-                    <div class="mb-6">
-                        <span class="text-gray-400 font-black text-xs uppercase tracking-widest block mb-1">MODE 03</span>
-                        <h3 class="text-2xl font-black uppercase tracking-tight">RORO Shipping</h3>
-                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">The standard economy baseline choice for quick port-to-port regional automotive transit operations.</p>
-                    </div>
-
-                    <div class="h-px bg-white/10 my-4"></div>
-
-                    <div class="space-y-3">
-                        <p class="text-[10px] font-black text-yellow-400 uppercase tracking-widest mb-1">Ideal Vehicle Types:</p>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Standard Daily Passenger Cars</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Light Commercial Fleets</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-yellow-400 text-sm">✔</span>
-                            <span class="text-gray-200 text-xs font-semibold">Fleet Shipments &amp; Dealership Logistics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-white/5 rounded-xl p-4 border border-white/5">
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Logistics Edge:</p>
-                    <p class="text-xs text-gray-400 leading-relaxed">Direct drive-on loading deck integration. Fastest terminal turnaround processing timelines.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="mt-16 bg-zinc-950 text-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
-            <div class="flex items-center gap-4">
-                <span class="text-yellow-400 text-3xl">🛡️</span>
-                <div class="text-left">
-                    <p class="text-sm font-black uppercase tracking-wider">All Transits Insured &amp; Documented</p>
-                    <p class="text-xs text-gray-400 mt-0.5">Rates vary relative to international bunker fuel indices and dynamic terminal congestion indices.</p>
-                </div>
-            </div>
-            <a href="/termscars" class="text-xs font-black uppercase tracking-widest text-yellow-400 hover:text-white border-b-2 border-yellow-400 hover:border-white pb-1 transition-colors">
-                Read Booking Terms &amp; Conditions →
-            </a>
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <script>
         /**
@@ -613,6 +443,3 @@
             }
         }
     </script>
-
-</body>
-</html>
