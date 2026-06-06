@@ -34,6 +34,9 @@ Route::get('/servicesdeliveryshipping', function () {
     return view('layouts.ARK02_ServicesDeliveryShipping');
 });
 
+Route::get('/servicescustomshipping', function () {
+    return view('layouts.ARK02_ServicesCustomShipping');
+});
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;

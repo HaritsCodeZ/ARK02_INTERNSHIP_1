@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | Delivery Shipping</title>
+    <title>ARKOD | Custom Shipping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -132,7 +132,7 @@
     <section class="relative min-h-[10vh] md:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
 
         <div class="absolute inset-0 z-0">
-            <img src="{{ asset('images/DeliveryShippings.png') }}" alt="ARKOD Logistics" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
+            <img src="{{ asset('images/CUSTOM SHIPPING 2.png') }}" alt="ARKOD Logistics" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
             <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
         </div>
 
@@ -146,7 +146,7 @@
                 <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.1] tracking-tighter mb-10 transition-all duration-1000 delay-300" :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
                     Your Logistics, <br class="hidden sm:block">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Trusted,</span>
-                    <br>Fullfilled
+                    <br>Fullfilled,
                 </h1>
 
                 <p class="text-gray-300 text-sm md:text-xl font-medium leading-relaxed mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-4 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500" :class="loaded ? 'opacity-100' : 'opacity-0'">
@@ -182,15 +182,15 @@
 
                 <div class="lg:col-span-5">
                     <div class="inline-flex items-center gap-2 px-5 py-2 border border-yellow-400/50 rounded-full bg-yellow-400/10 mb-6">
-                        <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">OUR CAPABILITIES</span>
+                        <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">WHAT WE DO</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight tracking-tighter mb-8 text-black">
-                        HYPER-FAST <span class="text-yellow-400">DELIVERY</span><br>
-                         WITHOUT THE <span class="text-yellow-400">FRICTION</span><br>
+                        Beyond Standard,<br>
+                        <span class="text-yellow-400">Shaping Your Logistics</span>
                     </h2>
                     <div class="h-px w-24 bg-yellow-400 mb-8"></div>
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        “In a world that moves fast, your shipping should move faster. We leverage intelligent routing and automated sorting to ensure your packages clear customs, bypass delays, and reach your clients in record time”
+                        We know standard freight doesn’t fit unique requirements. By collaborating closely from the very first agreement, we establish specialized handling protocols and custom shipping terms that ensure premium, precise execution on every project.
                     </p>
                 </div>
 
@@ -443,3 +443,6 @@
             }
         }
     </script>
+
+</body>
+</html>
