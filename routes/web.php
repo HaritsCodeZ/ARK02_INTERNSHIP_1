@@ -42,6 +42,10 @@ Route::get('/membership', function () {
     return view('layouts.ARK02_Membershippage');
 });
 
+Route::get('/knowledge', function () {
+    return view('layouts.ARK02_KnowledgeInsights');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
