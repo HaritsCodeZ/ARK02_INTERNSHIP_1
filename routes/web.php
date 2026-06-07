@@ -38,6 +38,10 @@ Route::get('/servicescustomshipping', function () {
     return view('layouts.ARK02_ServicesCustomShipping');
 });
 
+Route::get('/membership', function () {
+    return view('layouts.ARK02_Membershippage');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
