@@ -137,6 +137,47 @@
         active: 2,
         total: 5,
         interval: null,
+
+        <!-- Modal State & Content -->
+        modalOpen: false,
+        modalData: { title: '', text: '', img: '' },
+
+        <!-- Detailed content for each slide mapping -->
+        details: {
+            1: {
+                title: 'Industrial Logistics',
+                text: 'Our industrial logistics framework is engineered to manage heavy machinery, infrastructural equipment, and raw materials. We optimize multi-modal supply chains to guarantee rigid compliance with safety standards, synchronized manufacturing schedules, and zero down-time for high-impact industrial operations.',
+                img: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop'
+            },
+            2: {
+                title: 'Food & Beverage',
+                text: 'Revolutionizing the way you handle dry-packed and sensitive products. From specialized warehousing ecosystem controls to reliable cross-docking distribution channels, we preserve package integrity and drive high throughput velocity from production lines straight to retail shelves.',
+                img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop'
+            },
+            3: {
+                title: 'Health & Cosmetics',
+                text: 'Your gateway to a healthier, fully compliant, and beautifully streamlined business. This dedicated pipeline offers pristine climate-monitored tracking, strict sanitization protocols, batch management, and specialized handling customized for high-value cosmetics and healthcare supplies.',
+                img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'
+            },
+            4: {
+                title: 'Sport & Recreational',
+                text: 'Providing top-notch fulfillment services that score big with your customers. We handle bulk sporting gear, localized e-commerce distribution, event-based seasonal spikes, and lightning-fast reverse logistics so your inventory stays moving and ahead of the competition.',
+                img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop'
+            },
+            5: {
+                title: 'Smart Logistics',
+                text: 'Embrace the future with our signature automated distribution mechanisms worldwide. Leveraging state-of-the-art routing algorithms, end-to-end predictive analytics, and real-time asset transparency, we redefine maximum efficiency across all borders.',
+                img: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop'
+            }
+        },
+
+        <!-- Open Modal Helper -->
+        openDetails(id) {
+            this.modalData = this.details[id];
+            this.modalOpen = true;
+            clearInterval(this.interval); <!-- Pause autoplay when reading -->
+        },
+
         next() {
             this.active = this.active === this.total ? 1 : this.active + 1;
         },
@@ -147,7 +188,7 @@
             this.interval = setInterval(() => this.next(), 5000);
         }
     }"
-    class="w-full bg-white py-10 overflow-hidden font-montserrat"
+    class="w-full bg-white py-10 overflow-hidden font-montserrat relative"
 >
     <div class="max-w-[1600px] mx-auto px-6">
         <!-- Header -->
@@ -184,13 +225,13 @@
                         'z-0 translate-x-[620px] scale-75 opacity-0': active === 3
                      }"
                      :style="active === 1 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
                         <h3 class="font-black text-3xl mb-2">Industrial</h3>
                         <p class="text-sm opacity-90 mb-6 line-clamp-3">Robust supply chains for heavy infrastructure.</p>
-                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                        <!-- TRIGGER CHANGED HERE -->
+                        <button @click="openDetails(1)" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition focus:outline-none">Read More →</button>
                     </div>
                 </div>
 
@@ -204,13 +245,13 @@
                         'z-0 translate-x-[620px] scale-75 opacity-0': active === 4
                      }"
                      :style="active === 2 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
                         <h3 class="font-black text-3xl mb-2">Food & Beverage</h3>
                         <p class="text-sm opacity-90 mb-6 line-clamp-3">Revolutionize the way you handle dry-packed products.</p>
-                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                        <!-- TRIGGER CHANGED HERE -->
+                        <button @click="openDetails(2)" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition focus:outline-none">Read More →</button>
                     </div>
                 </div>
 
@@ -224,13 +265,13 @@
                         'z-0 translate-x-[620px] scale-75 opacity-0': active === 5
                      }"
                      :style="active === 3 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
                         <h3 class="font-black text-3xl mb-2">Health & Cosmetics</h3>
                         <p class="text-sm opacity-90 mb-6 line-clamp-3">Your gateway to a healthier and more beautiful business!</p>
-                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                        <!-- TRIGGER CHANGED HERE -->
+                        <button @click="openDetails(3)" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition focus:outline-none">Read More →</button>
                     </div>
                 </div>
 
@@ -244,13 +285,13 @@
                         'z-0 translate-x-[620px] scale-75 opacity-0': active === 1
                      }"
                      :style="active === 4 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
                         <h3 class="font-black text-3xl mb-2">Sport & Recreational</h3>
                         <p class="text-sm opacity-90 mb-6 line-clamp-3">Providing top-notch fulfillment services that score big.</p>
-                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                        <!-- TRIGGER CHANGED HERE -->
+                        <button @click="openDetails(4)" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition focus:outline-none">Read More →</button>
                     </div>
                 </div>
 
@@ -264,13 +305,13 @@
                         'z-0 translate-x-[620px] scale-75 opacity-0': active === 2
                      }"
                      :style="active === 5 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                         style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
                         <h3 class="font-black text-3xl mb-2">Smart Logistics</h3>
                         <p class="text-sm opacity-90 mb-6 line-clamp-3">And beyond! Tailored distribution mechanisms worldwide.</p>
-                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                        <!-- TRIGGER CHANGED HERE -->
+                        <button @click="openDetails(5)" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition focus:outline-none">Read More →</button>
                     </div>
                 </div>
             </div>
@@ -284,6 +325,75 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
             </button>
+        </div>
+    </div>
+
+    <!-- ==================== INSIGHTS MODAL OVERLAY ==================== -->
+    <div
+        x-show="modalOpen"
+        x-cloak
+        class="fixed inset-0 z-[200] flex items-center justify-center p-4"
+        @keydown.escape.window="modalOpen = false"
+    >
+        <!-- Dark Backdrop Overlay -->
+        <div
+            x-show="modalOpen"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            @click="modalOpen = false"
+        ></div>
+
+        <!-- Premium Luxury Pop-out Card Container -->
+        <div
+            x-show="modalOpen"
+            x-transition:enter="transition ease-out duration-400 cubic-bezier(0.34, 1.56, 0.64, 1)"
+            x-transition:enter-start="opacity-0 scale-90 translate-y-8"
+            x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-350"
+            x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+            x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+            class="bg-[#0f0f0f] border-2 border-white/10 rounded-[40px] shadow-[0_0_50px_rgba(0,0,0,0.8)] max-w-2xl w-full overflow-hidden z-10 relative text-white"
+        >
+            <!-- Card Cover Image Header -->
+            <div class="h-56 w-full relative bg-cover bg-center border-b border-white/10" :style="`background-image: url('${modalData.img}')`">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/40 to-black/20"></div>
+
+                <!-- Close Button -->
+                <button
+                    @click="modalOpen = false"
+                    class="absolute top-6 right-6 p-2 rounded-full bg-black/50 border border-white/20 text-white hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-200 focus:outline-none"
+                    aria-label="Close modal"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="p-10">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-[10px] font-black uppercase tracking-[0.25em] bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-md border border-yellow-400/20">ARKOD INSIGHTS</span>
+                </div>
+                <h3 class="text-4xl font-black text-white tracking-tight uppercase mb-6" x-text="modalData.title"></h3>
+                <div class="w-16 h-[3px] bg-yellow-400 mb-6"></div>
+                <p class="text-gray-300 text-base leading-relaxed font-medium mb-8" x-text="modalData.text"></p>
+
+                <!-- Action Footer Button -->
+                <div class="flex justify-end">
+                    <button
+                        @click="modalOpen = false"
+                        class="bg-yellow-400 hover:bg-white text-black font-black px-8 py-3 rounded-xl text-xs uppercase tracking-widest transition-all duration-300 shadow-[0_4px_20px_rgba(250,204,21,0.2)] focus:outline-none"
+                    >
+                        Close Details
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
