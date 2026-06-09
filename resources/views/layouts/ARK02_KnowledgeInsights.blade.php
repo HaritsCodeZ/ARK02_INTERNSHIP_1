@@ -132,142 +132,253 @@
         </div>
     </nav>
 
-<section x-data="{
-    active: 3,
-    total: 5,
-    interval: null,
-    next() {
-        this.active = this.active === this.total ? 1 : this.active + 1;
-    },
-    prev() {
-        this.active = this.active === 1 ? this.total : this.active - 1;
-    },
-    init() {
-        this.interval = setInterval(() => { this.next(); }, 6000);
-    }
-}"
-class="w-full max-w-[1600px] mx-auto py-20 px-4 bg-white flex flex-col items-center select-none font-montserrat overflow-hidden">
-
-    <div class="text-center max-w-3xl mb-14">
-        <h2 class="text-4xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight mb-4">Knowledge & Insights</h2>
-        <div class="w-24 h-[3px] bg-yellow-400 mx-auto mb-6"></div>
-        <p class="text-gray-600 text-sm sm:text-base font-semibold leading-relaxed max-w-2xl mx-auto">
-            Deep dives into specialized logistics for food, healthcare, industrial machinery, and beyond!
-        </p>
-    </div>
-
-    <div class="relative w-full flex items-center justify-between h-[620px] max-w-[1500px] mx-auto px-4">
-
-        <button @click="prev(); clearInterval(interval); interval = setInterval(() => { next(); }, 6000);"
-                class="z-50 p-2 text-black hover:text-yellow-500 transition-colors focus:outline-none shrink-0" aria-label="Previous slide">
-            <svg class="w-14 h-14 stroke-[4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-        </button>
-
-        <div class="relative flex items-center justify-center flex-1 h-[580px]">
-
-            <div class="absolute overflow-hidden shadow-2xl transition-all duration-700 ease-out"
-                 :class="{
-                    'z-30 translate-y-6 border-[6px] border-white shadow-[0_25px_60px_-10px_rgba(0,0,0,0.4)] opacity-100': active === 1,
-                    'z-20 -translate-x-[250px] opacity-100': active === 5,
-                    'z-20 translate-x-[250px] opacity-100': active === 2,
-                    'z-0 -translate-x-[400px] opacity-0 pointer-events-none': active === 4,
-                    'z-0 translate-x-[400px] opacity-0 pointer-events-none': active === 3
-                 }"
-                 :style="active === 1 ? 'width: 449px; height: 544px; border-radius: 52px;' : 'width: 413px; height: 512px; border-radius: 52px;'">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="absolute inset-0 bg-black/60 transition-opacity duration-700" :class="active === 1 ? 'opacity-40' : 'opacity-75'"></div>
-                <div class="absolute inset-0 p-10 flex flex-col justify-end items-center text-center text-white">
-                    <h3 class="font-black mb-3 tracking-wide transition-all duration-700" :class="active === 1 ? 'text-3xl' : 'text-2xl'">Industrial</h3>
-                    <p class="text-xs text-gray-300 mb-5 leading-relaxed max-w-[260px]">Robust supply chains for heavy infrastructure.</p>
-                    <a href="#" class="text-sm font-black underline underline-offset-4 hover:text-yellow-400 transition uppercase tracking-widest">Read more</a>
-                </div>
-            </div>
-
-            <div class="absolute overflow-hidden shadow-2xl transition-all duration-700 ease-out"
-                 :class="{
-                    'z-30 translate-y-6 border-[6px] border-white shadow-[0_25px_60px_-10px_rgba(0,0,0,0.4)] opacity-100': active === 2,
-                    'z-20 -translate-x-[250px] opacity-100': active === 1,
-                    'z-20 translate-x-[250px] opacity-100': active === 3,
-                    'z-0 -translate-x-[400px] opacity-0 pointer-events-none': active === 5,
-                    'z-0 translate-x-[400px] opacity-0 pointer-events-none': active === 4
-                 }"
-                 :style="active === 2 ? 'width: 449px; height: 544px; border-radius: 52px;' : 'width: 413px; height: 512px; border-radius: 52px;'">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="absolute inset-0 bg-black/60 transition-opacity duration-700" :class="active === 2 ? 'opacity-40' : 'opacity-75'"></div>
-                <div class="absolute inset-0 p-10 flex flex-col justify-end items-center text-center text-white">
-                    <h3 class="font-black mb-3 tracking-wide transition-all duration-700" :class="active === 2 ? 'text-3xl' : 'text-2xl'">Food & Beverage</h3>
-                    <p class="text-xs text-gray-300 mb-5 leading-relaxed max-w-[260px]">Revolutionize the way you handle dry-packed products.</p>
-                    <a href="#" class="text-sm font-black underline underline-offset-4 hover:text-yellow-400 transition uppercase tracking-widest">Read more</a>
-                </div>
-            </div>
-
-            <div class="absolute overflow-hidden shadow-2xl transition-all duration-700 ease-out"
-                 :class="{
-                    'z-30 translate-y-6 border-[6px] border-white shadow-[0_25px_60px_-10px_rgba(0,0,0,0.4)] opacity-100': active === 3,
-                    'z-20 -translate-x-[250px] opacity-100': active === 2,
-                    'z-20 translate-x-[250px] opacity-100': active === 4,
-                    'z-0 -translate-x-[400px] opacity-0 pointer-events-none': active === 1,
-                    'z-0 translate-x-[400px] opacity-0 pointer-events-none': active === 5
-                 }"
-                 :style="active === 3 ? 'width: 449px; height: 544px; border-radius: 52px;' : 'width: 413px; height: 512px; border-radius: 52px;'">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="absolute inset-0 bg-black/60 transition-opacity duration-700" :class="active === 3 ? 'opacity-40' : 'opacity-75'"></div>
-                <div class="absolute inset-0 p-10 flex flex-col justify-end items-center text-center text-white">
-                    <h3 class="font-black mb-4 tracking-wide transition-all duration-700" :class="active === 3 ? 'text-3xl' : 'text-2xl'">Health & Cosmetics</h3>
-                    <p class="text-xs text-gray-200 mb-6 leading-relaxed max-w-[280px]">Your gateway to a healthier and more beautiful business!</p>
-                    <a href="#" class="text-sm font-black underline underline-offset-4 hover:text-yellow-400 transition uppercase tracking-widest">Read more</a>
-                </div>
-            </div>
-
-            <div class="absolute overflow-hidden shadow-2xl transition-all duration-700 ease-out"
-                 :class="{
-                    'z-30 translate-y-6 border-[6px] border-white shadow-[0_25px_60px_-10px_rgba(0,0,0,0.4)] opacity-100': active === 4,
-                    'z-20 -translate-x-[250px] opacity-100': active === 3,
-                    'z-20 translate-x-[250px] opacity-100': active === 5,
-                    'z-0 -translate-x-[400px] opacity-0 pointer-events-none': active === 2,
-                    'z-0 translate-x-[400px] opacity-0 pointer-events-none': active === 1
-                 }"
-                 :style="active === 4 ? 'width: 449px; height: 544px; border-radius: 52px;' : 'width: 413px; height: 512px; border-radius: 52px;'">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="absolute inset-0 bg-black/60 transition-opacity duration-700" :class="active === 4 ? 'opacity-40' : 'opacity-75'"></div>
-                <div class="absolute inset-0 p-10 flex flex-col justify-end items-center text-center text-white">
-                    <h3 class="font-black mb-3 tracking-wide transition-all duration-700" :class="active === 4 ? 'text-3xl' : 'text-2xl'">Sport & Recreational</h3>
-                    <p class="text-xs text-gray-300 mb-5 leading-relaxed max-w-[260px]">Providing top-notch fulfillment services that score big</p>
-                    <a href="#" class="text-sm font-black underline underline-offset-4 hover:text-yellow-400 transition uppercase tracking-widest">Read more</a>
-                </div>
-            </div>
-
-            <div class="absolute overflow-hidden shadow-2xl transition-all duration-700 ease-out"
-                 :class="{
-                    'z-30 translate-y-6 border-[6px] border-white shadow-[0_25px_60px_-10px_rgba(0,0,0,0.4)] opacity-100': active === 5,
-                    'z-20 -translate-x-[250px] opacity-100': active === 4,
-                    'z-20 translate-x-[250px] opacity-100': active === 1,
-                    'z-0 -translate-x-[400px] opacity-0 pointer-events-none': active === 3,
-                    'z-0 translate-x-[400px] opacity-0 pointer-events-none': active === 2
-                 }"
-                 :style="active === 5 ? 'width: 449px; height: 544px; border-radius: 52px;' : 'width: 413px; height: 512px; border-radius: 52px;'">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="absolute inset-0 bg-black/60 transition-opacity duration-700" :class="active === 5 ? 'opacity-40' : 'opacity-75'"></div>
-                <div class="absolute inset-0 p-10 flex flex-col justify-end items-center text-center text-white">
-                    <h3 class="font-black mb-3 tracking-wide transition-all duration-700" :class="active === 5 ? 'text-3xl' : 'text-2xl'">Smart Logistics</h3>
-                    <p class="text-xs text-gray-300 mb-5 leading-relaxed max-w-[260px]">And beyond! Tailored distribution mechanisms worldwide.</p>
-                    <a href="#" class="text-sm font-black underline underline-offset-4 hover:text-yellow-400 transition uppercase tracking-widest">Read more</a>
-                </div>
-            </div>
-
+<section
+    x-data="{
+        active: 2,
+        total: 5,
+        interval: null,
+        next() {
+            this.active = this.active === this.total ? 1 : this.active + 1;
+        },
+        prev() {
+            this.active = this.active === 1 ? this.total : this.active - 1;
+        },
+        init() {
+            this.interval = setInterval(() => this.next(), 5000);
+        }
+    }"
+    class="w-full bg-white py-10 overflow-hidden font-montserrat"
+>
+    <div class="max-w-[1600px] mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-black text-[#0a0a0a] tracking-tighter">KNOWLEDGE & INSIGHTS</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4 mb-6"></div>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Deep dives into specialized logistics for food, healthcare, industrial machinery, and beyond!
+            </p>
         </div>
 
-        <button @click="next(); clearInterval(interval); interval = setInterval(() => { next(); }, 6000);"
-                class="z-50 p-2 text-black hover:text-yellow-500 transition-colors focus:outline-none shrink-0" aria-label="Next slide">
-            <svg class="w-14 h-14 stroke-[4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-        </button>
+        <!-- Carousel Container -->
+        <div class="relative flex items-center justify-center h-[620px] mx-auto" style="max-width: 1480px;">
 
+            <!-- Left Arrow -->
+            <button
+                @click="prev(); clearInterval(interval); interval = setInterval(() => next(), 5000);"
+                class="absolute left-4 z-50 p-4 text-black hover:text-yellow-500 transition-all hover:scale-110 focus:outline-none"
+                aria-label="Previous">
+                <svg class="w-12 h-12 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+
+            <div class="relative w-full h-[580px] flex items-center justify-center">
+
+                <!-- Slide 1 -->
+                <div class="absolute transition-all duration-700 ease-out overflow-hidden shadow-2xl rounded-[52px] border-4 border-white"
+                     :class="{
+                        'z-30 scale-110 -translate-y-4 shadow-2xl': active === 1,
+                        'z-20 -translate-x-[380px] scale-95 opacity-80': active === 5,
+                        'z-20 translate-x-[380px] scale-95 opacity-80': active === 2,
+                        'z-10 -translate-x-[620px] scale-75 opacity-30': active === 4,
+                        'z-0 translate-x-[620px] scale-75 opacity-0': active === 3
+                     }"
+                     :style="active === 1 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
+                        <h3 class="font-black text-3xl mb-2">Industrial</h3>
+                        <p class="text-sm opacity-90 mb-6 line-clamp-3">Robust supply chains for heavy infrastructure.</p>
+                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="absolute transition-all duration-700 ease-out overflow-hidden shadow-2xl rounded-[52px] border-4 border-white"
+                     :class="{
+                        'z-30 scale-110 -translate-y-4 shadow-2xl': active === 2,
+                        'z-20 -translate-x-[380px] scale-95 opacity-80': active === 1,
+                        'z-20 translate-x-[380px] scale-95 opacity-80': active === 3,
+                        'z-10 -translate-x-[620px] scale-75 opacity-30': active === 5,
+                        'z-0 translate-x-[620px] scale-75 opacity-0': active === 4
+                     }"
+                     :style="active === 2 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
+                        <h3 class="font-black text-3xl mb-2">Food & Beverage</h3>
+                        <p class="text-sm opacity-90 mb-6 line-clamp-3">Revolutionize the way you handle dry-packed products.</p>
+                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="absolute transition-all duration-700 ease-out overflow-hidden shadow-2xl rounded-[52px] border-4 border-white"
+                     :class="{
+                        'z-30 scale-110 -translate-y-4 shadow-2xl': active === 3,
+                        'z-20 -translate-x-[380px] scale-95 opacity-80': active === 2,
+                        'z-20 translate-x-[380px] scale-95 opacity-80': active === 4,
+                        'z-10 -translate-x-[620px] scale-75 opacity-30': active === 1,
+                        'z-0 translate-x-[620px] scale-75 opacity-0': active === 5
+                     }"
+                     :style="active === 3 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
+                        <h3 class="font-black text-3xl mb-2">Health & Cosmetics</h3>
+                        <p class="text-sm opacity-90 mb-6 line-clamp-3">Your gateway to a healthier and more beautiful business!</p>
+                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="absolute transition-all duration-700 ease-out overflow-hidden shadow-2xl rounded-[52px] border-4 border-white"
+                     :class="{
+                        'z-30 scale-110 -translate-y-4 shadow-2xl': active === 4,
+                        'z-20 -translate-x-[380px] scale-95 opacity-80': active === 3,
+                        'z-20 translate-x-[380px] scale-95 opacity-80': active === 5,
+                        'z-10 -translate-x-[620px] scale-75 opacity-30': active === 2,
+                        'z-0 translate-x-[620px] scale-75 opacity-0': active === 1
+                     }"
+                     :style="active === 4 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
+                        <h3 class="font-black text-3xl mb-2">Sport & Recreational</h3>
+                        <p class="text-sm opacity-90 mb-6 line-clamp-3">Providing top-notch fulfillment services that score big.</p>
+                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="absolute transition-all duration-700 ease-out overflow-hidden shadow-2xl rounded-[52px] border-4 border-white"
+                     :class="{
+                        'z-30 scale-110 -translate-y-4 shadow-2xl': active === 5,
+                        'z-20 -translate-x-[380px] scale-95 opacity-80': active === 4,
+                        'z-20 translate-x-[380px] scale-95 opacity-80': active === 1,
+                        'z-10 -translate-x-[620px] scale-75 opacity-30': active === 3,
+                        'z-0 translate-x-[620px] scale-75 opacity-0': active === 2
+                     }"
+                     :style="active === 5 ? 'width: 460px; height: 560px;' : 'width: 410px; height: 500px;'">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                         style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop')"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-10 text-white">
+                        <h3 class="font-black text-3xl mb-2">Smart Logistics</h3>
+                        <p class="text-sm opacity-90 mb-6 line-clamp-3">And beyond! Tailored distribution mechanisms worldwide.</p>
+                        <a href="#" class="inline-block text-sm font-bold uppercase tracking-widest hover:text-yellow-400 transition">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button
+                @click="next(); clearInterval(interval); interval = setInterval(() => next(), 5000);"
+                class="absolute right-4 z-50 p-4 text-black hover:text-yellow-500 transition-all hover:scale-110 focus:outline-none"
+                aria-label="Next">
+                <svg class="w-12 h-12 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
     </div>
 </section>
+
+<footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="w-full h-[2px] bg-white mb-12"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Logistics Solutions</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Pickup & Delivery</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Sea Freight</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Air Freight</a></li>
+                </ul>
+                <h4 class="text-[24px] font-bold mt-12 mb-5">Warehousing Solution</h4>
+                <ul class="text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Company</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Partners</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cookies, Legal & Privacy Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Policies</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Shipping Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cancellation & Refund Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms & Policies</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-start lg:items-end lg:text-right">
+                <div class="mb-14">
+                    <h4 class="text-[24px] font-bold mb-5">Support</h4>
+                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                        <li><a href="#" class="hover:text-yellow-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Documents</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start lg:items-end">
+                    <h4 class="text-[24px] font-bold mb-4 tracking-tight uppercase">ARKOD SMART LOGITECH</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-9 h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-[2px] bg-white mb-8"></div>
+
+        <div class="flex flex-col items-center justify-center space-y-8">
+            <p class="text-[14px] font-bold tracking-[0.3em] uppercase">© ARKOD 2026. ALL RIGHTS RESERVED</p>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.75.46 3.4 1.26 4.83L2 22l5.3-1.26c1.37.75 2.93 1.17 4.58 1.17a10 10 0 0010-10c0-5.52-4.48-10-10-10zm5.97 14.24c-.24.68-1.22 1.25-1.7 1.33-.43.07-.98.11-2.91-.68-2.47-1.01-4.06-3.53-4.18-3.7-.12-.16-1-1.33-1-2.54 0-1.21.63-1.8 1.21-1.8s.5.12.75.12c.24 0 .44-.04.63.4.19.46.65 1.59.71 1.71.06.12.1.26.02.42-.08.16-.12.26-.25.42-.12.16-.27.36-.39.48-.13.13-.27.27-.12.52.16.25.7 1.15 1.5 1.86.64.58 1.18.76 1.44.89.26.13.41.11.57-.07s.66-.77.83-1.04c.17-.26.34-.22.58-.13s1.51.71 1.77.84.44.19.51.3c.06.11.06.66-.18 1.34z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">+60 18-911 6168</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">082-384 999</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span class="text-[17px] font-bold text-white lowercase tracking-tight">customersupport@arkod.com.my</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
