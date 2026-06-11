@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | News & Updates</title>
+    <title>ARKOD | About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>[x-cloak] { display: none !important; }</style>
 </head>
+
 <!-- THE NAVBAR !-->
 <body class="bg-[#0a0a0a] font-montserrat antialiased text-white">
     <nav class="bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 px-6 py-4 sticky top-0 z-[100]">
@@ -131,204 +132,60 @@
         </div>
     </nav>
 
-<section class="relative bg-white py-20 px-6 overflow-hidden select-none">
+<!-- To this: -->
+<section class="py-24 relative overflow-hidden bg-[#0a0a0a]">
+    <!-- Background Layer: Original Image without effects -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/helpcenterback.png') }}" alt="Support Background" class="w-full h-full object-cover">
 
-    <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40 transition-opacity duration-500"
-        style="background-image: url('{{ asset('images/AnnouncementBackground.png') }}');"
-    ></div>
+        <!-- Gradient Overlay to ensure text readability -->
+        <div class="absolute inset-0 bg-[#0a0a0a]/50"></div>
+    </div>
 
-    <style>
-        @keyframes colorWave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .animate-gold-wave {
-            background-size: 200% 200%;
-            animation: colorWave 4s ease infinite;
-        }
-    </style>
-
-    <svg class="absolute w-0 h-0" width="0" height="0">
-        <defs>
-            <clipPath id="figma-card-curve" clipPathUnits="objectBoundingBox">
-                <path d="M 0,0
-                         L 1,0
-                         L 1,0.82
-                         C 0.75,0.92 0.25,0.92 0,0.82
-                         Z" />
-            </clipPath>
-        </defs>
-    </svg>
-
-    <div class="max-w-[1600px] mx-auto relative z-10">
-
-        <div class="text-center mb-16 relative z-20">
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-wider text-black mb-3 font-montserrat">
-                Announcements
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6">
+                Need <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Assistance?</span>
             </h2>
-            <div class="w-16 h-[4px] bg-[#f9a01b] mx-auto mb-6 rounded-full"></div>
-            <p class="text-gray-900 text-sm md:text-base font-bold tracking-wide max-w-2xl mx-auto">
-                Big things are moving—here is what's happening right now!
+            <div class="h-1 w-24 bg-yellow-500 mx-auto mb-8 rounded-full shadow-[0_0_20px_rgba(234,179,8,0.5)]"></div>
+            <p class="text-gray-300 max-w-lg mx-auto text-lg font-bold">
+                Our elite support team is ready to streamline your logistics experience. Connect with us instantly.
             </p>
         </div>
 
-        <div x-data="{
-            currentIndex: 0,
-            total: 3,
-            next() { this.currentIndex = (this.currentIndex + 1) % this.total },
-            prev() { this.currentIndex = (this.currentIndex - 1 + this.total) % this.total }
-        }" class="relative max-w-[1200px] mx-auto px-4 sm:px-12">
-
-            <button @click="prev()" class="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
-                <svg class="w-10 h-10 stroke-[3] transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-
-            <div class="overflow-hidden w-full">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
-                        <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
-                            <img src="{{ asset('images/UNLOCKTHENEXTLEVEL.png') }}" alt="Unlock the Next Level" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
-                        </div>
-
-                        <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
-                            <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
-                            <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
-                                UNLOCK THE<br>NEXT LEVEL
-                            </h3>
-
-                            <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
-                               Discover new perks and benefits of being one of us!
-                            </p>
-
-                            <a href="/membership" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
-                                Read more
-                            </a>
-                        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/60189116168" target="_blank" class="group relative overflow-hidden bg-[#1a1a1a]/60 backdrop-blur-md border border-white/10 p-10 rounded-[2rem] hover:bg-[#1a1a1a]/80 transition-all duration-500 hover:-translate-y-4 hover:border-yellow-500/50 shadow-2xl">
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mb-8 border-2 border-yellow-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
                     </div>
-
-                    <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
-                        <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
-                            <img src="{{ asset('images/SHIPPINGMODEHANDLINGS.png') }}" alt="Shipping Mode Handlings" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
-                        </div>
-
-                        <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
-                            <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
-                            <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
-                                SHIPPING MODE<br>HANDLINGS
-                            </h3>
-
-                            <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
-                                Discover smart strategic updates on vehicle transit processing!
-                            </p>
-
-                            <a href="/servicecarshipping" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
-                        <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
-                            <img src="{{ asset('images/SPECIAL PACKAGES.png') }}" alt="Special Packages and Services" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
-                        </div>
-
-                        <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
-                            <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
-                            <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
-                                SPECIAL PACKAGE<br>SERVICE
-                            </h3>
-
-                            <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
-                                Discover new packages that is suited for your needs!
-                            </p>
-
-                            <a href="#" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
-                                Read more
-                            </a>
-                        </div>
-                    </div>
-
+                    <h3 class="text-white font-black text-xl uppercase tracking-widest mb-3">WhatsApp</h3>
+                    <p class="text-yellow-400 font-bold text-lg">+60 18-911 6168</p>
                 </div>
-            </div>
+            </a>
 
-            <button @click="next()" class="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
-                <svg class="w-10 h-10 stroke-[3] transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
-
-        </div>
-    </div>
-</section>
-
-<section class="bg-white py-20 px-6">
-    <div class="max-w-[1200px] mx-auto">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-black uppercase tracking-wider text-black mb-3">News</h2>
-            <div class="w-16 h-[4px] bg-[#f9a01b] mx-auto mb-4 rounded-full"></div>
-            <p class="text-gray-600 font-bold">Breaking down the big news from us that you might have missed!</p>
-        </div>
-
-        <!-- Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-            <!-- Main Featured News -->
-            <div class="lg:col-span-2 relative group overflow-hidden rounded-[2rem] shadow-xl">
-                <img src="{{ asset('images/image_202d58.jpg') }}" alt="News Headline" class="w-full h-[500px] object-cover">
-                <!-- Overlay Gradient -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                    <h3 class="text-white text-2xl font-black uppercase mb-3">To Be Determined</h3>
-                    <p class="text-gray-200 text-sm font-medium leading-relaxed">To Be Determined</p>
-                </div>
-            </div>
-
-            <!-- Side List -->
-            <div class="flex flex-col gap-6">
-                <!-- News Item 1 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 1</h4>
+            <!-- Office Line -->
+            <a href="tel:082384999" class="group relative overflow-hidden bg-[#1a1a1a]/60 backdrop-blur-md border border-white/10 p-10 rounded-[2rem] hover:bg-[#1a1a1a]/80 transition-all duration-500 hover:-translate-y-4 hover:border-yellow-500/50 shadow-2xl">
+                 <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mb-8 border-2 border-yellow-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     </div>
+                    <h3 class="text-white font-black text-xl uppercase tracking-widest mb-3">Office Line</h3>
+                    <p class="text-yellow-400 font-bold text-lg">082-384 999</p>
                 </div>
-                <!-- News Item 2 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 2</h4>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:customersupport@arkod.com.my" class="group relative overflow-hidden bg-[#1a1a1a]/60 backdrop-blur-md border border-white/10 p-10 rounded-[2rem] hover:bg-[#1a1a1a]/80 transition-all duration-500 hover:-translate-y-4 hover:border-yellow-500/50 shadow-2xl">
+                 <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mb-8 border-2 border-yellow-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
+                    <h3 class="text-white font-black text-xl uppercase tracking-widest mb-3">Email</h3>
+                    <p class="text-yellow-400 font-bold text-sm mt-1">customersupport@arkod.com.my</p>
                 </div>
-                <!-- News Item 3 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 3</h4>
-                    </div>
-                </div>
-                <!-- News Item 4 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 4</h4>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
@@ -426,4 +283,5 @@
     </div>
 </footer>
 
-
+</body>
+</html>

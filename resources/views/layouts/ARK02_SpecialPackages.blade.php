@@ -48,7 +48,7 @@
             </button>
             <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
                <a href="/career" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Career</a>
-                <a href="agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Agent Application</a>
+                <a href="/agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Agent Application</a>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
             </button>
             <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-64 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
                 <a href="/aboutus" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">About Us</a>
-                <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">News & Updates</a>
+                <a href="/newsandupdates" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">News & Updates</a>
                 <a href="/knowledge" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Knowledge & Insights</a>
             </div>
         </div>
@@ -82,7 +82,7 @@
                 <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-48 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Help Center</a>
+                <a href="/helpcenter" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Help Center</a>
                 <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">FAQ</a>
             </div>
         </div>
@@ -179,6 +179,14 @@
 
 <!-- Section 2: The 3-Package Presentation Grid (Premium Black Edition) -->
 <section class="py-24 bg-white px-6 relative text-white">
+     <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-black text-[#0a0a0a] tracking-tighter">DESIRE-MATCHED PACKAGES</h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4 mb-6"></div>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Here at Arkod Smart Logitech we provide the best for our clients
+            </p>
+        </div>
     <div class="max-w-[1600px] mx-auto">
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -269,17 +277,15 @@
             </h2>
             <div class="w-12 h-[3px] bg-amber-500"></div>
             <p class="text-neutral-600 text-sm md:text-base leading-relaxed max-w-xl font-medium">
-                Join thousands of smart vehicle owners who trust ARKOD Smart Logistics to handle cross-strait vehicle transport with unparalleled premium attention[cite: 1]. Lock in your custom selection during checkout for premium treatment.
+                Join thousands of smart vehicle owners who trust Arkod Smart Logitech to handle cross-strait vehicle transport with unparalleled premium attention. Lock in your custom selection during checkout for premium treatment.
             </p>
 
             <!-- CTA Trigger Action Interface -->
             <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
-                <a href="#" class="w-full sm:w-auto bg-black hover:bg-amber-500 text-white hover:text-black text-center font-black px-10 py-5 rounded text-xs uppercase tracking-widest transition-all duration-300 shadow-md">
-                    Secure Your Package Now
-                </a>
-                <a href="tel:0189116168" class="w-full sm:w-auto border border-neutral-300 hover:border-black text-black font-bold px-8 py-5 text-center rounded text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3">
-                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    Helpline: 018-9116168[cite: 1]
+                <a href="https://wa.me/60189116168" target="_blank" class="w-full sm:w-auto border border-neutral-300 hover:border-green-600 hover:text-green-600 text-black font-bold px-8 py-5 text-center rounded text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3">
+                    <!-- Your SVG (consider swapping this for a WhatsApp icon) -->
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.52 0 10.016-4.496 10.016-10.016 0-5.52-4.496-10.016-10.016-10.016-5.52 0-10.016 4.496-10.016 10.016 0 2.025.59 3.864 1.554 5.485l-1.018 3.725 3.725-1.018z"/></svg>
+                    Chat on WhatsApp
                 </a>
             </div>
         </div>
@@ -304,3 +310,95 @@
 
     </div>
 </section>
+
+<footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="w-full h-[2px] bg-white mb-12"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Logistics Solutions</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Pickup & Delivery</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Sea Freight</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Air Freight</a></li>
+                </ul>
+                <h4 class="text-[24px] font-bold mt-12 mb-5">Warehousing Solution</h4>
+                <ul class="text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Company</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Partners</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cookies, Legal & Privacy Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[24px] font-bold mb-5">Policies</h4>
+                <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">Shipping Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Cancellation & Refund Policies</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">Terms & Policies</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-start lg:items-end lg:text-right">
+                <div class="mb-14">
+                    <h4 class="text-[24px] font-bold mb-5">Support</h4>
+                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
+                        <li><a href="#" class="hover:text-yellow-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition">Documents</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start lg:items-end">
+                    <h4 class="text-[24px] font-bold mb-4 tracking-tight uppercase">ARKOD SMART LOGITECH</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-9 h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+                        </a>
+                        <a href="#" class="hover:opacity-75 transition">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-[2px] bg-white mb-8"></div>
+
+        <div class="flex flex-col items-center justify-center space-y-8">
+            <p class="text-[14px] font-bold tracking-[0.3em] uppercase">© ARKOD 2026. ALL RIGHTS RESERVED</p>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.75.46 3.4 1.26 4.83L2 22l5.3-1.26c1.37.75 2.93 1.17 4.58 1.17a10 10 0 0010-10c0-5.52-4.48-10-10-10zm5.97 14.24c-.24.68-1.22 1.25-1.7 1.33-.43.07-.98.11-2.91-.68-2.47-1.01-4.06-3.53-4.18-3.7-.12-.16-1-1.33-1-2.54 0-1.21.63-1.8 1.21-1.8s.5.12.75.12c.24 0 .44-.04.63.4.19.46.65 1.59.71 1.71.06.12.1.26.02.42-.08.16-.12.26-.25.42-.12.16-.27.36-.39.48-.13.13-.27.27-.12.52.16.25.7 1.15 1.5 1.86.64.58 1.18.76 1.44.89.26.13.41.11.57-.07s.66-.77.83-1.04c.17-.26.34-.22.58-.13s1.51.71 1.77.84.44.19.51.3c.06.11.06.66-.18 1.34z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">+60 18-911 6168</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="text-[17px] font-bold text-white transition">082-384 999</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span class="text-[17px] font-bold text-white lowercase tracking-tight">customersupport@arkod.com.my</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -53,6 +53,11 @@ Route::get('/newsandupdates', function () {
 Route::get('/specialpackages', function () {
     return view('layouts.ARK02_SpecialPackages');
 });
+
+Route::get('/helpcenter', function () {
+    return view('layouts.ARK02_HelpCenter');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 

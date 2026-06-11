@@ -8,22 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>[x-cloak] { display: none !important; }</style>
+    <style>
+        [x-cloak] { display: none !important; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; }
+
+        /* Mobile Improvements */
+        @media (max-width: 768px) {
+            .carousel-container { height: 420px !important; }
+            .service-card { padding: 2rem !important; }
+            .hero-text { font-size: 2.5rem !important; line-height: 1.1 !important; }
+        }
+    </style>
 </head>
-<!-- THE NAVBAR !-->
 <body class="bg-[#0a0a0a] font-montserrat antialiased text-white">
+
+    <!-- NAVBAR -->
     <nav class="bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 px-6 py-4 sticky top-0 z-[100]">
         <div class="max-w-[1600px] mx-auto flex items-center justify-between">
+
+            <!-- Logo + Ticker -->
             <div class="flex items-center">
                 <a href="/" class="flex items-center group">
-                    <img src="{{ asset('images/Company Logo.png') }}" alt="ARKOD Logo" class="h-14 w-auto object-contain transition-transform group-hover:scale-105">
+                    <img src="{{ asset('images/Company Logo.png') }}" alt="ARKOD Logo" class="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105">
                     <div class="h-10 w-[2px] bg-yellow-400 mx-4 hidden md:block"></div>
 
                     <div x-data="{
                         texts: ['Welcome To Arkod Smart Logitech SDN. BHD', 'Innovative Solutions for Logistics', 'Efficiency & Innovation With Smart Logistics'],
                         active: 0,
                         init() { setInterval(() => { this.active = (this.active + 1) % this.texts.length }, 4000); }
-                    }" class="relative h-10 min-w-[500px] overflow-hidden hidden lg:block">
+                    }" class="relative h-10 min-w-[260px] md:min-w-[500px] overflow-hidden hidden lg:block">
                         <template x-for="(text, index) in texts" :key="index">
                             <div x-show="active === index"
                                  x-transition:enter="transition ease-out duration-700"
@@ -39,94 +53,107 @@
                 </a>
             </div>
 
-            <div class="flex items-center space-x-8">
-                <div class="hidden xl:flex items-center space-x-8">
-                    <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
-                        <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                            <span>Application</span>
-                <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-               <a href="/career" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Career</a>
-                <a href="agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Agent Application</a>
-            </div>
-        </div>
-
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
-            <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                <span>Blog</span>
-                <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-64 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                <a href="/aboutus" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">About Us</a>
-                <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">News & Updates</a>
-                <a href="/knowledge" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Knowledge & Insights</a>
-            </div>
-        </div>
-
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
-            <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                <span>Services</span>
-                <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Vehicle Shipping</a>
-                <a href="/servicesdeliveryshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Delivery Shipping</a>
-                <a href="/servicescustomshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Custom Shipping</a>
-            </div>
-        </div>
-
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
-            <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                <span>Help</span>
-                <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-48 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Help Center</a>
-                <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">FAQ</a>
-            </div>
-        </div>
-
-       <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition inline-block">
-    Membership
-</a>
-    </div>
-
-    <div class="flex items-center space-x-6">
-        <a href="#" class="text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-widest">Login</a>
-        <a href="#" class="bg-yellow-400 hover:bg-white text-black font-black px-8 py-3 rounded-md text-sm uppercase transition shadow-[0_4px_20px_rgba(250,204,21,0.3)]">Sign Up</a>
-            <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
-                <button class="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors group">
-                <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" />
-                </svg>
-                <span class="text-xs font-bold uppercase tracking-widest">EN</span>
-                <svg :class="{'rotate-180': open}" class="w-3 h-3 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M19 9l-7 7-7-7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                </button>
-
-    <div x-show="open"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 translate-y-2"
-         x-transition:enter-end="opacity-100 translate-y-0"
-         x-cloak
-         class="absolute right-0 mt-2 w-40 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-[110] py-2">
-
-        <a href="{{ url('lang/en') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black">
-            English <span class="text-[8px] opacity-50">EN</span>
-        </a>
-
-        <a href="{{ url('lang/zh') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
-            中文 <span class="text-[8px] opacity-50">ZH</span>
-        </a>
-
-        <a href="{{ url('lang/ms') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
-            Melayu <span class="text-[8px] opacity-50">MS</span>
-        </a>
-    </div>
-</div>
+            <!-- Desktop Menu -->
+            <div class="hidden xl:flex items-center space-x-8">
+                <!-- Application Dropdown -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
+                        <span>Application</span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
+                        <a href="/career" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Career</a>
+                        <a href="/agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Agent Application</a>
+                    </div>
                 </div>
+
+                <!-- Blog Dropdown -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
+                        <span>Blog</span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-64 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
+                        <a href="/aboutus" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">About Us</a>
+                        <a href="/newsandupdates" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">News & Updates</a>
+                        <a href="/knowledge" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Knowledge & Insights</a>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
+                        <span>Services</span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
+                        <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Vehicle Shipping</a>
+                        <a href="/servicesdeliveryshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Delivery Shipping</a>
+                        <a href="/servicescustomshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Custom Shipping</a>
+                    </div>
+                </div>
+
+                <!-- Help Dropdown -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
+                        <span>Help</span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-48 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
+                        <a href="/helpcenter" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Help Center</a>
+                        <a href="#" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">FAQ</a>
+                    </div>
+                </div>
+
+                <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition">Membership</a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="#" class="hidden md:block text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-widest">Login</a>
+                <a href="#" class="bg-yellow-400 hover:bg-white text-black font-black px-6 py-3 rounded-md text-sm uppercase transition shadow-[0_4px_20px_rgba(250,204,21,0.3)]">Sign Up</a>
+
+                <!-- Language -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2 hidden md:block">
+                    <button class="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors group">
+                        <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" />
+                        </svg>
+                        <span class="text-xs font-bold uppercase tracking-widest">EN</span>
+                    </button>
+                </div>
+
+                <!-- Hamburger -->
+                <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div x-data="{ mobileOpen: false }" class="xl:hidden">
+            <div x-show="mobileOpen" x-transition class="mt-4 py-8 bg-[#0a0a0a] border-t border-white/10 px-6 space-y-6 text-lg font-semibold uppercase tracking-wider">
+                <a href="/membership" class="block hover:text-yellow-400">Membership</a>
+                <a href="/career" class="block hover:text-yellow-400">Career</a>
+                <a href="/agentapp" class="block hover:text-yellow-400">Agent Application</a>
+                <a href="/aboutus" class="block hover:text-yellow-400">About Us</a>
+                <a href="/newsandupdates" class="block hover:text-yellow-400">News & Updates</a>
+                <a href="/knowledge" class="block hover:text-yellow-400">Knowledge & Insights</a>
+                <a href="/servicecarshipping" class="block hover:text-yellow-400">Vehicle Shipping</a>
+                <a href="/servicesdeliveryshipping" class="block hover:text-yellow-400">Delivery Shipping</a>
+                <a href="/servicescustomshipping" class="block hover:text-yellow-400">Custom Shipping</a>
+                <a href="/servicescustomshipping" class="block hover:text-yellow-400">Custom Shipping</a>
+                <a href="/helpcenter" class="block hover:text-yellow-400">Help Center</a>
             </div>
         </div>
     </nav>
@@ -135,134 +162,117 @@
         @yield('content')
     </main>
 
-<section class="bg-white py-8 px-8 border-t border-slate-100 relative overflow-hidden">
-    <div class="absolute top-10 left-10 text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50">
-        SERVICES
-    </div>
-
-    <div class="max-w-[1600px] mx-auto text-center relative z-10">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-            <span class="text-1 xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Expertise</span>
+    <!-- SERVICES SECTION -->
+    <section class="bg-white py-12 md:py-8 px-6 md:px-8 border-t border-slate-100 relative overflow-hidden">
+        <div class="absolute top-8 left-6 md:top-10 md:left-10 text-[6rem] md:text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50 pointer-events-none">
+            SERVICES
         </div>
 
-        <h2 class="text-slate-900 text-5xl md:text-6xl font-black uppercase tracking-tight mb-24 leading-none">
-            Solutions <span class="text-yellow-500">Tailored</span> <br> For Your Business
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            @php
-                $services = [
-                    ['name' => 'Delivery', 'img' => 'Truck_X-removebg-preview.png', 'desc' => 'Fast and reliable logistics solutions.'],
-                    ['name' => 'Car Shipment', 'img' => 'car.png', 'desc' => 'Secure vehicle transport across borders.'],
-                    ['name' => 'Custom ', 'img' => 'box_2.png', 'desc' => 'Tailored packaging and handling.'],
-                ];
-            @endphp
-
-            @foreach($services as $s)
-            <div class="group relative p-12 bg-white border border-slate-100 rounded-[3rem] transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] hover:border-yellow-400">
-
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-slate-100 group-hover:bg-yellow-400 transition-colors duration-500 rounded-b-full"></div>
-
-                <div class="absolute top-8 right-10 text-slate-450 text-2xl font-black group-hover:text-yellow-50 transition-colors duration-500">
-                    0{{ $loop->iteration }}
-                </div>
-
-                <div class="relative w-32 h-32 mx-auto mb-10">
-                    <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
-                    <img src="{{ asset('images/' . $s['img']) }}"
-                         alt="{{ $s['name'] }}"
-                         class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
-                </div>
-
-                <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
-                    {{ $s['name'] }}
-                </h3>
-
-                <p class="text-slate-400 text-M font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {{ $s['desc'] }}
-                </p>
-
-                <div class="mt-8 flex justify-center">
-                    <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500">
-                        <svg class="w-5 h-5 text-slate-300 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </div>
-                </div>
+        <div class="max-w-[1600px] mx-auto text-center relative z-10">
+            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
+                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Expertise</span>
             </div>
-            @endforeach
-        </div>
-    </div>
-</section>
 
-<section class="bg-white py-8 px-8 border-y border-black/5 relative overflow-hidden"
-         x-data="{
-            active: 1, // Start with the central card active
-            collaborations: [
-                { title: 'Partnerships', type: 'Global Trade', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
-                { title: 'Affiliate Programmes', type: 'Technology', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
-                { title: 'Car Shipping', type: 'Logistics', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
-            ],
-            loop() {
-                setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000)
-            }
-         }" x-init="loop()">
+            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-16 md:mb-24 leading-none">
+                Solutions <span class="text-yellow-500">Tailored</span> <br> For Your Business
+            </h2>
 
-    <div class="absolute top-10 right-10 text-[16rem] font-black text-slate-100 select-none -z-10 tracking-tighter opacity-70">
-        GROW
-    </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                @php
+                    $services = [
+                        ['name' => 'Delivery', 'img' => 'Truck_X-removebg-preview.png', 'desc' => 'Fast and reliable logistics solutions.'],
+                        ['name' => 'Car Shipment', 'img' => 'car.png', 'desc' => 'Secure vehicle transport across borders.'],
+                        ['name' => 'Custom ', 'img' => 'box_2.png', 'desc' => 'Tailored packaging and handling.'],
+                    ];
+                @endphp
 
-    <div class="max-w-[1600px] mx-auto text-center relative z-20">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-            <span class="text-1xl md:text-3xl font-black uppercase tracking-[0.4em]] text-yellow-600">Our Network</span>
-        </div>
+                @foreach($services as $s)
+                <div class="service-card group relative p-8 md:p-12 bg-white border border-slate-100 rounded-[3rem] transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] hover:border-yellow-400">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-slate-100 group-hover:bg-yellow-400 transition-colors duration-500 rounded-b-full"></div>
+                    <div class="absolute top-8 right-8 text-slate-400 text-2xl font-black group-hover:text-yellow-50 transition-colors">0{{ $loop->iteration }}</div>
 
-        <h2 class="text-slate-900 text-5xl md:text-6xl font-black uppercase tracking-tight mb-28 leading-none max-w-4xl mx-auto">
-            Collaboration <span class="text-yellow-500">Opportunities</span>
-        </h2>
+                    <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
+                        <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['name'] }}" class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+                    </div>
 
-        <div class="relative h-[500px] flex items-center justify-center">
+                    <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
+                        {{ $s['name'] }}
+                    </h3>
 
-            <template x-for="(collab, index) in collaborations" :key="index">
-                <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[3.5rem] bg-white border border-slate-100 p-8 shadow-xl overflow-hidden"
-                     @click="active = index"
-                     :class="{
-                        'z-30 scale-100 opacity-100 translate-x-0': active === index,
-                        'z-20 scale-85 opacity-30 -translate-x-1/2 md:-translate-x-[60%] blur-[2px]': (active - 1 + collaborations.length) % collaborations.length === index,
-                        'z-20 scale-85 opacity-30 translate-x-1/2 md:translate-x-[60%] blur-[2px]': (active + 1) % collaborations.length === index,
-                        'opacity-0 scale-50 z-10': Math.abs(active - index) > 1 && Math.abs(active - index) < collaborations.length - 1
-                     }"
-                     :style="active === index ? 'box-shadow: 0 40px 100px -20px rgba(0,0,0,0.1)' : ''">
+                    <p class="text-slate-500 text-base font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {{ $s['desc'] }}
+                    </p>
 
-                    <div class="absolute top-0 left-0 w-full h-2 group-hover:opacity-100 transition-opacity duration-300"
-                         :class="active === index ? collab.color : 'bg-slate-100'"></div>
-
-                    <div class="relative w-[300px] md:w-[600px] lg:w-[850px] aspect-video rounded-[3rem] overflow-hidden">
-                        <img :src="collab.img"
-                             :alt="collab.title"
-                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-12 flex flex-col justify-end transition-opacity duration-500"
-                             :class="active === index ? 'opacity-100' : 'opacity-0'">
-                            <span class="text-yellow-400 font-black text-xs uppercase tracking-[0.3em] mb-3 block" x-text="collab.type"></span>
-                            <h3 class="text-white text-3xl md:text-4xl font-black uppercase tracking-wider mb-2" x-text="collab.title"></h3>
-
-                            <a href="#" class="inline-flex items-center gap-4 text-white hover:text-yellow-400 font-black uppercase text-xs tracking-widest mt-6 group/link">
-                                <span class="w-12 h-[2px] bg-yellow-400 group-hover/link:w-20 transition-all duration-500"></span>
-                            </a>
+                    <div class="mt-8 flex justify-center">
+                        <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500">
+                            <svg class="w-5 h-5 text-slate-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
                         </div>
                     </div>
-
-                    <div class="absolute bottom-6 right-14 text-slate-100 text-6xl font-black transition-colors duration-500 group-hover:text-yellow-50"
-                    :class="active === index ? 'text-yellow-50' : ''">
-                    <span x-text="'0' + (index + 1s)"></span>
-                    </div>
                 </div>
-            </template>
-
+                @endforeach
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- COLLABORATION CAROUSEL -->
+    <section class="bg-white py-12 px-6 md:px-8 border-y border-black/5 relative overflow-hidden"
+             x-data="{
+                active: 1,
+                collaborations: [
+                    { title: 'Partnerships', type: 'Global Trade', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
+                    { title: 'Affiliate Programmes', type: 'Technology', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
+                    { title: 'Car Shipping', type: 'Logistics', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
+                ],
+                loop() { setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000) }
+             }" x-init="loop()">
+
+        <div class="absolute top-8 right-6 md:top-10 md:right-10 text-[8rem] md:text-[16rem] font-black text-slate-100 select-none -z-10 tracking-tighter opacity-70 pointer-events-none">
+            GROW
+        </div>
+
+        <div class="max-w-[1600px] mx-auto text-center relative z-20">
+            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
+                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Network</span>
+            </div>
+
+            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-12 md:mb-28 leading-none max-w-4xl mx-auto">
+                Collaboration <span class="text-yellow-500">Opportunities</span>
+            </h2>
+
+            <div class="carousel-container relative h-[420px] md:h-[500px] flex items-center justify-center mx-auto max-w-5xl">
+                <template x-for="(collab, index) in collaborations" :key="index">
+                    <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[2.5rem] md:rounded-[3.5rem] bg-white border border-slate-100 p-6 md:p-8 shadow-xl overflow-hidden w-[92%] md:w-auto"
+                         @click="active = index"
+                         :class="{
+                            'z-30 scale-100 opacity-100': active === index,
+                            'z-20 scale-90 opacity-40 -translate-x-8 md:-translate-x-[45%]': (active - 1 + collaborations.length) % collaborations.length === index,
+                            'z-20 scale-90 opacity-40 translate-x-8 md:translate-x-[45%]': (active + 1) % collaborations.length === index,
+                            'opacity-0 scale-75 z-10': Math.abs(active - index) > 1
+                         }">
+
+                        <div class="absolute top-0 left-0 w-full h-2" :class="active === index ? collab.color : 'bg-slate-100'"></div>
+
+                        <div class="relative w-full aspect-video rounded-[2rem] overflow-hidden">
+                            <img :src="collab.img" :alt="collab.title" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end"
+                                 :class="active === index ? 'opacity-100' : 'opacity-0'">
+                                <span class="text-yellow-400 font-black text-xs uppercase tracking-[0.3em] mb-3" x-text="collab.type"></span>
+                                <h3 class="text-white text-2xl md:text-4xl font-black uppercase tracking-wider" x-text="collab.title"></h3>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-6 right-6 md:right-14 text-5xl md:text-6xl font-black text-slate-200 transition-colors"
+                             :class="active === index ? 'text-yellow-50' : ''">
+                            <span x-text="'0' + (index + 1)"></span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
 
 <footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
     <div class="max-w-[1400px] mx-auto">
