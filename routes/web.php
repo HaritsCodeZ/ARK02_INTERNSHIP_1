@@ -46,6 +46,13 @@ Route::get('/knowledge', function () {
     return view('layouts.ARK02_KnowledgeInsights');
 });
 
+Route::get('/newsandupdates', function () {
+    return view('layouts.ARK02_NewsUpdates');
+});
+
+Route::get('/specialpackages', function () {
+    return view('layouts.ARK02_SpecialPackages');
+});
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
