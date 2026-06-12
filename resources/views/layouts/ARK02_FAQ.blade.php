@@ -628,44 +628,799 @@
 
                     <div class="flex items-center justify-between px-2 mb-4">
                         <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
-                            Section 02 // Live Transit Analytics
+                                Section 02 // During Shipping Protocols
                         </h4>
                         <span class="text-xs font-bold text-gray-400 font-mono">9 Operations Listed</span>
                     </div>
 
                     <!-- FAQ 1 -->
-                    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
-                        :class="activeFaq === 101 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 101 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(101)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">1. How to track my item/parcel?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 101 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 101" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            Click on the “Track & Trace” menu option OR login to your ARKOD account and find “Track & Trace” – enter your tracking number. Do note that the Track & Trace details are only available after the collection of consignments.
+        </div>
+    </div>
+</div>
 
-                        <button @click="toggleFaq(101)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
-                            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
-                                1. How to track my item/parcel?
-                            </span>
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
-                                :class="activeFaq === 101 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                                </svg>
-                            </div>
-                        </button>
+<!-- FAQ 2 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 102 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(102)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">2. I want a Delivery Order (DO)/ Waybill to be returned to me after delivery. What should I do?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 102 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 102" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            You may contact our hotline or email our customersupport@arkod.com.my for further enquiries.
+        </div>
+    </div>
+</div>
 
-                        <div x-show="activeFaq === 101" x-collapse x-cloak>
-                            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
-                                Click on the “Track & Trace” menu option OR login to your account and enter your tracking number.
-                            </div>
-                        </div>
-                    </div>
+<!-- FAQ 3 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 103 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(103)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">3. What if my parcel is lost & damaged?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 103 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 103" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            You may contact our hotline or email our customersuppport@arkod.com.my to further your issue.
+        </div>
+    </div>
+</div>
 
+<!-- FAQ 4 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 104 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(104)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">4. What if the receiver/consignee is not present/available to receive the item/consignment?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 104 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 104" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            The carrier driver from certain companies may leave a calling card at the doorstep requesting manual collection OR we will inform you of the delivery rescheduled for the next day. Otherwise, the consignment may be returned to the depot. The consignee can pick up their goods or parcel from the depot.
+        </div>
+    </div>
+</div>
 
-                <div x-show="activeTab === 'agents-hub'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 03 // Global Agent Portal</h4><span class="text-xs font-bold text-gray-400 font-mono">Consignment Log</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Payout metrics validation documentation metrics... ]</div>
+<!-- FAQ 5 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 105 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(105)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">5. What if the status of the parcel shows undelivered? Will there be another delivery?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 105 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 105" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            Undelivered status indicates the driver has failed to deliver the parcel. This happens when the receiver is not present to receive the parcel. The receiver may reschedule the pickup by contacting our hotline or emailing us at customersupport@arkod.com.my. If the courier is found to be at fault or any beyond circumstances such as weather, working hours, traffic conditions, store loading and wait times, and other unexpected barriers to loading or unloading, we will inform you of the reschedule for the next day.
+        </div>
+    </div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 106 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(106)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">6. How do I know if my parcel has been delivered?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 106 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 106" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            The delivery status will be shown/updated in our “Trace & Track” menu option.
+        </div>
+    </div>
+</div>
+
+<!-- FAQ 7 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 107 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(107)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">7. How to print the Invoice Report?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 107 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 107" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            The Invoice Report will be generated automatically after Checkout OR you will be notified through an email.
+        </div>
+    </div>
+</div>
+
+<!-- FAQ 8 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 108 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(108)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">8. How to refund my order?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 108 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 108" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            You may contact our hotline or email customersupport@arkod.com.my to further your enquiries.
+        </div>
+    </div>
+</div>
+
+<!-- FAQ 9 -->
+<div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+    :class="activeFaq === 109 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+    <button @click="toggleFaq(109)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+        <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">9. How to return my order?</span>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 109 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+    </button>
+    <div x-show="activeFaq === 109" x-collapse x-cloak>
+        <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+            You may contact our hotline or email our customersupport@arkod.com.my to further your enquiries.
+        </div>
+    </div>
+</div>
+</div>
+
+<div x-show="activeTab === 'agents-hub'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 03 // Agent Hub
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">10 Operations Listed</span>
+    </div>
+
+    <!-- FAQ 201 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 201 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(201)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">1. Where can I view my tasks/delivery information?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 201 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 201" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Login to the ARKOD Agent Portal.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 202 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 202 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(202)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">2. What is the purpose of scanning the QR code?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 202 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 202" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                To provide ease of operation for the delivering agent to update delivery status and view a specific task description through the waybill “QR code”.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 203 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 203 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(203)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">3. What if an accident occurs, loss or any unfavoured circumstances happen in the process of delivering?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 203 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 203" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                The compensation of loss or damaged item will be covered by the agent.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 204 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 204 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(204)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">4. Can I change the collection/pickup time with the customers?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 204 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 204" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes. The agent is required to inform ARKOD customer support and the customer before collection/pickup time.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 205 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 205 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(205)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">5. What is the meaning of “manpower required” under the additional service/special request?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 205 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 205" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Manpower required means the Van/Lorry driver needs to bring an extra helper to assist in the loading and unloading. The number of manpower required would mean the number of helpers requires, not including the driver.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 206 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 206 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(206)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">6. What should I do if the parcel cannot be delivered on the stated date?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 206 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 206" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Delivery Agent should update “Undelivered” with reason if the customer is not available or request to change the delivery date.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 207 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 207 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(207)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">7. Can I cancel my delivery after accepting the delivery task?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 207 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 207" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Once the task/assignment is accepted, it CAN NOT be cancelled unless there are last minutes changes. Please notify or provide your reason. Multiple cancellations will lead to your account suspension.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 208 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 208 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(208)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">8. What if the sender or receiver is not present during the pickup time/delivery of the parcel/item?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 208 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 208" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Agents are required to call or reach out to the sender/receiver before pickup and delivery for their availability. Please reschedule the pickup/delivery time and date for the following available day. You can leave the parcel at the door ONLY with the consent/request of the receiver with proof of photos and SMS/message.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 209 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 209 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(209)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">9. Do you accept sub-contractors?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 209 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 209" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes. If you are interested, please sign-up for our agent account and email us your interest. Our agent application form can be found at https://arkod.com.my/ - Agent Application. We will contact you to further your application and discuss your future task.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 210 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+        :class="activeFaq === 210 ? 'bg-[#0f0f0f] text-white shadow-2xl' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(210)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">10. How do I get paid after completing the task/ successfully delivering the parcel?</span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0" :class="activeFaq === 210 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 210" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Agents send or email their invoice report of successfully delivering status to billing@arkod.com.my. The payment will be transferred to the agent account/bank every fortnightly, Friday.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ==================================================== -->
+<!-- SECTION 04: E-FULFILLMENT RECEIVING (FIXED ID)       -->
+<!-- ==================================================== -->
+<div x-show="activeTab === 'ef-receiving'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 04 // E-Fulfillment Receiving
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">5 Operations Listed</span>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 41 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(41)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. How do i prepare the inventory shipments for E-fulfilmet Service's facility?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 41 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 41" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Please provide a master packing slip and individual packing slips for each carton that outlines the contents of a shipment as a whole. It should list the SKUs (stock-keeping units) and quantities of the items included in the shipment. Additionally, ensure that each unit has scannable barcodes because it allows the receiving team to quickly and accurately scan and track the items as they are received. If the items in the shipment do not have barcodes, E-fulfilment Service's team can label them for you.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 42 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(42)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                2. How Long Does the Receiving Process Take?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 42 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 42" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                The receiving process depends on the size of the shipment, the number of items being received, and the complexity of the receiving process. In some cases, it may take longer than 2-3 days to complete the receiving process if there are issues with the shipment or if there is a high volume of incoming goods.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 43 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(43)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                3. Is there any inspection for my items/products/goods when you receive them?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 43 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 43" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes, we do inspect a portion of the items during the receiving process to ensure that the merchandise is in good condition and matches the descriptions provided on the packing slip or invoice. If you need specific requirements to inspect your item, we can accommodate that request.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 44 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(44)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                4. What happens if my stock arrives damaged?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 44 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 44" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We will take note and photograph the item(s) and the corresponding packaging, and notify you immediately. If any issues are discovered during the inspection process, they can be addressed before the items are added to the inventory.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 45 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(45)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                5. What should I do if the quantity of my goods is lesser or greater than expected upon receiving?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 45 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 45" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Promptly communicate with the supplier. Notify them about any discrepancies in the received goods as compared to the information in the referred documents such as Warehouse Management System (WMS), Inventory Management System (IMS) records, and Delivery Orders (D.O). This ensures accurate record-keeping and allows the supplier to address the situation and resolve any issues related to the quantity difference.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <!-- SECTION 05 -->
+                <div x-show="activeTab === 'ef-storage'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 05 // Secure Warehousing
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">15 Operations Listed</span>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 51 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(51)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. What is the standard spacing/minimum space for storing inventory?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 51 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 51" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We offer 2000 KG of spacing per month and using per square feet methods. For rates you may refer to our E-Fulfilment (Pick and Pack) Service Prices. Another option, you may send a customise storage request. Our minimum storage is 0.5 per cubic meter/1 pallet. However, if you need extended storage space or require specific storage spaces, you need to subcontract for additional warehouse storage, space, and related services as necessary at the rates agreed with the service provider.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 52 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(52)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                2. Do you provide customise storage options or predefined storage periods?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 52 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 52" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We provide 3, 6, and 12 months of storage which vary depending on the promotional offers. The rates may refer to E-Fulfilment (Pick and Pack) Service Prices. For other options, you may request using per cubic metre per month. This is a variable charge, billed on a monthly basis depending on storage space usage. Unless specified otherwise, the customise storage period or spacing are depending on both party’s agreement through a contract.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 53 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(53)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                3. Do you charge a long-term storage fee?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 53 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 53" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                No, there is no surcharge or higher cost for long-term storage. For inventory storage/pick and pack, our clients are charged the same amount regardless of how long their items are stored in our warehouse. You may refer to our E-Fulfilment (Pick and Pack) Service Prices with packages for the add-on.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 54 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(54)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                4. How do you bill for storage space?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 54 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 54" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We charge the storage for the space that you are using at any given time per month. Please refer to our E-Fulfilment Service Prices list.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 55 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(55)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                5. Do my items need bar codes?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 55 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 55" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes, scannable barcodes must be present on each of your individual units. If your products don't have scannable barcodes when they arrive at our warehouse, we can label them for you.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 56 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(56)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                6. What security features do your facilities have?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 56 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 56" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Security cameras, smoke hatches, fire sprinkler systems, fire extinguishers, security guards and round-the-clock alarm monitoring are all present at our warehouse.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 57 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(57)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                7. Do you have material handling equipment to move the inventory?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 57 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 57" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes, we have sliding rails, forklifts, pallet jacks, racking, and a crane to move your inventory.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 58 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(58)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                8. Are there items you don't accept?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 58 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 58" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Although we work with the vast majority of consumer goods, there are some that we don't, such as unpackaged food, frozen food, some hazardous commodities, firearms or ammunition, pornography, and exceedingly high-value goods.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 59 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(59)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                9. Do you offer climate-controlled storage?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 59 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 59" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                No, we don't work with frozen or chilled goods because we don't have a refrigerated section.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 60 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(60)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                10. How can I modify or cancel a storage order/booking?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 60 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 60" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Please cancel your booking/order through our website or directly contact admin@arkod.com.my or customersupport@arkod.com.my for full details of the issue.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 61 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(61)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                11. Can I visit your warehouse to inspect my inventory?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 61 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 61" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Please inform us 24 hours in advance to make sure that we prepare you with the safety guidelines before entering the warehouse. Your safety is our top priority. Provide us with the autorised letter or any authorise related documents beforehand. You or your representative can access the warehouse during business hours (9.00 a.m.–5.00 p.m.) for the inventory inspection.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 62 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(62)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                12. Is my inventory insured while stored in your warehouse?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 62 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 62" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                The maximum insurance coverage is RM1000. Extra insurance coverage is available upon request.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 63 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(63)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                13. Is there a written agreement or contract for storage services?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 63 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 63" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes. You can refer to our Terms of Service regarding the (PICK & PACK - E-commerce Fulfilment, Storage and Delivery Service Terms & Conditions).
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 64 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(64)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                14. What is the process for terminating storage services and moving inventory out?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 64 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 64" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Please provide us 30 days notice in advance to make sure that the move-out process is done in a proper manner as stated according to the terms & conditions. This entails any transaction, payment or liabilities to be resolve through the correct procedures.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 65 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(65)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                15. Can I or my representative pick up items directly from the warehouse?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 65 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 65" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes. Please inform us 24 hours in advance. Do provide us your authorisation letter with other related identification documents - vehicle’s driver (for representative).
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <!-- SECTION 06 -->
+                <div x-show="activeTab === 'ef-shipping'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
+                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 06 // Freight Deployments</h4><span class="text-xs font-bold text-gray-400 font-mono">Outbound Shipping</span></div>
+                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Automated dispatch matrix and courier integrations details will parse here ]</div>
                 </div>
 
-                <div x-show="activeTab === 'ef-receiving'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 04 // Inbound Gateways</h4><span class="text-xs font-bold text-gray-400 font-mono">Receiving</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Inbound receiving protocol parameters pipeline documentation will parse here ]</div>
+                <!-- SECTION 07 -->
+                <div x-show="activeTab === 'ef-returns'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
+                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 07 // Reverse Logistics</h4><span class="text-xs font-bold text-gray-400 font-mono">Returns Handling</span></div>
+                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Reverse inspection queues and RMA workflows parameters details will parse here ]</div>
                 </div>
+
+                <!-- SECTION 08 -->
+                <div x-show="activeTab === 'ef-packaging'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
+                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 08 // Parcel Processing</h4><span class="text-xs font-bold text-gray-400 font-mono">Custom Packaging</span></div>
+                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Packing materials checklist and safety insulation guidelines will parse here ]</div>
+                </div>
+
+                <!-- SECTION 09 -->
+                <div x-show="activeTab === 'ef-addons'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
+                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 09 // Premium Features</h4><span class="text-xs font-bold text-gray-400 font-mono">Value Addons</span></div>
+                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Tailored real-time API provisioning or insurance coverage options details will parse here ]</div>
+                </div>
+
+                <!-- SECTION 10 -->
+                <div x-show="activeTab === 'ef-payment'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
+                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 10 // Financial Settlement</h4><span class="text-xs font-bold text-gray-400 font-mono">Payment</span></div>
+                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Billing structures and automated wallet reconciliation configurations will parse here ]</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
 
                 <div x-show="activeTab === 'ef-storage'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
                     <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 05 // Secure Warehousing</h4><span class="text-xs font-bold text-gray-400 font-mono">Storage</span></div>
