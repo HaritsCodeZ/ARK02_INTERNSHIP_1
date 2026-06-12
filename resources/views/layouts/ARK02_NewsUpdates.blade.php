@@ -131,9 +131,8 @@
         </div>
     </nav>
 
-<section class="relative bg-white py-20 px-6 overflow-hidden select-none">
-
-    <div
+<section class="relative bg-white py-20 px-6 overflow-hidden select-none"
+         x-data="{ openPopup: false }"> <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40 transition-opacity duration-500"
         style="background-image: url('{{ asset('images/AnnouncementBackground.png') }}');"
     ></div>
@@ -147,6 +146,14 @@
         .animate-gold-wave {
             background-size: 200% 200%;
             animation: colorWave 4s ease infinite;
+        }
+        /* Custom pulse shadow animation for the bombastic modal */
+        @keyframes goldPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(249, 160, 27, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(249, 160, 27, 0.7); }
+        }
+        .animate-gold-pulse {
+            animation: goldPulse 3s infinite ease-in-out;
         }
     </style>
 
@@ -181,7 +188,7 @@
             prev() { this.currentIndex = (this.currentIndex - 1 + this.total) % this.total }
         }" class="relative max-w-[1200px] mx-auto px-4 sm:px-12">
 
-            <button @click="prev()" class="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
+            <button @click="openPopup = true" class="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
                 <svg class="w-10 h-10 stroke-[3] transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -191,22 +198,17 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
                         <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
                             <img src="{{ asset('images/UNLOCKTHENEXTLEVEL.png') }}" alt="Unlock the Next Level" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
                         </div>
-
                         <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
                             <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
                             <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
                                 UNLOCK THE<br>NEXT LEVEL
                             </h3>
-
                             <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
                                Discover new perks and benefits of being one of us!
                             </p>
-
                             <a href="/membership" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
                                 Read more
                             </a>
@@ -214,22 +216,17 @@
                     </div>
 
                     <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
                         <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
                             <img src="{{ asset('images/SHIPPINGMODEHANDLINGS.png') }}" alt="Shipping Mode Handlings" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
                         </div>
-
                         <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
                             <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
                             <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
                                 SHIPPING MODE<br>HANDLINGS
                             </h3>
-
                             <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
                                 Discover smart strategic updates on vehicle transit processing!
                             </p>
-
                             <a href="/servicecarshipping" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
                                 Read more
                             </a>
@@ -237,23 +234,18 @@
                     </div>
 
                     <div class="bg-[#121212] rounded-[2.5rem] p-5 flex flex-col justify-between items-center text-center shadow-xl border border-yellow-600/20 transform transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(249,160,27,0.15)] hover:border-[#f9a01b]/60 group">
-
                         <div class="w-full h-60 overflow-hidden relative rounded-t-[31px]" style="clip-path: url(#figma-card-curve);">
                             <img src="{{ asset('images/SPECIAL PACKAGES.png') }}" alt="Special Packages and Services" class="w-full h-full object-cover rounded-t-[31px] transform transition-transform duration-700 ease-out group-hover:scale-110">
                         </div>
-
                         <div class="mt-2 flex flex-col items-center flex-grow justify-between w-full pb-2">
                             <div class="w-36 h-[3px] bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] rounded-full mb-4 shadow-[0_0_12px_rgba(249,160,27,0.7)]"></div>
-
                             <h3 class="text-white font-black text-xl md:text-2xl tracking-wide uppercase leading-tight min-h-[50px] flex items-center justify-center">
                                 SPECIAL PACKAGE<br>SERVICE
                             </h3>
-
                             <p class="text-gray-400 text-xs font-semibold tracking-wide max-w-[240px] mt-2 line-clamp-2 min-h-[36px]">
                                 Discover new packages that is suited for your needs!
                             </p>
-
-                            <a href="#" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
+                            <a href="/specialpackages" class="mt-5 inline-block w-full max-w-[160px] bg-gradient-to-r from-[#121212] via-[#f9a01b] to-[#121212] text-white hover:text-black font-black py-3 rounded-full text-[11px] uppercase tracking-widest border border-yellow-600/40 hover:border-transparent transition-all duration-300 text-center shadow-md transform active:scale-95 animate-gold-wave">
                                 Read more
                             </a>
                         </div>
@@ -262,7 +254,7 @@
                 </div>
             </div>
 
-            <button @click="next()" class="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
+            <button @click="openPopup = true" class="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-700 hover:text-[#f9a01b] hover:scale-125 active:scale-95 transition-all duration-300 focus:outline-none group">
                 <svg class="w-10 h-10 stroke-[3] transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
@@ -270,69 +262,55 @@
 
         </div>
     </div>
-</section>
 
-<section class="bg-white py-20 px-6">
-    <div class="max-w-[1200px] mx-auto">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-black uppercase tracking-wider text-black mb-3">News</h2>
-            <div class="w-16 h-[4px] bg-[#f9a01b] mx-auto mb-4 rounded-full"></div>
-            <p class="text-gray-600 font-bold">Breaking down the big news from us that you might have missed!</p>
-        </div>
+    <div x-show="openPopup"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+         x-cloak
+         @click.self="openPopup = false"
+         @keydown.escape.window="openPopup = false">
 
-        <!-- Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div x-show="openPopup"
+             x-transition:enter="transition ease-out duration-300 transform scale-90"
+             x-transition:enter-start="opacity-0 scale-90"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-200 transform scale-100"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-90"
+             class="bg-[#0f0f0f] border-2 border-[#f9a01b]/50 rounded-[2.5rem] max-w-md w-full p-8 text-center relative overflow-hidden animate-gold-pulse">
 
-            <!-- Main Featured News -->
-            <div class="lg:col-span-2 relative group overflow-hidden rounded-[2rem] shadow-xl">
-                <img src="{{ asset('images/image_202d58.jpg') }}" alt="News Headline" class="w-full h-[500px] object-cover">
-                <!-- Overlay Gradient -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                    <h3 class="text-white text-2xl font-black uppercase mb-3">To Be Determined</h3>
-                    <p class="text-gray-200 text-sm font-medium leading-relaxed">To Be Determined</p>
-                </div>
+            <button @click="openPopup = false" class="absolute top-5 right-5 text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <div class="w-20 h-20 bg-[#f9a01b]/10 border border-[#f9a01b]/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-[#f9a01b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
             </div>
 
-            <!-- Side List -->
-            <div class="flex flex-col gap-6">
-                <!-- News Item 1 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 1</h4>
-                    </div>
-                </div>
-                <!-- News Item 2 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 2</h4>
-                    </div>
-                </div>
-                <!-- News Item 3 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 3</h4>
-                    </div>
-                </div>
-                <!-- News Item 4 -->
-                <div class="flex gap-4 items-start">
-                    <div class="w-32 h-20 bg-gray-300 rounded-lg flex-shrink-0"></div>
-                    <div>
-                        <span class="text-[10px] text-gray-400 font-bold uppercase">20 April 2026</span>
-                        <h4 class="text-sm font-black text-black uppercase mt-1">Title of news 4</h4>
-                    </div>
-                </div>
-            </div>
+            <h3 class="text-white font-black text-2xl md:text-3xl tracking-wider uppercase mb-3 font-montserrat">
+                Stay Tuned!
+            </h3>
+            <div class="w-12 h-[3px] bg-[#f9a01b] mx-auto mb-4 rounded-full"></div>
+
+            <p class="text-gray-400 text-sm font-semibold tracking-wide mb-6 leading-relaxed">
+                More updates and game-changing announcements are currently loading on our radar. Don't blink!
+            </p>
+
+            <button @click="openPopup = false" class="w-full bg-gradient-to-r from-[#d4af37] via-[#f9a01b] to-[#d4af37] text-black font-black py-3.5 rounded-full text-xs uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(250,204,21,0.3)]">
+                Acknowledge
+            </button>
         </div>
     </div>
 </section>
-
 
 <footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
     <div class="max-w-[1400px] mx-auto">

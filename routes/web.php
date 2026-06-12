@@ -58,6 +58,10 @@ Route::get('/helpcenter', function () {
     return view('layouts.ARK02_HelpCenter');
 });
 
+Route::get('/faq', function () {
+    return view('layouts.ARK02_Faq');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
