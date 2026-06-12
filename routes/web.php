@@ -62,6 +62,18 @@ Route::get('/faq', function () {
     return view('layouts.ARK02_Faq');
 });
 
+Route::get('/termspolicy', function () {
+    return view('layouts.ARK02_TermsPolicy');
+});
+
+Route::get('/shippingpolicy', function () {
+    return view('layouts.ARK02_ShippingPolicies');
+});
+
+Route::get('/cancelationpolicy', function () {
+    return view('layouts.ARK02_Cancelation');
+});
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
