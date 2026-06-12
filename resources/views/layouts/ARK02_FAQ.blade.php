@@ -1385,35 +1385,409 @@
 
 </div>
 
-                <!-- SECTION 06 -->
-                <div x-show="activeTab === 'ef-shipping'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 06 // Freight Deployments</h4><span class="text-xs font-bold text-gray-400 font-mono">Outbound Shipping</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Automated dispatch matrix and courier integrations details will parse here ]</div>
-                </div>
+                <!-- ==================================================== -->
+<!-- SECTION 06: E-FULFILLMENT SHIPPING                   -->
+<!-- ==================================================== -->
+<div x-show="activeTab === 'ef-shipping'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 06 // Freight Deployments
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">4 Operations Listed</span>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 71 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(71)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. Which Shipping Carriers Do You Use?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 71 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 71" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                dhExpress and other reliable shipping carriers or transporters
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 72 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(72)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                2. When you get an order, how soon do you ship it?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 72 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 72" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Within 2-5 days business days after receipt, orders are dispatched.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 73 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(73)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                3. What areas does your shipping support?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 73 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 73" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We support domestic shipping across Malaysia.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 74 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(74)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                4. Do My Shipments Come With Tracking?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 74 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 74" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes, all shipments come with free tracking, you can go to our tracking page here.
+            </div>
+        </div>
+    </div>
+
+</div>
 
                 <!-- SECTION 07 -->
-                <div x-show="activeTab === 'ef-returns'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 07 // Reverse Logistics</h4><span class="text-xs font-bold text-gray-400 font-mono">Returns Handling</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Reverse inspection queues and RMA workflows parameters details will parse here ]</div>
-                </div>
+               <div x-show="activeTab === 'ef-returns'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
 
-                <!-- SECTION 08 -->
-                <div x-show="activeTab === 'ef-packaging'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 08 // Parcel Processing</h4><span class="text-xs font-bold text-gray-400 font-mono">Custom Packaging</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Packing materials checklist and safety insulation guidelines will parse here ]</div>
-                </div>
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 07 // Reverse Logistics
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">5 Operations Listed</span>
+    </div>
 
-                <!-- SECTION 09 -->
-                <div x-show="activeTab === 'ef-addons'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 09 // Premium Features</h4><span class="text-xs font-bold text-gray-400 font-mono">Value Addons</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Tailored real-time API provisioning or insurance coverage options details will parse here ]</div>
-                </div>
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 81 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(81)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. Can my customers send returns to your facility?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 81 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 81" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes. You can inform your customers to return orders to our facilities. This can be done using the packing slip that we include with each item and your company's return policy.
+            </div>
+        </div>
+    </div>
 
-                <!-- SECTION 10 -->
-                <div x-show="activeTab === 'ef-payment'" x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0" class="space-y-4" x-cloak>
-                    <div class="flex items-center justify-between px-2 mb-2"><h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">Section 10 // Financial Settlement</h4><span class="text-xs font-bold text-gray-400 font-mono">Payment</span></div>
-                    <div class="border border-white/10 rounded-[2rem] bg-black/40 backdrop-blur-md text-white p-8 shadow-sm font-mono text-xs opacity-60">[ Billing structures and automated wallet reconciliation configurations will parse here ]</div>
-                </div>
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 82 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(82)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                2. What happens to the items that are returned?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 82 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 82" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We will follow the return instructions provided by your account manager throughout the setup process. This might involve replenishing undamaged products and consolidating or eliminating any damaged merchandise.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 83 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(83)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                3. Can you test returned items to see if they're still functional?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 83 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 83" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                On returned products, we can perform specific quality control tests. Please contact your sales representative for additional details.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 84 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(84)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                4. What happens if you make a mistake on a shipment?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 84 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 84" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                If an order is returned due to a pick or pack fault, eFulfillment Service will instantly send a replacement order to your customer at no extra cost. In addition, we will attempt to determine the source of the issue in order to avoid it from happening again in the future.
+            </div>
+        </div>
+    </div>
+
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 85 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(85)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                5. Do you charge a returns processing fee?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 85 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 85" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                You can check the proposal provided by our sales staff, which includes a list of package prices.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <!-- ==================================================== -->
+<!-- SECTION 08: E-FULFILLMENT PACKAGING                  -->
+<!-- ==================================================== -->
+<div x-show="activeTab === 'ef-packaging'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 08 // Kitting & Presentation
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">4 Operations Listed</span>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 91 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(91)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. Is there a logo for eFulfillment Service on the boxes?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 91 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 91" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We may include our logo on any related delivery purposes, such as the waybill.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 92 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(92)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                2. Can I Use My Own Packaging?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 92 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 92" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                In some cases, we allow clients to use their own shipment packaging. Please contact us or your sales representative for further information on your packaging requirements.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 93 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(93)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                3. Can you help me to pack my items/products/goods?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 93 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 93" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                Yes, we offer packing services, which are optional. You can find the option for the add-on service on our website in the E-Fulfilment / Pick and Pack Service section. And also, if you need products that require special packaging or label printing and tagging, or bundling and/or pairing for products such as goodie bags, or even loose pairs of shoes in parcels, send us the details via sales@arkod.com.my and we will quote you the charges.
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 94 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(94)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                4. I don’t need packaging for my separate or individual items.
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 94 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 94" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                External wrapping/cover/pouches are compulsory for Delivery Order (D.O.) labelling purposes, especially for unwrapped/unpacked individual items.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <!-- ==================================================== -->
+<!-- SECTION 09: E-FULFILLMENT ADD ON SERVICES            -->
+<!-- ==================================================== -->
+<div x-show="activeTab === 'ef-addons'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 09 // Value-Added Processing
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">1 Operation Listed</span>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 101 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(101)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                1. What additional services do you provide?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 101 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 101" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                We provide add-on services such as Pre-packing, Outbound for Bazaar, Stockist and etc., box assembly, printing, shrink wrap, pallet wrap/supply and other services upon request with agreed charges.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+               <!-- ==================================================== -->
+<!-- SECTION 10: E-FULFILLMENT PAYMENT                    -->
+<!-- ==================================================== -->
+<div x-show="activeTab === 'ef-payment'"
+     x-transition:enter="transition ease-out duration-400 transform translate-y-2 opacity-0"
+     class="space-y-4"
+     x-cloak>
+
+    <!-- Header Section -->
+    <div class="flex items-center justify-between px-2 mb-4">
+        <h4 class="text-xs font-black tracking-[0.2em] text-[#f9a01b] uppercase">
+            Section 10 // Billing & Transactions
+        </h4>
+        <span class="text-xs font-bold text-gray-400 font-mono">1 Operation Listed</span>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="border border-white/10 rounded-[2rem] transition-all duration-500 overflow-hidden"
+         :class="activeFaq === 111 ? 'bg-[#0f0f0f] text-white shadow-2xl scale-[1.01]' : 'bg-black/40 text-white hover:border-white/20 shadow-sm backdrop-blur-md'">
+        <button @click="toggleFaq(111)" class="w-full flex items-center justify-between text-left p-8 outline-none select-none group">
+            <span class="text-sm md:text-base font-bold tracking-wide transition-colors group-hover:text-[#f9a01b]">
+                What method of payment do you accept?
+            </span>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ml-4 flex-shrink-0"
+                 :class="activeFaq === 111 ? 'bg-[#f9a01b] text-black rotate-45' : 'bg-white/5 text-white group-hover:bg-[#f9a01b] group-hover:text-black'">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </div>
+        </button>
+        <div x-show="activeFaq === 111" x-collapse x-cloak>
+            <div class="px-8 pb-8 text-xs md:text-sm font-medium leading-relaxed text-gray-400 max-w-4xl border-t border-white/5 pt-6 tracking-wide">
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Bank Transfer (inclusive of any online type of transfer)</li>
+                    <li>FPX Internet Banking</li>
+                    <li>Credit / Debit Card Payment</li>
+                    <li>Cheque payment</li>
+                    <li>Cash payment at the service provider's location</li>
+                    <li>e-Wallet • ARKOD Points (AP) / (ARKOD Credit Account)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
 
             </div>
         </div>

@@ -382,10 +382,10 @@
     <div class="w-full lg:w-2/5 py-8 text-right lg:text-left">
         <div class="inline-block px-3 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-widest mb-4">Mixed Cargo Solutions</div>
         <h3 class="text-3xl font-black text-black leading-tight mb-6 group-hover:text-yellow-600 transition-colors">
-            To Be Determined
+            Recycling Project – Red Bull
         </h3>
         <p class="text-gray-600 text-base leading-relaxed mb-8 opacity-80 border-r-4 lg:border-r-0 lg:border-l-4 border-yellow-400 pr-6 lg:pr-0 lg:pl-6">
-            To be Determined
+            As part of this initiative, we were appointed to collect expired Red Bull stock from various locations throughout the region.
         </p>
 
         <button @click="modal4Open = true; document.body.style.overflow = 'hidden'"
@@ -489,7 +489,7 @@
                     <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
                         <p class="text-lg font-bold text-gray-950">From Manila to Kuching, we don’t just move cargo—we transport the massive infrastructure that shapes tomorrow.</p>
                         <p>Featured here is the seamless logistical execution of our monumental <strong class="text-black">3500x3500x2000 mm wall pipe</strong> shipment, precision-engineered and securely transported via specialized open-top containers.</p>
-                        <p>This critical milestone stands as a testament to our capacity for handling extreme-scale industrial demands, and it directly paves the way for our next major undertaking: anchoring the upcoming infrastructure development project in <span class="bg-yellow-300 px-1 font-bold text-black">Serian, Sarawak</span>.</p>
+                        <p>This critical milestone stands as a testament to our capacity for handling extreme-scale industrial demands, and it directly paves the way for our next major undertaking: anchoring the upcoming infrastructure development project in Serian, Sarawak.</p>
                     </div>
                 </div>
                 <div class="mt-8 pt-6 border-t border-black/10 flex items-center justify-between text-xs text-gray-500 font-bold tracking-wider">
@@ -658,20 +658,20 @@
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <span class="px-2.5 py-1 bg-black text-white text-[10px] font-black uppercase tracking-widest">Arkod Smart Logitech Sdn. Bhd</span>
-                        <span class="text-xs text-gray-500 font-bold tracking-wider">KUCHING — KUALA LUMPUR</span>
+                        <span class="text-xs text-gray-500 font-bold tracking-wider">Recycling Project</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-black text-black leading-tight mb-6 uppercase tracking-tight border-b-4 border-black pb-4">
-                        To be Determined...
+                        Recycling Project – Red Bull
                     </h2>
                     <div class="space-y-4 text-gray-800 text-base leading-relaxed font-medium">
                         <p class="text-lg font-bold text-gray-950">
-                            To be Determined...
+                            In 2024, we successfully completed one of our largest logistics and supply distribution projects across Sarawak.
                         </p>
                         <p>
-                             To be Determined...
+                             As part of this initiative, we were appointed to collect expired Red Bull stock from various locations throughout the region. The operation involved handling palletized shipments of Red Bull products, carefully managed and prepared for transport as part of the collection and recycling process.
                         </p>
                         <p>
-                            To be Determined...
+                           Through careful planning, efficient logistics coordination, and reliable transportation management, we ensured timely delivery and collection across multiple locations while maintaining the highest standards of service.
                         </p>
                     </div>
                 </div>
