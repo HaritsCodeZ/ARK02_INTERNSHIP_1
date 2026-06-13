@@ -76,11 +76,13 @@ Route::get('/cancelationpolicy', function () {
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 Route::get('lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'zh', 'ms'])) {
+    // Only allow specific languages
+    if (in_array($locale, ['en', 'ms', 'zh'])) {
         Session::put('locale', $locale);
     }
-    return redirect()->back();
+    return Redirect::back();
 });
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,18 +23,20 @@
 </head>
 <body class="bg-[#0a0a0a] font-montserrat antialiased text-white">
 
-    <!-- NAVBAR -->
     <nav class="bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 px-6 py-4 sticky top-0 z-[100]">
         <div class="max-w-[1600px] mx-auto flex items-center justify-between">
 
-            <!-- Logo + Ticker -->
             <div class="flex items-center">
                 <a href="/" class="flex items-center group">
                     <img src="{{ asset('images/Company Logo.png') }}" alt="ARKOD Logo" class="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105">
                     <div class="h-10 w-[2px] bg-yellow-400 mx-4 hidden md:block"></div>
 
                     <div x-data="{
-                        texts: ['Welcome To Arkod Smart Logitech SDN. BHD', 'Innovative Solutions for Logistics', 'Efficiency & Innovation With Smart Logistics'],
+                        texts: [
+                            '{{ __('Welcome To Arkod Smart Logitech SDN. BHD') }}',
+                            '{{ __('Innovative Solutions for Logistics') }}',
+                            '{{ __('Efficiency & Innovation With Smart Logistics') }}'
+                        ],
                         active: 0,
                         init() { setInterval(() => { this.active = (this.active + 1) % this.texts.length }, 4000); }
                     }" class="relative h-10 min-w-[260px] md:min-w-[500px] overflow-hidden hidden lg:block">
@@ -53,131 +55,156 @@
                 </a>
             </div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden xl:flex items-center space-x-8">
+            <!-- Unified Desktop Navigation Container -->
+            <div class="hidden xl:flex items-center space-x-6">
                 <!-- Application Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                        <span>Application</span>
+                        <span>{{ __('Application') }}</span>
                         <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                     <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                        <a href="/career" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Career</a>
-                        <a href="/agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Agent Application</a>
+                        <a href="/career" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Career') }}
+                        </a>
+                        <a href="/agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Agent Application') }}
+                        </a>
                     </div>
                 </div>
 
                 <!-- Blog Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                        <span>Blog</span>
+                        <span>{{ __('Blog') }}</span>
                         <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                     <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-64 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                        <a href="/aboutus" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">About Us</a>
-                        <a href="/newsandupdates" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">News & Updates</a>
-                        <a href="/knowledge" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Knowledge & Insights</a>
+                        <a href="/aboutus" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('About Us') }}
+                        </a>
+                        <a href="/newsandupdates" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('News & Updates') }}
+                        </a>
+                        <a href="/knowledge" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Knowledge & Insights') }}
+                        </a>
                     </div>
                 </div>
 
                 <!-- Services Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                        <span>Services</span>
+                        <span>{{ __('Services') }}</span>
                         <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                     <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                        <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Vehicle Shipping</a>
-                        <a href="/servicesdeliveryshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Delivery Shipping</a>
-                        <a href="/servicescustomshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Custom Shipping</a>
+                        <a href="/servicecarshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Vehicle Shipping') }}
+                        </a>
+                        <a href="/servicesdeliveryshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Delivery Shipping') }}
+                        </a>
+                        <a href="/servicescustomshipping" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Custom Shipping') }}
+                        </a>
                     </div>
                 </div>
 
                 <!-- Help Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
-                        <span>Help</span>
+                        <span>{{ __('Help') }}</span>
                         <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                     <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-48 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
-                        <a href="/helpcenter" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">Help Center</a>
-                        <a href="/faq" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">FAQ</a>
+                        <a href="/helpcenter" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Help Center') }}
+                        </a>
+                        <a href="/faq" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('FAQ') }}
+                        </a>
                     </div>
                 </div>
 
-                <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition">Membership</a>
+                <!-- Membership Link -->
+                <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition shrink-0 whitespace-nowrap">
+                    {{ __('Membership') }}
+                </a>
+
+                <!-- Login Link -->
+                <a href="#" class="text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-wider whitespace-nowrap">
+                    {{ __('Login') }}
+                </a>
+
+                <!-- Sign Up Button -->
+                <a href="#" class="bg-yellow-400 hover:bg-white text-black font-black px-5 py-3 rounded-md text-sm uppercase transition shadow-[0_4px_20px_rgba(250,204,21,0.3)] whitespace-nowrap">
+                    {{ __('Sign Up') }}
+                </a>
+
+                <!-- Language Dropdown -->
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="flex items-center gap-1.5 text-gray-300 hover:text-yellow-400 transition-colors group">
+                        <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" />
+                        </svg>
+                        <span class="text-xs font-bold uppercase tracking-widest">{{ strtoupper(app()->getLocale()) }}</span>
+                        <svg :class="{'rotate-180': open}" class="w-3 h-3 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu Options -->
+                    <div x-show="open"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 translate-y-2"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-cloak
+                        class="absolute right-0 mt-2 w-40 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-[110] py-2">
+
+                        <a href="{{ url('lang/en') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black">
+                            English <span class="text-[8px] opacity-50">EN</span>
+                        </a>
+
+                        <a href="{{ url('lang/ms') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
+                            Melayu <span class="text-[8px] opacity-50">MS</span>
+                        </a>
+
+                        <a href="{{ url('lang/zh') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
+                            中文 <span class="text-[8px] opacity-50">ZH</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Right Side -->
-            <div class="flex items-center space-x-4 md:space-x-6">
-                <a href="#" class="hidden md:block text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-widest">Login</a>
-                <a href="#" class="bg-yellow-400 hover:bg-white text-black font-black px-6 py-3 rounded-md text-sm uppercase transition shadow-[0_4px_20px_rgba(250,204,21,0.3)]">Sign Up</a>
-
-                <!-- Language -->
-<div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2 hidden md:block">
-    <button class="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors group">
-        <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18" />
-        </svg>
-        <span class="text-xs font-bold uppercase tracking-widest">EN</span>
-        <svg :class="{'rotate-180': open}" class="w-3 h-3 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path d="M19 9l-7 7-7-7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-
-    <!-- Dropdown Menu -->
-    <div x-show="open"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 translate-y-2"
-         x-transition:enter-end="opacity-100 translate-y-0"
-         x-cloak
-         class="absolute right-0 mt-2 w-40 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-[110] py-2">
-
-        <a href="{{ url('lang/en') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black">
-            English <span class="text-[8px] opacity-50">EN</span>
-        </a>
-
-        <a href="{{ url('lang/ms') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
-            Melayu <span class="text-[8px] opacity-50">MS</span>
-        </a>
-
-        <a href="{{ url('lang/zh') }}" class="flex items-center justify-between px-6 py-3 text-[10px] text-white hover:bg-yellow-400 hover:text-black transition uppercase tracking-[0.2em] font-black border-t border-white/5">
-            中文 <span class="text-[8px] opacity-50">ZH</span>
-        </a>
-    </div>
-</div>
 
                 <!-- Hamburger -->
-                <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
+    <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+</div>
 
-        <!-- MOBILE MENU -->
         <div x-data="{ mobileOpen: false }" class="xl:hidden">
             <div x-show="mobileOpen" x-transition class="mt-4 py-8 bg-[#0a0a0a] border-t border-white/10 px-6 space-y-6 text-lg font-semibold uppercase tracking-wider">
-                <a href="/membership" class="block hover:text-yellow-400">Membership</a>
-                <a href="/career" class="block hover:text-yellow-400">Career</a>
-                <a href="/agentapp" class="block hover:text-yellow-400">Agent Application</a>
-                <a href="/aboutus" class="block hover:text-yellow-400">About Us</a>
-                <a href="/newsandupdates" class="block hover:text-yellow-400">News & Updates</a>
-                <a href="/knowledge" class="block hover:text-yellow-400">Knowledge & Insights</a>
-                <a href="/servicecarshipping" class="block hover:text-yellow-400">Vehicle Shipping</a>
-                <a href="/servicesdeliveryshipping" class="block hover:text-yellow-400">Delivery Shipping</a>
-                <a href="/servicescustomshipping" class="block hover:text-yellow-400">Custom Shipping</a>
-                <a href="/servicescustomshipping" class="block hover:text-yellow-400">Custom Shipping</a>
-                <a href="/helpcenter" class="block hover:text-yellow-400">Help Center</a>
+                <a href="/membership" class="block hover:text-yellow-400">{{ __('Membership') }}</a>
+                <a href="/career" class="block hover:text-yellow-400">{{ __('Career') }}</a>
+                <a href="/agentapp" class="block hover:text-yellow-400">{{ __('Agent Application') }}</a>
+                <a href="/aboutus" class="block hover:text-yellow-400">{{ __('About Us') }}</a>
+                <a href="/newsandupdates" class="block hover:text-yellow-400">{{ __('News & Updates') }}</a>
+                <a href="/knowledge" class="block hover:text-yellow-400">{{ __('Knowledge & Insights') }}</a>
+                <a href="/servicecarshipping" class="block hover:text-yellow-400">{{ __('Vehicle Shipping') }}</a>
+                <a href="/servicesdeliveryshipping" class="block hover:text-yellow-400">{{ __('Delivery Shipping') }}</a>
+                <a href="/servicescustomshipping" class="block hover:text-yellow-400">{{ __('Custom Shipping') }}</a>
+                <a href="/helpcenter" class="block hover:text-yellow-400">{{ __('Help Center') }}</a>
             </div>
         </div>
     </nav>
@@ -186,7 +213,6 @@
         @yield('content')
     </main>
 
-    <!-- SERVICES SECTION -->
     <section class="bg-white py-12 md:py-8 px-6 md:px-8 border-t border-slate-100 relative overflow-hidden">
         <div class="absolute top-8 left-6 md:top-10 md:left-10 text-[6rem] md:text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50 pointer-events-none">
             SERVICES
@@ -194,11 +220,11 @@
 
         <div class="max-w-[1600px] mx-auto text-center relative z-10">
             <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Expertise</span>
+                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Expertise') }}</span>
             </div>
 
             <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-16 md:mb-24 leading-none">
-                Solutions <span class="text-yellow-500">Tailored</span> <br> For Your Business
+                {!! str_replace('Tailored', '<span class="text-yellow-500">' . __('Tailored') . '</span>', __('Solutions Tailored For Your Business')) !!}
             </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
@@ -217,15 +243,15 @@
 
                     <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-8">
                         <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
-                        <img src="{{ asset('images/' . $s['img']) }}" alt="{{ $s['name'] }}" class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+                        <img src="{{ asset('images/' . $s['img']) }}" alt="{{ __($s['name']) }}" class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
                     </div>
 
                     <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
-                        {{ $s['name'] }}
+                        {{ __($s['name']) }}
                     </h3>
 
                     <p class="text-slate-500 text-base font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        {{ $s['desc'] }}
+                        {{ __($s['desc']) }}
                     </p>
 
                     <div class="mt-8 flex justify-center">
@@ -241,14 +267,13 @@
         </div>
     </section>
 
-    <!-- COLLABORATION CAROUSEL -->
     <section class="bg-white py-12 px-6 md:px-8 border-y border-black/5 relative overflow-hidden"
              x-data="{
                 active: 1,
                 collaborations: [
-                    { title: 'Partnerships', type: 'Global Trade', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
-                    { title: 'Affiliate Programmes', type: 'Technology', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
-                    { title: 'Car Shipping', type: 'Logistics', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
+                    { title: '{{ __('Partnerships') }}', type: '{{ __('Global Trade') }}', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
+                    { title: '{{ __('Affiliate Programmes') }}', type: '{{ __('Technology') }}', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
+                    { title: '{{ __('Car Shipping') }}', type: '{{ __('Logistics') }}', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
                 ],
                 loop() { setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000) }
              }" x-init="loop()">
@@ -259,11 +284,11 @@
 
         <div class="max-w-[1600px] mx-auto text-center relative z-20">
             <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">Our Network</span>
+                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Network') }}</span>
             </div>
 
             <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-12 md:mb-28 leading-none max-w-4xl mx-auto">
-                Collaboration <span class="text-yellow-500">Opportunities</span>
+                {!! str_replace('Opportunities', '<span class="text-yellow-500">' . __('Opportunities') . '</span>', __('Collaboration Opportunities')) !!}
             </h2>
 
             <div class="carousel-container relative h-[420px] md:h-[500px] flex items-center justify-center mx-auto max-w-5xl">
@@ -305,64 +330,60 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
 
             <div class="text-left">
-                <h4 class="text-[24px] font-bold mb-5">Logistics Solutions</h4>
+                <h4 class="text-[24px] font-bold mb-5">{{ __('Logistics Solutions') }}</h4>
                 <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                    <li><a>Pickup & Delivery</a></li>
-                    <li><a>Sea Freight</a></li>
-                    <li><a>Air Freight</a></li>
+                    <li><a>{{ __('Pickup & Delivery') }}</a></li>
+                    <li><a>{{ __('Sea Freight') }}</a></li>
+                    <li><a>{{ __('Air Freight') }}</a></li>
                 </ul>
-                <h4 class="text-[24px] font-bold mt-12 mb-5">Warehousing Solution</h4>
+                <h4 class="text-[24px] font-bold mt-12 mb-5">{{ __('Warehousing Solution') }}</h4>
                 <ul class="text-[20px] font-medium text-white/90">
-                    <li><a href="#" class="hover:text-yellow-500 transition">Warehousing</a></li>
+                    <li><a href="#" class="hover:text-yellow-500 transition">{{ __('Warehousing') }}</a></li>
                 </ul>
             </div>
 
             <div class="text-left">
-                <h4 class="text-[24px] font-bold mb-5">Company</h4>
+                <h4 class="text-[24px] font-bold mb-5">{{ __('Company') }}</h4>
                 <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">About Us</a></li>
-                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">Blog</a></li>
-                    <li><a href="/career" class="hover:text-yellow-500 transition">Careers</a></li>
-                    <li><a href="/helpcenter" class="hover:text-yellow-500 transition">Partners</a></li>
-                    <li><a>Cookies, Legal & Privacy Policies</a></li>
-                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">Terms and Conditions</a></li>
+                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('About Us') }}</a></li>
+                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('Blog') }}</a></li>
+                    <li><a href="/career" class="hover:text-yellow-500 transition">{{ __('Careers') }}</a></li>
+                    <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Partners') }}</a></li>
+                    <li><a>{{ __('Cookies, Legal & Privacy Policies') }}</a></li>
+                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms and Conditions') }}</a></li>
                 </ul>
             </div>
 
             <div class="text-left">
-                <h4 class="text-[24px] font-bold mb-5">Policies</h4>
+                <h4 class="text-[24px] font-bold mb-5">{{ __('Policies') }}</h4>
                 <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                    <li><a href="/shippingpolicy" class="hover:text-yellow-500 transition">Shipping Policies</a></li>
-                    <li><a href="/cancelationpolicy" class="hover:text-yellow-500 transition">Cancellation & Refund Policies</a></li>
-                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">Terms & Policies</a></li>
+                    <li><a href="/shippingpolicy" class="hover:text-yellow-500 transition">{{ __('Shipping Policies') }}</a></li>
+                    <li><a href="/cancelationpolicy" class="hover:text-yellow-500 transition">{{ __('Cancellation & Refund Policies') }}</a></li>
+                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms & Policies') }}</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col items-start lg:items-end lg:text-right">
                 <div class="mb-14">
-                    <h4 class="text-[24px] font-bold mb-5">Support</h4>
+                    <h4 class="text-[24px] font-bold mb-5">{{ __('Support') }}</h4>
                     <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                        <li><a href="/helpcenter" class="hover:text-yellow-500 transition">Contact Us</a></li>
-                        <li><a href="/faq" class="hover:text-yellow-500 transition">FAQ</a></li>
+                        <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Contact Us') }}</a></li>
+                        <li><a href="/faq" class="hover:text-yellow-500 transition">{{ __('FAQ') }}</a></li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col items-start lg:items-end">
                 <h4 class="text-[24px] font-bold mb-4 tracking-tight uppercase">ARKOD SMART LOGITECH</h4>
                 <div class="flex gap-4">
-                    <!--Linkedin !-->
                     <a href="https://www.linkedin.com/company/arkod-smart-logitech-sdn-bhd" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
                     </a>
-                    <!--Instagram !-->
                     <a href="https://www.instagram.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
                     </a>
-                    <!--Youtube !-->
                     <a href="https://www.youtube.com/@ArkodSmartLogitech" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
                         <svg class="w-9 h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
                     </a>
-                    <!--Facebook !-->
                     <a href="https://www.facebook.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
                     </a>
