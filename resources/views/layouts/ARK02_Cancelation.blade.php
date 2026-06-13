@@ -133,12 +133,27 @@
             </div>
         </nav>
 
-        <div class="space-y-6 mt-6 max-w-[1600px] mx-auto px-6 mb-12">
+         <section class="bg-[#0a0a0a] text-white font-montserrat antialiased py-20 px-6 border-t border-white/5">
+    <div class="max-w-[1200px] mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black uppercase tracking-widest text-white mb-4">
+                Cancellation <span class="text-yellow-400">Policy</span>
+            </h1>
+            <div class="h-1 w-24 bg-yellow-400 mx-auto rounded-full mb-8"></div>
+            <p class="text-gray-400 text-sm max-w-3xl mx-auto leading-relaxed">
+                Please read these Cancellation Policies carefully before using the services offered by Arkod smart logistic network Sdn Bhd (“ARKOD”) or (“We”, “Us”, “Platform” or “Our”), a company incorporated under the laws of Malaysia. These terms set forth the legally binding terms and conditions for your use of Our Services as contained in <a href="http://www.arkod.com.my" class="text-yellow-400 hover:underline">http://www.arkod.com.my</a> (“Website”) (collectively with the site, referred to as “Services”).
+            </p>
+            <p class="text-gray-500 text-xs max-w-3xl mx-auto mt-4 italic">
+                By accessing this site, you are indicating your acknowledgement and acceptance of these terms of use. These terms of use are subject to change by our company at any time in its discretion.
+            </p>
+        </div>
 
             <div x-data="{ open: true }" class="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden transition-all duration-300 hover:border-yellow-400/30">
                 <button @click="open = !open" class="w-full flex items-center justify-between p-6 text-left group">
                     <h2 class="text-lg font-bold uppercase tracking-wider text-white group-hover:text-yellow-400 transition-colors">
-                        Cancellation & Refund Framework
+                        1. Cancellation & Refund Framework
                     </h2>
                     <span class="text-yellow-400 transition-transform duration-300" :class="open ? 'rotate-180' : ''">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -169,7 +184,7 @@
             <div x-data="{ open: true }" class="bg-[#0f0f0f] border border-white/10 rounded-lg overflow-hidden transition-all duration-300 hover:border-yellow-400/30">
                 <button @click="open = !open" class="w-full flex items-center justify-between p-6 text-left group">
                     <h2 class="text-lg font-bold uppercase tracking-wider text-white group-hover:text-yellow-400 transition-colors">
-                        Order Cancellation Eligibility & Execution
+                        2. Order Cancellation Eligibility & Execution
                     </h2>
                     <span class="text-yellow-400 transition-transform duration-300" :class="open ? 'rotate-180' : ''">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
