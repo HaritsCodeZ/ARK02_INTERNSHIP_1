@@ -3,10 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
     return view('ARK02_Homepage');
 });
 
@@ -79,10 +75,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
 Route::get('lang/{locale}', function ($locale) {
-    // Only allow specific languages
     if (in_array($locale, ['en', 'ms', 'zh'])) {
         Session::put('locale', $locale);
     }
     return Redirect::back();
 });
-

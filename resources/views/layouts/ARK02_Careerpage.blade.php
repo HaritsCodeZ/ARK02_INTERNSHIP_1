@@ -43,9 +43,7 @@
                 </a>
             </div>
 
-            <!-- Unified Desktop Navigation Container -->
             <div class="hidden xl:flex items-center space-x-6">
-                <!-- Application Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
                         <span>{{ __('Application') }}</span>
@@ -63,7 +61,6 @@
                     </div>
                 </div>
 
-                <!-- Blog Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
                         <span>{{ __('Blog') }}</span>
@@ -84,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- Services Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
                         <span>{{ __('Services') }}</span>
@@ -105,7 +101,6 @@
                     </div>
                 </div>
 
-                <!-- Help Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
                         <span>{{ __('Help') }}</span>
@@ -123,22 +118,18 @@
                     </div>
                 </div>
 
-                <!-- Membership Link -->
                 <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition shrink-0 whitespace-nowrap">
                     {{ __('Membership') }}
                 </a>
 
-                <!-- Login Link -->
                 <a href="#" class="text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-wider whitespace-nowrap">
                     {{ __('Login') }}
                 </a>
 
-                <!-- Sign Up Button -->
                 <a href="#" class="bg-yellow-400 hover:bg-white text-black font-black px-5 py-3 rounded-md text-sm uppercase transition shadow-[0_4px_20px_rgba(250,204,21,0.3)] whitespace-nowrap">
                     {{ __('Sign Up') }}
                 </a>
 
-                <!-- Language Dropdown -->
                 <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
                     <button class="flex items-center gap-1.5 text-gray-300 hover:text-yellow-400 transition-colors group">
                         <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +141,6 @@
                         </svg>
                     </button>
 
-                    <!-- Dropdown Menu Options -->
                     <div x-show="open"
                         x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 translate-y-2"
@@ -173,24 +163,39 @@
                 </div>
             </div>
 
-                <!-- Hamburger -->
-    <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none">
+            <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none z-[110]">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" :d="mobileOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" />
                 </svg>
             </button>
-        </div> <div class="xl:hidden" x-show="mobileOpen" x-cloak>
-            <div x-transition class="mt-4 py-8 bg-[#0a0a0a] border-t border-white/10 px-6 space-y-6 text-lg font-semibold uppercase tracking-wider">
-                <a href="/membership" class="block hover:text-yellow-400">{{ __('Membership') }}</a>
-                <a href="/career" class="block hover:text-yellow-400">{{ __('Career') }}</a>
-                <a href="/agentapp" class="block hover:text-yellow-400">{{ __('Agent Application') }}</a>
-                <a href="/aboutus" class="block hover:text-yellow-400">{{ __('About Us') }}</a>
-                <a href="/newsandupdates" class="block hover:text-yellow-400">{{ __('News & Updates') }}</a>
-                <a href="/knowledge" class="block hover:text-yellow-400">{{ __('Knowledge & Insights') }}</a>
-                <a href="/servicecarshipping" class="block hover:text-yellow-400">{{ __('Vehicle Shipping') }}</a>
-                <a href="/servicesdeliveryshipping" class="block hover:text-yellow-400">{{ __('Delivery Shipping') }}</a>
-                <a href="/servicescustomshipping" class="block hover:text-yellow-400">{{ __('Custom Shipping') }}</a>
-                <a href="/helpcenter" class="block hover:text-yellow-400">{{ __('Help Center') }}</a>
+        </div>
+
+        <div x-show="mobileOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             x-cloak
+             class="xl:hidden">
+            <div class="mt-4 py-6 bg-[#0f0f0f] border-t border-white/10 rounded-xl px-6 space-y-4 text-base font-semibold uppercase tracking-wider shadow-2xl">
+                <a href="/membership" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Membership') }}</a>
+                <a href="/career" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Career') }}</a>
+                <a href="/agentapp" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Agent Application') }}</a>
+                <a href="/aboutus" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('About Us') }}</a>
+                <a href="/newsandupdates" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('News & Updates') }}</a>
+                <a href="/knowledge" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Knowledge & Insights') }}</a>
+                <a href="/servicecarshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Vehicle Shipping') }}</a>
+                <a href="/servicesdeliveryshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Delivery Shipping') }}</a>
+                <a href="/servicescustomshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Custom Shipping') }}</a>
+                <a href="/helpcenter" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Help Center') }}</a>
+
+                <div class="pt-4 border-t border-white/10 flex gap-4 text-xs font-black">
+                    <a href="{{ url('lang/en') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">EN</a>
+                    <a href="{{ url('lang/ms') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">MS</a>
+                    <a href="{{ url('lang/zh') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">ZH</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -265,200 +270,211 @@
         }
     </style>
 
-    <section class="py-24 bg-white font-montserrat overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-6 mb-40 text-center relative z-10">
-            <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
-                {{ __('Why') }} <span class="text-[#F99D1C]">{{ __('Choose') }}</span> {{ __('Us?') }}
-            </h2>
-            <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
+    <!-- ========================================== -->
+<!-- START OF WHY CHOOSE US & JOBS SECTION      -->
+<!-- ========================================== -->
+<section class="py-16 md:py-24 bg-white font-montserrat overflow-hidden relative">
+
+    <div class="max-w-7xl mx-auto px-6 mb-24 md:mb-40 text-center relative z-10">
+        <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
+            {{ __('Why') }} <span class="text-[#F99D1C]">{{ __('Choose') }}</span> {{ __('Us?') }}
+        </h2>
+        <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
+    </div>
+
+    <!-- Block 1: Workspace -->
+    <div class="relative flex flex-col md:flex-row items-center bg-[#FFCC00] w-full rounded-r-[100px] md:rounded-r-[300px] min-h-[450px] mb-48 md:mb-60 pt-12 pb-16 md:py-0">
+        <div class="absolute right-20 top-10 w-32 h-32 bg-[#F99D1C] rounded-full opacity-50 animate-float"></div>
+        <div class="absolute right-60 bottom-10 w-16 h-16 bg-white rounded-full opacity-40 animate-float-delayed"></div>
+
+        <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-start mb-8 md:mb-0">
+            <img src="{{ asset('images/Office_1.png') }}"
+                 class="w-[85%] md:w-[70%] shadow-2xl relative left-0 md:left-[5%] lg:left-[20%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
         </div>
 
-        <div class="relative flex flex-col md:flex-row items-center bg-[#FFCC00] w-full rounded-r-[300px] min-h-[450px] mb-60">
-            <div class="absolute right-20 top-10 w-32 h-32 bg-[#F99D1C] rounded-full opacity-50 animate-float"></div>
-            <div class="absolute right-60 bottom-10 w-16 h-16 bg-white rounded-full opacity-40 animate-float-delayed"></div>
+        <div class="w-full md:w-1/2 px-6 sm:px-12 pt-4 pb-4 md:py-16 lg:pl-10 lg:pr-40 z-10 text-center md:text-left">
+            <h3 class="text-3xl lg:text-6xl font-black mb-6 text-black leading-[1.2] uppercase tracking-tighter">
+                <span class="text-white block md:inline">{{ __('Comfortable and') }}</span> <span class="text-black block md:inline">{{ __('Friendly workspace') }}</span>
+            </h3>
+            <p class="font-bold text-xl md:text-2xl text-black leading-relaxed">
+                {{ __('We foster a professional and collaborative working environment that supports continuous learning, teamwork, and performance excellence.') }}
+            </p>
+        </div>
+    </div>
 
-            <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-start">
-                <img src="{{ asset('images/Office_1.png') }}"
-                     class="w-[85%] md:w-[70%] shadow-2xl relative left-[5%] lg:left-[20%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
-            </div>
+    <!-- Block 2: Communications -->
+    <div class="relative flex flex-col md:flex-row-reverse items-center bg-[#F99D1C] w-full rounded-l-[100px] md:rounded-l-[300px] min-h-[450px] mb-32 pt-12 pb-16 md:py-0">
+        <div class="absolute left-20 top-10 w-24 h-24 bg-[#FFCC00] rounded-full opacity-60 animate-float-delayed"></div>
+        <div class="absolute left-40 bottom-20 w-12 h-12 bg-white rounded-full opacity-30 animate-float"></div>
 
-            <div class="w-full md:w-1/2 px-12 py-16 lg:pl-10 lg:pr-40 z-10">
-                <h3 class="text-4xl lg:text-6xl font-black mb-6 text-black leading-[1.1] uppercase tracking-tighter">
-                    <span class="text-white">{{ __('Comfortable and') }}</span><br> <span class="text-black">{{ __('Friendly workspace') }}</span>
-                </h3>
-                <p class="font-bold text-2xl text-black leading-relaxed">
-                    {{ __('We foster a professional and collaborative working environment that supports continuous learning, teamwork, and performance excellence.') }}
-                </p>
-            </div>
+        <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-end mb-8 md:mb-0">
+            <img src="{{ asset('images/Office_2.png') }}"
+                 class="w-[85%] md:w-[80%] shadow-2xl relative right-0 md:right-[5%] lg:right-[25%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
         </div>
 
-        <div class="relative flex flex-col md:flex-row-reverse items-center bg-[#F99D1C] w-full rounded-l-[300px] min-h-[450px] mb-32">
-            <div class="absolute left-20 top-10 w-24 h-24 bg-[#FFCC00] rounded-full opacity-60 animate-float-delayed"></div>
-            <div class="absolute left-40 bottom-20 w-12 h-12 bg-white rounded-full opacity-30 animate-float"></div>
+        <div class="w-full md:w-2/3 px-6 sm:px-12 pt-4 pb-4 md:py-16 lg:pr-20 lg:pl-40 z-10 text-center md:text-left">
+            <h3 class="text-3xl lg:text-6xl font-black mb-6 text-black leading-[1.2] uppercase tracking-tighter">
+                <span class="text-white block md:inline">{{ __('Honest and') }}</span> <span class="text-black block md:inline">{{ __('Open Communications') }}</span>
+            </h3>
+            <p class="font-bold text-xl md:text-2xl text-black leading-relaxed">
+                {{ __('We promote transparent communication and encourage open dialogue at all levels of the organization.') }}
+            </p>
+        </div>
+    </div>
 
-            <div class="relative w-full md:w-1/2 z-20 flex justify-center md:justify-end">
-                <img src="{{ asset('images/Office_2.png') }}"
-                     class="w-[85%] md:w-[80%] shadow-2xl relative right-[5%] lg:right-[25%] top-[-50px] md:top-[-70px] scale-105 md:scale-110 rounded-lg transition-transform duration-500 hover:scale-115">
+    <!-- Section Divider Line Area -->
+    <div class="flex justify-center my-16 md:my-32">
+        <div class="w-[80%] h-[3px] bg-black"></div>
+    </div>
+
+    <!-- Job Opportunities Main Area Wrapper -->
+    <div class="relative w-full py-10">
+        <div class="absolute -left-10 top-0 w-40 h-40 bg-[#FFCC00] rounded-full opacity-10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-10 bottom-0 w-40 h-40 bg-[#F99D1C] rounded-full opacity-10 blur-3xl pointer-events-none"></div>
+
+        <div id="job-section" class="relative">
+            <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+                <h2 class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter">
+                    {{ __('Job') }} <span class="text-[#F99D1C]">{{ __('Opportunities') }}</span> {{ __('At Arkod') }}
+                </h2>
+                <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
             </div>
 
-            <div class="w-full md:w-2/3 px-12 py-16 lg:pr-20 lg:pl-40 z-10 text-right md:text-left">
-                <h3 class="text-4xl lg:text-6xl font-black mb-6 text-black leading-[1.1] uppercase tracking-tighter">
-                    <span class="text-white">{{ __('Honest and') }}</span><br> <span class="text-black">{{ __('Open Communications') }}</span>
-                </h3>
-                <p class="font-bold text-2xl text-black leading-relaxed">
-                    {{ __('We promote transparent communication and encourage open dialogue at all levels of the organization.') }}
-                </p>
-            </div>
-        </div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-10">
+                    @php
+                        $jobs = [
+                            ['name' => __('Sales Manager'), 'img' => 'Salesmanager.png'],
+                            ['name' => __('Sales Executive'), 'img' => 'Sales_Executive.png'],
+                            ['name' => __('Office Admin Assistant'), 'img' => 'admin_assistant.png'],
+                            ['name' => __('Tech Manager'), 'img' => 'tech_manager.png'],
+                            ['name' => __('Marketing Manager'), 'img' => 'marketing_manager.png'],
+                            ['name' => __('Digital Marketing'), 'img' => 'digital_marketing.png'],
+                            ['name' => __('Customer Service'), 'img' => 'customer_service.png'],
+                            ['name' => __('Graphic Designer'), 'img' => 'graphic_designer.png'],
+                            ['name' => __('IT Administrator'), 'img' => 'it_admin.png'],
+                            ['name' => __('Internship'), 'img' => 'internship.png'],
+                        ];
+                    @endphp
 
-        <div class="flex justify-center my-32">
-            <div class="w-[80%] h-[3px] bg-black"></div>
-        </div>
+                    @foreach($jobs as $job)
+                    <div class="group flex flex-col items-center bg-white p-6 rounded-xl border-2 border-gray-100 shadow-lg
+                                hover:shadow-2xl hover:border-[#FFCC00] hover:-translate-y-3 hover:scale-105
+                                transition-all duration-500 cursor-pointer">
 
-        <div class="relative">
-            <div class="absolute -left-10 top-0 w-40 h-40 bg-[#FFCC00] rounded-full opacity-10 blur-3xl"></div>
-            <div class="absolute -right-10 bottom-0 w-40 h-40 bg-[#F99D1C] rounded-full opacity-10 blur-3xl"></div>
-
-            <div id="job-section" class="relative mt-10">
-                <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
-                    <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">
-                        {{ __('Job') }} <span class="text-[#F99D1C]">{{ __('Opportunities') }}</span> {{ __('At Arkod') }}
-                    </h2>
-                    <div class="w-24 h-2 bg-[#FFCC00] mx-auto mt-4"></div>
-                </div>
-
-                <div class="max-w-7xl mx-auto px-6 relative z-10">
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-10">
-                        @php
-                            $jobs = [
-                                ['name' => __('Sales Manager'), 'img' => 'Salesmanager.png'],
-                                ['name' => __('Sales Executive'), 'img' => 'Sales_Executive.png'],
-                                ['name' => __('Office Admin Assistant'), 'img' => 'admin_assistant.png'],
-                                ['name' => __('Tech Manager'), 'img' => 'tech_manager.png'],
-                                ['name' => __('Marketing Manager'), 'img' => 'marketing_manager.png'],
-                                ['name' => __('Digital Marketing'), 'img' => 'digital_marketing.png'],
-                                ['name' => __('Customer Service'), 'img' => 'customer_service.png'],
-                                ['name' => __('Graphic Designer'), 'img' => 'graphic_designer.png'],
-                                ['name' => __('IT Administrator'), 'img' => 'it_admin.png'],
-                                ['name' => __('Internship'), 'img' => 'internship.png'],
-                            ];
-                        @endphp
-
-                        @foreach($jobs as $job)
-                        <div class="group flex flex-col items-center bg-white p-6 rounded-xl border-2 border-gray-100 shadow-lg
-                                    hover:shadow-2xl hover:border-[#FFCC00] hover:-translate-y-3 hover:scale-105
-                                    transition-all duration-500 cursor-pointer">
-
-                            <div class="w-20 h-20 md:w-28 md:h-28 mb-4 bg-gray-50 rounded-full p-4 flex items-center justify-center
-                                        group-hover:bg-[#FFF9E6] transition-colors duration-500 shadow-inner">
-                                <img src="{{ asset('images/' . $job['img']) }}" alt="{{ $job['name'] }}"
-                                     class="w-full h-full object-contain group-hover:rotate-6 transition-transform duration-500">
-                            </div>
-
-                            <h4 class="text-center font-black text-sm md:text-base uppercase leading-tight text-black
-                                       group-hover:text-[#F99D1C] transition-colors duration-500">
-                                {{ $job['name'] }}
-                            </h4>
-
-                            <div class="w-0 group-hover:w-10 h-1 bg-[#F99D1C] mt-2 transition-all duration-500"></div>
+                        <div class="w-20 h-20 md:w-28 md:h-28 mb-4 bg-gray-50 rounded-full p-4 flex items-center justify-center
+                                    group-hover:bg-[#FFF9E6] transition-colors duration-500 shadow-inner">
+                            <img src="{{ asset('images/' . $job['img']) }}" alt="{{ $job['name'] }}"
+                                 class="w-full h-full object-contain group-hover:rotate-6 transition-transform duration-500">
                         </div>
-                        @endforeach
+
+                        <h4 class="text-center font-black text-sm md:text-base uppercase leading-tight text-black
+                                   group-hover:text-[#F99D1C] transition-colors duration-500">
+                            {{ $job['name'] }}
+                        </h4>
+
+                        <div class="w-0 group-hover:w-10 h-1 bg-[#F99D1C] mt-2 transition-all duration-500"></div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ========================================== -->
+<!-- END OF WHY CHOOSE US & JOBS SECTION        -->
+<!-- ========================================== -->
+
+   <footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
+    <div class="max-w-[1400px] mx-auto">
+        <div class="w-full h-[2px] bg-white mb-8 md:mb-12"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 md:gap-y-12 mb-12 md:mb-16">
+
+            <div class="text-left">
+                <h4 class="text-[20px] md:text-[24px] font-bold mb-3 md:mb-5">{{ __('Logistics Solutions') }}</h4>
+                <ul class="space-y-2 md:space-y-3 text-[16px] md:text-[20px] font-medium text-white/90">
+                    <li><a>{{ __('Pickup & Delivery') }}</a></li>
+                    <li><a>{{ __('Sea Freight') }}</a></li>
+                    <li><a>{{ __('Air Freight') }}</a></li>
+                </ul>
+                <h4 class="text-[20px] md:text-[24px] font-bold mt-8 md:mt-12 mb-3 md:mb-5">{{ __('Warehousing Solution') }}</h4>
+                <ul class="text-[16px] md:text-[20px] font-medium text-white/90">
+                    <li><a href="#" class="hover:text-yellow-500 transition">{{ __('Warehousing') }}</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[20px] md:text-[24px] font-bold mb-3 md:mb-5">{{ __('Company') }}</h4>
+                <ul class="space-y-2 md:space-y-3 text-[16px] md:text-[20px] font-medium text-white/90">
+                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('About Us') }}</a></li>
+                    <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('Blog') }}</a></li>
+                    <li><a href="/career" class="hover:text-yellow-500 transition">{{ __('Careers') }}</a></li>
+                    <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Partners') }}</a></li>
+                    <li><a>{{ __('Cookies, Legal & Privacy Policies') }}</a></li>
+                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms and Conditions') }}</a></li>
+                </ul>
+            </div>
+
+            <div class="text-left">
+                <h4 class="text-[20px] md:text-[24px] font-bold mb-3 md:mb-5">{{ __('Policies') }}</h4>
+                <ul class="space-y-2 md:space-y-3 text-[16px] md:text-[20px] font-medium text-white/90">
+                    <li><a href="/shippingpolicy" class="hover:text-yellow-500 transition">{{ __('Shipping Policies') }}</a></li>
+                    <li><a href="/cancelationpolicy" class="hover:text-yellow-500 transition">{{ __('Cancellation & Refund Policies') }}</a></li>
+                    <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms & Policies') }}</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-start lg:items-end lg:text-right">
+                <div class="mb-8 md:mb-14">
+                    <h4 class="text-[20px] md:text-[24px] font-bold mb-3 md:mb-5">{{ __('Support') }}</h4>
+                    <ul class="space-y-2 md:space-y-3 text-[16px] md:text-[20px] font-medium text-white/90">
+                        <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Contact Us') }}</a></li>
+                        <li><a href="/faq" class="hover:text-yellow-500 transition">{{ __('FAQ') }}</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col items-start lg:items-end">
+                    <h4 class="text-lg md:text-[24px] font-bold mb-3 md:mb-4 tracking-tight uppercase">{{ __('ARKOD SMART LOGITECH') }}</h4>
+                    <div class="flex gap-3 md:gap-4">
+                        <a href="https://www.linkedin.com/company/arkod-smart-logitech-sdn-bhd" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition text-white">
+                            <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition text-white">
+                            <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@ArkodSmartLogitech" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition text-white">
+                            <svg class="w-7 h-7 md:w-9 md:h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition text-white">
+                            <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <footer class="bg-black text-white pt-16 pb-12 px-8 font-sans">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="w-full h-[2px] bg-white mb-12"></div>
+        <div class="w-full h-[2px] bg-white mb-6 md:mb-8"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+        <div class="flex flex-col items-center justify-center space-y-4 md:space-y-8">
+            <p class="text-[11px] md:text-[14px] font-bold tracking-[0.3em] uppercase text-center">© ARKOD 2026. {{ __('ALL RIGHTS RESERVED') }}</p>
 
-                <div class="text-left">
-                    <h4 class="text-[24px] font-bold mb-5">{{ __('Logistics Solutions') }}</h4>
-                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                        <li><a>{{ __('Pickup & Delivery') }}</a></li>
-                        <li><a>{{ __('Sea Freight') }}</a></li>
-                        <li><a>{{ __('Air Freight') }}</a></li>
-                    </ul>
-                    <h4 class="text-[24px] font-bold mt-12 mb-5">{{ __('Warehousing Solution') }}</h4>
-                    <ul class="text-[20px] font-medium text-white/90">
-                        <li><a href="#" class="hover:text-yellow-500 transition">{{ __('Warehousing') }}</a></li>
-                    </ul>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-y-3 gap-x-6 md:gap-x-12">
+                <div class="flex items-center gap-2 md:gap-3">
+                    <svg class="w-5 h-5 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.75.46 3.4 1.26 4.83L2 22l5.3-1.26c1.37.75 2.93 1.17 4.58 1.17a10 10 0 0010-10c0-5.52-4.48-10-10-10zm5.97 14.24c-.24.68-1.22 1.25-1.7 1.33-.43.07-.98.11-2.91-.68-2.47-1.01-4.06-3.53-4.18-3.7-.12-.16-1-1.33-1-2.54 0-1.21.63-1.8 1.21-1.8s.5.12.75.12c.24 0 .44-.04.63.4.19.46.65 1.59.71 1.71.06.12.1.26.02.42-.08.16-.12.26-.25.42-.12.16-.27.36-.39.48-.13.13-.27.27-.12.52.16.25.7 1.15 1.5 1.86.64.58 1.18.76 1.44.89.26.13.41.11.57-.07s.66-.77.83-1.04c.17-.26.34-.22.58-.13s1.51.71 1.77.84.44.19.51.3c.06.11.06.66-.18 1.34z"/></svg>
+                    <span class="text-[13px] md:text-[17px] font-bold text-white transition">+60 18-911 6168</span>
                 </div>
-
-                <div class="text-left">
-                    <h4 class="text-[24px] font-bold mb-5">{{ __('Company') }}</h4>
-                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                        <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('About Us') }}</a></li>
-                        <li><a href="/aboutus" class="hover:text-yellow-500 transition">{{ __('Blog') }}</a></li>
-                        <li><a href="/career" class="hover:text-yellow-500 transition">{{ __('Careers') }}</a></li>
-                        <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Partners') }}</a></li>
-                        <li><a>{{ __('Cookies, Legal & Privacy Policies') }}</a></li>
-                        <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms and Conditions') }}</a></li>
-                    </ul>
+                <div class="flex items-center gap-2 md:gap-3">
+                    <svg class="w-4 h-4 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span class="text-[13px] md:text-[17px] font-bold text-white transition">082-384 999</span>
                 </div>
-
-                <div class="text-left">
-                    <h4 class="text-[24px] font-bold mb-5">{{ __('Policies') }}</h4>
-                    <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                        <li><a href="/shippingpolicy" class="hover:text-yellow-500 transition">{{ __('Shipping Policies') }}</a></li>
-                        <li><a href="/cancelationpolicy" class="hover:text-yellow-500 transition">{{ __('Cancellation & Refund Policies') }}</a></li>
-                        <li><a href="/termspolicy" class="hover:text-yellow-500 transition">{{ __('Terms & Policies') }}</a></li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-col items-start lg:items-end lg:text-right">
-                    <div class="mb-14">
-                        <h4 class="text-[24px] font-bold mb-5">{{ __('Support') }}</h4>
-                        <ul class="space-y-3 text-[20px] font-medium text-white/90">
-                            <li><a href="/helpcenter" class="hover:text-yellow-500 transition">{{ __('Contact Us') }}</a></li>
-                            <li><a href="/faq" class="hover:text-yellow-500 transition">{{ __('FAQ') }}</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="flex flex-col items-start lg:items-end">
-                        <h4 class="text-[24px] font-bold mb-4 tracking-tight uppercase">ARKOD SMART LOGITECH</h4>
-                        <div class="flex gap-4">
-                            <a href="https://www.linkedin.com/company/arkod-smart-logitech-sdn-bhd" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-1.8.7-2.1 1.2v-1h-3.3v10h3.3v-5.6c0-.3 0-.6.1-.8.2-.5.6-.9 1.2-.9 1 0 1.2.8 1.2 1.9v5.4h3.3M7 19h3.3V9H7v10m1.6-11.3c1.1 0 1.9-.8 1.9-1.9 0-1.1-.8-1.9-1.9-1.9-1.1 0-1.9.8-1.9 1.9 0 1.1.8 1.9 1.9 1.9Z"/></svg>
-                            </a>
-                            <a href="https://www.instagram.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-                            </a>
-                            <a href="https://www.youtube.com/@ArkodSmartLogitech" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
-                                <svg class="w-9 h-9 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
-                            </a>
-                            <a href="https://www.facebook.com/arkodsmartlogitech/" target="_blank" rel="noopener noreferrer" class="hover:opacity-75 transition">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9V15.36H7.72v-3.3h2.72v-2.52c0-2.68 1.59-4.16 4.03-4.16 1.17 0 2.39.21 2.39.21v2.62h-1.35c-1.33 0-1.74.83-1.74 1.68v2.01h2.96l-.47 3.3h-2.49v6.6c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-full h-[2px] bg-white mb-8"></div>
-
-            <div class="flex flex-col items-center justify-center space-y-8">
-                <p class="text-[14px] font-bold tracking-[0.3em] uppercase">© ARKOD 2026. {{ __('ALL RIGHTS RESERVED') }}</p>
-
-                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-                    <div class="flex items-center gap-3">
-                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 2.01c-5.52 0-10 4.48-10 10 0 1.75.46 3.4 1.26 4.83L2 22l5.3-1.26c1.37.75 2.93 1.17 4.58 1.17a10 10 0 0010-10c0-5.52-4.48-10-10-10zm5.97 14.24c-.24.68-1.22 1.25-1.7 1.33-.43.07-.98.11-2.91-.68-2.47-1.01-4.06-3.53-4.18-3.7-.12-.16-1-1.33-1-2.54 0-1.21.63-1.8 1.21-1.8s.5.12.75.12c.24 0 .44-.04.63.4.19.46.65 1.59.71 1.71.06.12.1.26.02.42-.08.16-.12.26-.25.42-.12.16-.27.36-.39.48-.13.13-.27.27-.12.52.16.25.7 1.15 1.5 1.86.64.58 1.18.76 1.44.89.26.13.41.11.57-.07s.66-.77.83-1.04c.17-.26.34-.22.58-.13s1.51.71 1.77.84.44.19.51.3c.06.11.06.66-.18 1.34z"/></svg>
-                        <span class="text-[17px] font-bold text-white transition">+60 18-911 6168</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <span class="text-[17px] font-bold text-white transition">082-384 999</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <span class="text-[17px] font-bold text-white lowercase tracking-tight">customersupport@arkod.com.my</span>
-                    </div>
+                <div class="flex items-center gap-2 md:gap-3">
+                    <svg class="w-5 h-5 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span class="text-[13px] md:text-[17px] font-bold text-white lowercase tracking-tight break-all text-center">customersupport@arkod.com.my</span>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
