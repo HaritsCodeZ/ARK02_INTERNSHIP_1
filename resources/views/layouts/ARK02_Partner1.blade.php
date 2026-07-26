@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD SMART LOGITECH SDN. BHD</title>
+    <title>Arkod | Partners</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -285,136 +285,204 @@
         </div>
     </nav>
 
-    <main class="w-full">
-        @yield('content')
-    </main>
+    <!-- SECTION: PARTNER DETAILS CONTAINER -->
+    <section class="bg-white py-8 md:py-12 px-4 sm:px-6 lg:px-12 min-h-screen text-slate-900 font-montserrat">
+        <div class="max-w-[1440px] mx-auto space-y-6">
 
-   <section id="next-section" class="bg-white py-12 md:py-8 px-6 md:px-8 border-t border-slate-100 relative overflow-hidden">
-        <div class="absolute top-8 left-6 md:top-10 md:left-10 text-[6rem] md:text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50 pointer-events-none">
-            SERVICES
-        </div>
-
-        <div class="max-w-[1600px] mx-auto text-center relative z-10">
-            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Expertise') }}</span>
+            <!-- Back Navigation Header -->
+            <div>
+                <a href="/Community" class="inline-flex items-center space-x-2 text-xs font-bold text-slate-600 hover:text-blue-600 transition-colors uppercase tracking-widest">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span>{{ __('Back to Partners') }}</span>
+                </a>
             </div>
 
-            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-16 md:mb-24 leading-none">
-                {!! str_replace('Tailored', '<span class="text-yellow-500">' . __('Tailored') . '</span>', __('Solutions Tailored For Your Business')) !!}
-            </h2>
+            <!-- Main Layout Grid (Uses partner-layout class for seamless tablet/mobile collapsing) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start partner-layout">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-             @php
-    $services = [
-        [
-            'name' => 'Delivery',
-            'img' => 'Truck_X-removebg-preview.png',
-            'desc' => 'Fast and reliable logistics solutions.',
-            'url' => '/servicesdeliveryshipping'
-        ],
-        [
-            'name' => 'Car Shipment',
-            'img' => 'car.png',
-            'desc' => 'Secure vehicle transport across borders.',
-            'url' => '/servicecarshipping'
-        ],
-        [
-            'name' => 'Custom',
-            'img' => 'box_2.png',
-            'desc' => 'Tailored packaging and handling.',
-            'url' => '/servicescustomshipping'
-        ],
-    ];
-@endphp
+                <!-- LEFT SIDEBAR: Partner Profile Card -->
+                <div class="lg:col-span-3 bg-slate-50 border border-slate-200 rounded-[2rem] p-6 md:p-8 space-y-6 md:space-y-8 shadow-xl relative">
 
-                @foreach($services as $s)
-<a href="{{ $s['url'] }}" class="service-card group relative p-8 md:p-12 bg-white border border-slate-100 rounded-[3rem] transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] hover:border-yellow-400 block">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-slate-100 group-hover:bg-yellow-400 transition-colors duration-500 rounded-b-full"></div>
-    <div class="absolute top-8 right-8 text-slate-400 text-2xl font-black group-hover:text-yellow-50 transition-colors">0{{ $loop->iteration }}</div>
+                    <!-- Logo & Title Header -->
+                    <div class="text-center space-y-4 md:space-y-5">
+                        <div class="w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 mx-auto bg-white rounded-full flex items-center justify-center p-4 shadow-md border border-slate-100 overflow-hidden">
+                            <img src="{{ asset('images/newaerocean.png') }}" alt="Aerocean Logo" class="w-full h-full object-contain scale-110 md:scale-125">
+                        </div>
+                        <div class="space-y-1">
+                            <h1 class="text-xl md:text-2xl font-black uppercase tracking-tight text-slate-900">Aerocean</h1>
+                            <p class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">{{ __('Freight Forwarding & Logistics') }}</p>
+                        </div>
+                    </div>
 
-    <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-8">
-        <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
-        <img src="{{ asset('images/' . $s['img']) }}" alt="{{ __($s['name']) }}" class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
-    </div>
+                    <div class="h-[1px] w-full bg-slate-200"></div>
 
-    <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
-        {{ __($s['name']) }}
-    </h3>
-
-    <p class="text-slate-500 text-base font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        {{ __($s['desc']) }}
-    </p>
-
-    <div class="mt-8 flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500">
-            <svg class="w-5 h-5 text-slate-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-    </div>
-</a>
-@endforeach
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-12 px-6 md:px-8 border-y border-black/5 relative overflow-hidden"
-             x-data="{
-                active: 1,
-                collaborations: [
-                    { title: '{{ __('Partnerships') }}', type: '{{ __('Global Trade') }}', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
-                    { title: '{{ __('Affiliate Programmes') }}', type: '{{ __('Technology') }}', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
-                    { title: '{{ __('Car Shipping') }}', type: '{{ __('Logistics') }}', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
-                ],
-                loop() { setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000) }
-             }" x-init="loop()">
-
-        <div class="absolute top-8 right-6 md:top-10 md:right-10 text-[8rem] md:text-[16rem] font-black text-slate-100 select-none -z-10 tracking-tighter opacity-70 pointer-events-none">
-            GROW
-        </div>
-
-        <div class="max-w-[1600px] mx-auto text-center relative z-20">
-            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Network') }}</span>
-            </div>
-
-            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-12 md:mb-28 leading-none max-w-4xl mx-auto">
-                {!! str_replace('Opportunities', '<span class="text-yellow-500">' . __('Opportunities') . '</span>', __('Collaboration Opportunities')) !!}
-            </h2>
-
-            <div class="carousel-container relative h-[420px] md:h-[500px] flex items-center justify-center mx-auto max-w-5xl">
-                <template x-for="(collab, index) in collaborations" :key="index">
-                    <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[2.5rem] md:rounded-[3.5rem] bg-white border border-slate-100 p-6 md:p-8 shadow-xl overflow-hidden w-[92%] md:w-auto"
-                         @click="active = index"
-                         :class="{
-                            'z-30 scale-100 opacity-100': active === index,
-                            'z-20 scale-90 opacity-40 -translate-x-8 md:-translate-x-[45%]': (active - 1 + collaborations.length) % collaborations.length === index,
-                            'z-20 scale-90 opacity-40 translate-x-8 md:translate-x-[45%]': (active + 1) % collaborations.length === index,
-                            'opacity-0 scale-75 z-10': Math.abs(active - index) > 1
-                         }">
-
-                        <div class="absolute top-0 left-0 w-full h-2" :class="active === index ? collab.color : 'bg-slate-100'"></div>
-
-                        <div class="relative w-full aspect-video rounded-[2rem] overflow-hidden">
-                            <img :src="collab.img" :alt="collab.title" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end"
-                                 :class="active === index ? 'opacity-100' : 'opacity-0'">
-                                <span class="text-yellow-400 font-black text-xs uppercase tracking-[0.3em] mb-3" x-text="collab.type"></span>
-                                <h3 class="text-white text-2xl md:text-4xl font-black uppercase tracking-wider" x-text="collab.title"></h3>
+                    <!-- Metadata Details List -->
+                    <div class="space-y-5 md:space-y-6 text-sm">
+                        <!-- Industry -->
+                        <div class="flex items-start space-x-3">
+                            <div class="p-2.5 rounded-2xl bg-white text-blue-600 shadow-sm border border-slate-100 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Industry') }}</span>
+                                <span class="font-bold text-slate-900 uppercase tracking-wider text-xs">{{ __('Transportation & Logistics') }}</span>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-6 right-6 md:right-14 text-5xl md:text-6xl font-black text-slate-200 transition-colors"
-                             :class="active === index ? 'text-yellow-50' : ''">
-                            <span x-text="'0' + (index + 1)"></span>
+                        <!-- Headquarters -->
+                        <div class="flex items-start space-x-3">
+                            <div class="p-2.5 rounded-2xl bg-white text-blue-600 shadow-sm border border-slate-100 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Headquarters') }}</span>
+                                <span class="font-bold text-slate-900 uppercase tracking-wider text-xs">{{ __('Lot 9715, 1st Floor, Section 64 KTLD, Jalan Pending, Three Hills Park, 93450 Kuching, Sarawak') }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Website -->
+                        <div class="flex items-start space-x-3">
+                            <div class="p-2.5 rounded-2xl bg-white text-blue-600 shadow-sm border border-slate-100 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"/></svg>
+                            </div>
+                            <div class="overflow-hidden">
+                                <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Website') }}</span>
+                                <a href="https://aerocean.com.my" target="_blank" rel="noopener noreferrer" class="font-bold text-blue-600 hover:underline inline-flex items-center space-x-1 uppercase tracking-wider text-xs truncate max-w-full">
+                                    <span class="truncate">aerocean.com.my</span>
+                                    <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </template>
+
+                    <!-- Sidebar Action Button -->
+                    <div class="pt-2">
+                        <a href="mailto:jrw@aerocean.com.my" class="w-full flex items-center justify-center space-x-2 bg-transparent hover:bg-blue-600 text-blue-600 hover:text-white font-black py-3.5 px-4 rounded-2xl border-2 border-blue-600 transition-all duration-300 uppercase tracking-widest text-xs shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span>{{ __('Contact Partner') }}</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT PANEL: Main Details -->
+                <div class="lg:col-span-9 space-y-6 md:space-y-8">
+
+                    <!-- TOP HERO BANNER CARD -->
+                    <div class="bg-white border border-slate-200 rounded-[2rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-xl">
+                        <div class="p-6 sm:p-8 md:p-10 space-y-5 md:space-y-6 max-w-lg relative z-10 w-full">
+                            <div class="space-y-1">
+                                <h2 class="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-slate-900">Aerocean</h2>
+                                <p class="text-blue-600 font-bold text-xs uppercase tracking-wider">{{ __('Freight Forwarding & Logistics') }}</p>
+                            </div>
+                            <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
+                                {{ __('Providing total logistic services including air & sea freight forwarding, warehousing, and project cargo to cater to the varied needs of our customers worldwide.') }}
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-1">
+                                <span class="px-3.5 py-1.5 rounded-full bg-blue-50/60 border border-blue-100 text-[10px] sm:text-[11px] font-bold text-blue-600 shadow-sm">{{ __('Forwarding') }}</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-blue-50/60 border border-blue-100 text-[10px] sm:text-[11px] font-bold text-blue-600 shadow-sm">{{ __('Warehouse') }}</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-blue-50/60 border border-blue-100 text-[10px] sm:text-[11px] font-bold text-blue-600 shadow-sm">{{ __('Cargo') }}</span>
+                                <span class="px-3.5 py-1.5 rounded-full bg-blue-50/60 border border-blue-100 text-[10px] sm:text-[11px] font-bold text-blue-600 shadow-sm">{{ __('Deliveries') }}</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 pt-2">
+                                <a href="https://aerocean.com.my" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 sm:px-6 py-3.5 rounded-xl text-xs transition shadow-md">
+                                    <span>{{ __('Visit Website') }}</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                                <a href="mailto:jrw@aerocean.com.my" class="inline-flex items-center space-x-2 bg-white hover:bg-slate-50 text-slate-900 font-bold px-5 sm:px-6 py-3.5 rounded-xl text-xs border border-slate-200 transition shadow-sm">
+                                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    <span>{{ __('Contact') }}</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hero Banner Graphic Area -->
+                        <div class="relative w-full md:w-[45%] h-56 sm:h-64 md:h-80 bg-slate-100 overflow-hidden flex items-center justify-center border-t md:border-t-0 md:border-l border-slate-200">
+                            <img src="{{ asset('images/partneraero1.png') }}" alt="Aerocean Logistics Operations" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- TWO COLUMN SECTION: About & Services -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-6 sm:p-8 space-y-6 shadow-xl flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('About') }}</h3>
+                                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
+                                    {{ __('Aerocean is a Sarawak-based freight forwarder providing total logistic services to cater to the varied needs and expectations of our customers. We established a worldwide agency relationship with international freight forwarders in all major cities since 1975.') }}
+                                </p>
+                            </div>
+                            <div class="pt-6 flex justify-end opacity-20 text-blue-600">
+                                <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-6 sm:p-8 space-y-6 shadow-xl flex flex-col justify-between">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('Services') }}</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs border border-blue-200 font-black shrink-0">✓</div>
+                                        <span class="uppercase tracking-wider">{{ __('Air & Sea Freight Forwarding') }}</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs border border-blue-200 font-black shrink-0">✓</div>
+                                        <span class="uppercase tracking-wider">{{ __('Warehouse & Inventory Management') }}</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs border border-blue-200 font-black shrink-0">✓</div>
+                                        <span class="uppercase tracking-wider">{{ __('Project Cargo & Deliveries') }}</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs border border-blue-200 font-black shrink-0">✓</div>
+                                        <span class="uppercase tracking-wider">{{ __('Household Removals & Packing') }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 flex justify-end">
+                                <div class="w-12 h-12 rounded-xl border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-400">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GALLERY SECTION -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-6 sm:p-8 space-y-6 shadow-xl">
+                        <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('Gallery') }}</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <!-- Image 1 -->
+                            <div class="group relative h-48 sm:h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
+                                <img src="{{ asset('images/aerogalleryx.png') }}" alt="Warehouse Operations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Warehouse Operations') }}</span>
+                                </div>
+                            </div>
+                            <!-- Image 2 -->
+                            <div class="group relative h-48 sm:h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
+                                <img src="{{ asset('images/aerogallery1 (2).png') }}" alt="Freight Forwarding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Freight Forwarding') }}</span>
+                                </div>
+                            </div>
+                            <!-- Image 3 -->
+                            <div class="group relative h-48 sm:h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center sm:col-span-2 md:col-span-1">
+                                <img src="{{ asset('images/aerogallery2.png') }}" alt="Project Cargo & Shipping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Project Cargo & Shipping') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
     </section>
 
-<footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
+    <footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
     <div class="max-w-[1400px] mx-auto">
         <div class="w-full h-[2px] bg-white mb-8 md:mb-12"></div>
 

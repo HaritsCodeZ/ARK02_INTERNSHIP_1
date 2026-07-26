@@ -119,9 +119,22 @@
                     </div>
                 </div>
 
-                <a href="/membership" class="text-gray-300 hover:text-white text-sm font-semibold uppercase tracking-wider transition shrink-0 whitespace-nowrap">
-                    {{ __('Membership') }}
-                </a>
+                <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative py-2">
+                    <button class="text-gray-300 hover:text-white text-sm font-semibold flex items-center space-x-1 uppercase tracking-wider transition">
+                        <span>{{ __('Community') }}</span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 text-yellow-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition x-cloak class="absolute left-0 mt-2 w-56 bg-[#0f0f0f] border border-white/10 rounded-md shadow-2xl z-50 py-2">
+                        <a href="/membership" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Membership') }}
+                        </a>
+                        <a href="/Community" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Partnership') }}
+                        </a>
+                    </div>
+                </div>
 
                 <a href="#" class="text-white hover:text-yellow-400 text-sm font-bold transition uppercase tracking-wider whitespace-nowrap">
                     {{ __('Login') }}
@@ -164,39 +177,99 @@
                 </div>
             </div>
 
-            <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none z-[110]">
+            <button @click="mobileOpen = !mobileOpen" class="xl:hidden text-white p-2 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" :d="mobileOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </div>
 
-        <div x-show="mobileOpen"
-             x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-start="opacity-100 translate-y-0"
-             x-transition:leave-end="opacity-0 -translate-y-4"
-             x-cloak
-             class="xl:hidden">
-            <div class="mt-4 py-6 bg-[#0f0f0f] border-t border-white/10 rounded-xl px-6 space-y-4 text-base font-semibold uppercase tracking-wider shadow-2xl">
-                <a href="/membership" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Membership') }}</a>
-                <a href="/career" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Career') }}</a>
-                <a href="/agentapp" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Agent Application') }}</a>
-                <a href="/aboutus" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('About Us') }}</a>
-                <a href="/newsandupdates" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('News & Updates') }}</a>
-                <a href="/knowledge" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Knowledge & Insights') }}</a>
-                <a href="/servicecarshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Vehicle Shipping') }}</a>
-                <a href="/servicesdeliveryshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Delivery Shipping') }}</a>
-                <a href="/servicescustomshipping" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Custom Shipping') }}</a>
-                <a href="/helpcenter" class="block py-2 text-gray-300 hover:text-yellow-400 transition">{{ __('Help Center') }}</a>
+        <div class="xl:hidden" x-show="mobileOpen" x-cloak x-transition>
+            <div class="mt-4 py-6 bg-[#0a0a0a] border-t border-white/10 px-4 space-y-4 text-base font-semibold uppercase tracking-wider max-h-[80vh] overflow-y-auto">
 
-                <div class="pt-4 border-t border-white/10 flex gap-4 text-xs font-black">
-                    <a href="{{ url('lang/en') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">EN</a>
-                    <a href="{{ url('lang/ms') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">MS</a>
-                    <a href="{{ url('lang/zh') }}" class="px-3 py-1.5 rounded bg-white/5 text-white hover:bg-yellow-400 hover:text-black">ZH</a>
+                <div x-data="{ mOpen: false }">
+                    <button @click="mOpen = !mOpen" class="w-full flex justify-between items-center text-gray-300 hover:text-white py-2">
+                        <span>{{ __('Application') }}</span>
+                        <svg :class="{'rotate-180': mOpen}" class="w-4 h-4 text-yellow-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
+                        <a href="/career" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Career') }}</a>
+                        <a href="/agentapp" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Agent Application') }}</a>
+                    </div>
                 </div>
+
+                <div x-data="{ mOpen: false }">
+                    <button @click="mOpen = !mOpen" class="w-full flex justify-between items-center text-gray-300 hover:text-white py-2">
+                        <span>{{ __('Blog') }}</span>
+                        <svg :class="{'rotate-180': mOpen}" class="w-4 h-4 text-yellow-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
+                        <a href="/aboutus" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('About Us') }}</a>
+                        <a href="/newsandupdates" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('News & Updates') }}</a>
+                        <a href="/knowledge" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Knowledge & Insights') }}</a>
+                    </div>
+                </div>
+
+                <div x-data="{ mOpen: false }">
+                    <button @click="mOpen = !mOpen" class="w-full flex justify-between items-center text-gray-300 hover:text-white py-2">
+                        <span>{{ __('Services') }}</span>
+                        <svg :class="{'rotate-180': mOpen}" class="w-4 h-4 text-yellow-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
+                        <a href="/servicecarshipping" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Vehicle Shipping') }}</a>
+                        <a href="/servicesdeliveryshipping" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Delivery Shipping') }}</a>
+                        <a href="/servicescustomshipping" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Custom Shipping') }}</a>
+                    </div>
+                </div>
+
+                <div x-data="{ mOpen: false }">
+                    <button @click="mOpen = !mOpen" class="w-full flex justify-between items-center text-gray-300 hover:text-white py-2">
+                        <span>{{ __('Help') }}</span>
+                        <svg :class="{'rotate-180': mOpen}" class="w-4 h-4 text-yellow-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
+                        <a href="/helpcenter" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Help Center') }}</a>
+                        <a href="/faq" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('FAQ') }}</a>
+                    </div>
+                </div>
+
+                <div x-data="{ mOpen: false }">
+                    <button @click="mOpen = !mOpen" class="w-full flex justify-between items-center text-gray-300 hover:text-white py-2">
+                        <span>{{ __('Community') }}</span>
+                        <svg :class="{'rotate-180': mOpen}" class="w-4 h-4 text-yellow-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
+                    <a href="/membership" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Membership') }}</a>
+                    <a href="/Community" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Partnership') }}</a></div>
+                </div>
+
+                <div class="pt-2 flex flex-col space-y-3">
+                    <a href="#" class="block py-2 text-white hover:text-yellow-400 font-bold text-center border border-white/10 rounded-md">{{ __('Login') }}</a>
+
+                    <a href="#" class="block bg-yellow-400 text-black text-center font-black py-3 rounded-md text-sm shadow-md">
+                        {{ __('Sign Up') }}
+                    </a>
+                </div>
+
+                <div class="border-t border-white/10 pt-4 mt-2">
+                    <div class="text-[10px] text-gray-500 font-bold tracking-widest uppercase mb-2">{{ __('Select Language') }}</div>
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                        <a href="{{ url('lang/en') }}" class="py-2.5 rounded border border-white/10 hover:bg-yellow-400 hover:text-black transition-colors {{ app()->getLocale() == 'en' ? 'bg-white/10 text-yellow-400 font-bold' : 'text-white' }}">EN</a>
+                        <a href="{{ url('lang/ms') }}" class="py-2.5 rounded border border-white/10 hover:bg-yellow-400 hover:text-black transition-colors {{ app()->getLocale() == 'ms' ? 'bg-white/10 text-yellow-400 font-bold' : 'text-white' }}">MS</a>
+                        <a href="{{ url('lang/zh') }}" class="py-2.5 rounded border border-white/10 hover:bg-yellow-400 hover:text-black transition-colors {{ app()->getLocale() == 'zh' ? 'bg-white/10 text-yellow-400 font-bold' : 'text-white' }}">ZH</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </nav>

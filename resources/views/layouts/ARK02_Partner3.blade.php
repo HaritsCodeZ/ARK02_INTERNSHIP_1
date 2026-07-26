@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD SMART LOGITECH SDN. BHD</title>
+    <title>Arkod | Partners</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
@@ -284,137 +284,234 @@
             </div>
         </div>
     </nav>
+    <section class="bg-white py-12 px-6 md:px-12 min-h-screen text-slate-900 font-montserrat">
+    <div class="max-w-[1440px] mx-auto space-y-6">
 
-    <main class="w-full">
-        @yield('content')
-    </main>
-
-   <section id="next-section" class="bg-white py-12 md:py-8 px-6 md:px-8 border-t border-slate-100 relative overflow-hidden">
-        <div class="absolute top-8 left-6 md:top-10 md:left-10 text-[6rem] md:text-[12rem] font-black text-slate-50 select-none -z-10 tracking-tighter opacity-50 pointer-events-none">
-            SERVICES
+        <!-- Back Navigation Header -->
+        <div>
+            <a href="/Community" class="inline-flex items-center space-x-2 text-xs font-bold text-slate-600 hover:text-emerald-500 transition-colors uppercase tracking-widest">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                <span>{{ __('Back to Partners') }}</span>
+            </a>
         </div>
 
-        <div class="max-w-[1600px] mx-auto text-center relative z-10">
-            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Expertise') }}</span>
+        <!-- Main Layout Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+            <!-- LEFT SIDEBAR: Partner Profile Card (col-span-3) -->
+            <div class="lg:col-span-3 bg-slate-50 border border-slate-200 rounded-[2rem] p-6 md:p-8 space-y-8 shadow-xl relative">
+
+                <!-- Logo & Title Header -->
+                <div class="text-center space-y-5">
+                    <div class="w-44 h-44 md:w-56 md:h-56 mx-auto bg-white rounded-full flex items-center justify-center p-4 shadow-md border border-slate-100 overflow-hidden">
+                        <img src="{{ asset('images/NEWDELIMALINK.png') }}" alt="Delimalink Logo" class="w-full h-full object-contain scale-125">
+                    </div>
+                    <div class="space-y-1">
+                        <h1 class="text-xl md:text-2xl font-black uppercase tracking-tight text-slate-900">Delimalink</h1>
+                        <p class="text-[11px] font-bold text-emerald-500 uppercase tracking-widest">{{ __('Courier & Logistics Provider') }}</p>
+                    </div>
+                </div>
+
+                <div class="h-[1px] w-full bg-slate-200"></div>
+
+                <!-- Metadata Details List -->
+                <div class="space-y-6 text-sm">
+                    <!-- Industry -->
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-2xl bg-white text-emerald-500 shadow-sm border border-slate-100 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Industry') }}</span>
+                            <span class="font-bold text-slate-900 uppercase tracking-wider text-xs">{{ __('Courier & Logistics Services') }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Headquarters -->
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-2xl bg-white text-emerald-500 shadow-sm border border-slate-100 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Headquarters') }}</span>
+                            <span class="font-bold text-slate-900 uppercase tracking-wider text-xs">
+                            {{ __('No.33, Jalan Kasuarina 10/KS7, Bandar Botanik, 41200 Klang, Selangor') }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Website -->
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-2xl bg-white text-emerald-500 shadow-sm border border-slate-100 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"/>
+                            </svg>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">{{ __('Website') }}</span>
+                            <a href="https://delimalink.com" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-500 hover:underline inline-flex items-center space-x-1 uppercase tracking-wider text-xs truncate max-w-full">
+                                <span class="truncate">delimalink.com</span>
+                                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Action Button -->
+                <div class="pt-4">
+                    <a href="mailto:enquiry@delimalink.com" class="w-full flex items-center justify-center space-x-2 bg-transparent hover:bg-emerald-500 text-emerald-500 hover:text-white font-black py-3.5 px-4 rounded-2xl border-2 border-emerald-500 transition-all duration-300 uppercase tracking-widest text-xs shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span>{{ __('Contact Partner') }}</span>
+                    </a>
+                </div>
+
             </div>
 
-            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-16 md:mb-24 leading-none">
-                {!! str_replace('Tailored', '<span class="text-yellow-500">' . __('Tailored') . '</span>', __('Solutions Tailored For Your Business')) !!}
-            </h2>
+            <!-- RIGHT CONTENT PANEL: Main Details (col-span-9) -->
+            <div class="lg:col-span-9 space-y-8">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-             @php
-    $services = [
-        [
-            'name' => 'Delivery',
-            'img' => 'Truck_X-removebg-preview.png',
-            'desc' => 'Fast and reliable logistics solutions.',
-            'url' => '/servicesdeliveryshipping'
-        ],
-        [
-            'name' => 'Car Shipment',
-            'img' => 'car.png',
-            'desc' => 'Secure vehicle transport across borders.',
-            'url' => '/servicecarshipping'
-        ],
-        [
-            'name' => 'Custom',
-            'img' => 'box_2.png',
-            'desc' => 'Tailored packaging and handling.',
-            'url' => '/servicescustomshipping'
-        ],
-    ];
-@endphp
+                <!-- TOP HERO BANNER CARD -->
+                <div class="bg-white border border-slate-200 rounded-[2rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-xl">
 
-                @foreach($services as $s)
-<a href="{{ $s['url'] }}" class="service-card group relative p-8 md:p-12 bg-white border border-slate-100 rounded-[3rem] transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] hover:border-yellow-400 block">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-slate-100 group-hover:bg-yellow-400 transition-colors duration-500 rounded-b-full"></div>
-    <div class="absolute top-8 right-8 text-slate-400 text-2xl font-black group-hover:text-yellow-50 transition-colors">0{{ $loop->iteration }}</div>
+                    <div class="p-8 md:p-10 space-y-6 max-w-lg relative z-10 w-full">
+                        <div class="space-y-1">
+                            <h2 class="text-3xl md:text-5xl font-black tracking-tight text-slate-900">Delimalink</h2>
+                            <p class="text-emerald-500 font-bold text-xs uppercase tracking-wider">{{ __('Express Delivery & Logistics Solutions') }}</p>
+                        </div>
 
-    <div class="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-8">
-        <div class="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 rounded-full transition-all duration-700 scale-0 group-hover:scale-110"></div>
-        <img src="{{ asset('images/' . $s['img']) }}" alt="{{ __($s['name']) }}" class="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
-    </div>
+                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
+                            {{ __('Providing express delivery and logistics solutions designed to seamlessly connect businesses and customers through a dependable network.') }}
+                        </p>
 
-    <h3 class="text-slate-900 text-2xl font-black uppercase tracking-wider mb-4 group-hover:text-yellow-600 transition-colors">
-        {{ __($s['name']) }}
-    </h3>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-4 py-1.5 rounded-full bg-emerald-50/60 border border-emerald-100 text-[11px] font-bold text-emerald-600 shadow-sm">{{ __('Express Delivery') }}</span>
+                            <span class="px-4 py-1.5 rounded-full bg-emerald-50/60 border border-emerald-100 text-[11px] font-bold text-emerald-600 shadow-sm">{{ __('Logistics Solutions') }}</span>
+                            <span class="px-4 py-1.5 rounded-full bg-emerald-50/60 border border-emerald-100 text-[11px] font-bold text-emerald-600 shadow-sm">{{ __('Network Distribution') }}</span>
+                            <span class="px-4 py-1.5 rounded-full bg-emerald-50/60 border border-emerald-100 text-[11px] font-bold text-emerald-600 shadow-sm">{{ __('Supply Chain') }}</span>
+                        </div>
 
-    <p class="text-slate-500 text-base font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        {{ __($s['desc']) }}
-    </p>
+                        <div class="flex flex-row items-center gap-3 pt-2">
+                                <a href="https://delimalink.com" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-3.5 rounded-xl text-xs transition shadow-md whitespace-nowrap">
+                                    <span>{{ __('Visit Website') }}</span>
+                                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:enquiry@delimalink.com" class="flex-1 inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 text-slate-900 font-bold px-4 py-3.5 rounded-xl text-xs border border-slate-200 transition shadow-sm whitespace-nowrap">
+                                    <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span>{{ __('Contact Partner') }}</span>
+                                </a>
+                            </div>
+                    </div>
 
-    <div class="mt-8 flex justify-center">
-        <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-yellow-400 transition-all duration-500">
-            <svg class="w-5 h-5 text-slate-400 group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-    </div>
-</a>
-@endforeach
-            </div>
-        </div>
-    </section>
+                    <!-- Right Banner Graphic Area -->
+                    <div class="relative w-full md:w-[45%] h-64 md:h-80 bg-slate-100 overflow-hidden flex items-center justify-center border-t md:border-t-0 md:border-l border-slate-200">
+                        <img src="{{ asset('images/delimaback1.png') }}" alt="Delimalink Logistics Operations" class="w-full h-full object-cover">
+                    </div>
 
-    <section class="bg-white py-12 px-6 md:px-8 border-y border-black/5 relative overflow-hidden"
-             x-data="{
-                active: 1,
-                collaborations: [
-                    { title: '{{ __('Partnerships') }}', type: '{{ __('Global Trade') }}', img: '{{ asset('images/Partnerships.png') }}', color: 'bg-yellow-400' },
-                    { title: '{{ __('Affiliate Programmes') }}', type: '{{ __('Technology') }}', img: '{{ asset('images/Affiliate Progs.png') }}', color: 'bg-yellow-400' },
-                    { title: '{{ __('Car Shipping') }}', type: '{{ __('Logistics') }}', img: '{{ asset('images/Car Shipping.png') }}', color: 'bg-yellow-400' }
-                ],
-                loop() { setInterval(() => { this.active = (this.active + 1) % this.collaborations.length }, 6000) }
-             }" x-init="loop()">
+                </div>
 
-        <div class="absolute top-8 right-6 md:top-10 md:right-10 text-[8rem] md:text-[16rem] font-black text-slate-100 select-none -z-10 tracking-tighter opacity-70 pointer-events-none">
-            GROW
-        </div>
+                <!-- TWO COLUMN SECTION: About & Services -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <div class="max-w-[1600px] mx-auto text-center relative z-20">
-            <div class="inline-block px-4 py-1.5 mb-6 border border-yellow-400/30 rounded-full bg-yellow-400/5">
-                <span class="text-xl md:text-3xl font-black uppercase tracking-[0.4em] text-yellow-600">{{ __('Our Network') }}</span>
-            </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 space-y-6 shadow-xl flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('About') }}</h3>
+                            <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
+                                {{ __('Delimalink specializes in courier and logistics services, offering reliable shipping frameworks and regional distribution networks to streamline operations for businesses and consumers alike.') }}
+                            </p>
+                        </div>
+                        <div class="pt-6 flex justify-end opacity-20 text-emerald-500">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                    </div>
 
-            <h2 class="text-slate-900 text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-12 md:mb-28 leading-none max-w-4xl mx-auto">
-                {!! str_replace('Opportunities', '<span class="text-yellow-500">' . __('Opportunities') . '</span>', __('Collaboration Opportunities')) !!}
-            </h2>
+                    <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 space-y-6 shadow-xl flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('Services') }}</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs border border-emerald-200 font-black">✓</div>
+                                    <span class="uppercase tracking-wider">{{ __('Express Courier Delivery') }}</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs border border-emerald-200 font-black">✓</div>
+                                    <span class="uppercase tracking-wider">{{ __('B2B & B2C Logistics Solutions') }}</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs border border-emerald-200 font-black">✓</div>
+                                    <span class="uppercase tracking-wider">{{ __('Regional Network Distribution') }}</span>
+                                </li>
+                                <li class="flex items-center space-x-3 text-xs md:text-sm font-bold text-slate-800">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs border border-emerald-200 font-black">✓</div>
+                                    <span class="uppercase tracking-wider">{{ __('Parcel Tracking & Management') }}</span>
+                                </li>
+                            </ul>
+                        </div>
 
-            <div class="carousel-container relative h-[420px] md:h-[500px] flex items-center justify-center mx-auto max-w-5xl">
-                <template x-for="(collab, index) in collaborations" :key="index">
-                    <div class="absolute transition-all duration-1000 ease-in-out cursor-pointer group rounded-[2.5rem] md:rounded-[3.5rem] bg-white border border-slate-100 p-6 md:p-8 shadow-xl overflow-hidden w-[92%] md:w-auto"
-                         @click="active = index"
-                         :class="{
-                            'z-30 scale-100 opacity-100': active === index,
-                            'z-20 scale-90 opacity-40 -translate-x-8 md:-translate-x-[45%]': (active - 1 + collaborations.length) % collaborations.length === index,
-                            'z-20 scale-90 opacity-40 translate-x-8 md:translate-x-[45%]': (active + 1) % collaborations.length === index,
-                            'opacity-0 scale-75 z-10': Math.abs(active - index) > 1
-                         }">
+                        <div class="pt-4 flex justify-end">
+                            <div class="w-12 h-12 rounded-xl border border-slate-200 bg-white shadow-sm flex items-center justify-center text-slate-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="absolute top-0 left-0 w-full h-2" :class="active === index ? collab.color : 'bg-slate-100'"></div>
+                </div>
 
-                        <div class="relative w-full aspect-video rounded-[2rem] overflow-hidden">
-                            <img :src="collab.img" :alt="collab.title" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 md:p-12 flex flex-col justify-end"
-                                 :class="active === index ? 'opacity-100' : 'opacity-0'">
-                                <span class="text-yellow-400 font-black text-xs uppercase tracking-[0.3em] mb-3" x-text="collab.type"></span>
-                                <h3 class="text-white text-2xl md:text-4xl font-black uppercase tracking-wider" x-text="collab.title"></h3>
+                <!-- GALLERY SECTION -->
+                <div class="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 space-y-6 shadow-xl">
+                    <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 border-b border-slate-200 pb-4">{{ __('Gallery') }}</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Image 1 -->
+                        <div class="group relative h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
+                            <img src="{{ asset('images/truckmgmt.png') }}" alt="Logistics Hub" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Truck Management') }}</span>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-6 right-6 md:right-14 text-5xl md:text-6xl font-black text-slate-200 transition-colors"
-                             :class="active === index ? 'text-yellow-50' : ''">
-                            <span x-text="'0' + (index + 1)"></span>
+                        <!-- Image 2 -->
+                        <div class="group relative h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
+                            <img src="{{ asset('images/doortodoorssrv.png') }}" alt="Express Fleet" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Door To Door') }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Image 3 -->
+                        <div class="group relative h-56 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex items-center justify-center">
+                            <img src="{{ asset('images/logisticsrv.png') }}" alt="Courier Network" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <span class="text-white text-[10px] font-bold uppercase tracking-widest">{{ __('Logistic Service') }}</span>
+                            </div>
                         </div>
                     </div>
-                </template>
-            </div>
-        </div>
-    </section>
+                </div>
 
-<footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+     <footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
     <div class="max-w-[1400px] mx-auto">
         <div class="w-full h-[2px] bg-white mb-8 md:mb-12"></div>
 
@@ -508,3 +605,5 @@
 
 </body>
 </html>
+
+
