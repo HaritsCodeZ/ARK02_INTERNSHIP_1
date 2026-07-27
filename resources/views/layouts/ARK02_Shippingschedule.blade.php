@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARKOD | Delivery Shipping</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Arkod | ShippingSchedule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style>[x-cloak] { display: none !important; }</style>
+    <style>
+        [x-cloak] { display: none !important; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; }
+
+        /* Mobile Improvements */
+        @media (max-width: 768px) {
+            .carousel-container { height: 420px !important; }
+            .service-card { padding: 2rem !important; }
+            .hero-text { font-size: 2.5rem !important; line-height: 1.1 !important; }
+        }
+    </style>
 </head>
 <body class="bg-[#0a0a0a] font-montserrat antialiased text-white">
 
@@ -278,352 +289,328 @@
         </div>
     </nav>
 
-   <!-- ==================== RESPONSIVE HERO SECTION ==================== -->
-<section class="relative min-h-screen lg:min-h-screen w-full flex items-center overflow-hidden -mt-[72px] md:-mt-[88px]" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+   <!-- START: STRAIGHT ALIGNED WHITE & GOLD JET-BLACK BOLD SCHEDULE SECTION -->
+    <section class="relative bg-white text-[#000000] py-16 md:py-24 px-4 md:px-6 overflow-hidden border-t border-gray-200">
+        <!-- Luxury Gold & Soft Glow Background Effects -->
 
-    <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/DeliveryShippings.png') }}" alt="{{ __('ARKOD Logistics') }}" class="w-full h-full object-cover transition-all duration-[4000ms] ease-out" :class="loaded ? 'opacity-70 blur-0 scale-105' : 'opacity-0 blur-xl scale-125'">
-        <!-- Hybrid background overlay to handle mobile vertical stacking safely -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black lg:bg-gradient-to-r lg:from-black lg:via-black/85 lg:to-transparent z-10"></div>
-    </div>
 
-    <div class="relative z-20 max-w-[1600px] mx-auto px-6 md:px-8 w-full pt-28 pb-16 lg:py-0 mt-4 md:mt-20">
-        <div class="max-w-8xl text-center lg:text-left">
+        <div class="max-w-[1600px] mx-auto relative z-10">
 
-            <div class="inline-flex items-center gap-3 px-4 py-2 mb-6 md:mb-8 border border-yellow-400/20 rounded-full bg-yellow-400/5 backdrop-blur-md transition-all duration-1000 mx-auto lg:mx-0" x-show="loaded" x-transition:enter="opacity-0 -translate-x-10">
-                <span class="text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em]">{{ __('Arkod Smart Logitech SDN. BHD') }}</span>
-            </div>
-
-            <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[1.15] lg:leading-[1.1] tracking-tighter mb-8 md:mb-10 transition-all duration-1000 delay-300" :class="loaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'">
-                {{ __('Your Logistics,') }} <br class="hidden sm:block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">{{ __('Trusted,') }}</span>
-                <br>{{ __('Fullfilled') }}
-            </h1>
-
-            <p class="text-gray-300 text-sm sm:text-base md:text-xl font-medium leading-relaxed mb-10 md:mb-14 max-w-2xl border-l-0 lg:border-l-4 border-yellow-400 px-2 lg:pl-8 mx-auto lg:mx-0 transition-all duration-1000 delay-500" :class="loaded ? 'opacity-100' : 'opacity-0'">
-                {{ __('Built on mutual agreements and precise execution, our custom handling solutions provide the reliability and exact care your premium cargo demands.') }}
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 sm:gap-8 md:gap-10 transition-all duration-1000 delay-700" :class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-                <!-- UPDATE 1: Updated "See More" Component with Native Smooth Scroll Targeting -->
-            <a href="#capabilities"
-            style="scroll-behavior: smooth;"
-            class="w-full sm:w-auto text-center relative overflow-hidden bg-yellow-400 hover:bg-white text-black px-12 py-4.5 md:px-16 md:py-6 rounded-sm text-base md:text-lg font-black uppercase tracking-[0.3em] transition-all duration-500 group shadow-lg">
-                <span class="relative z-10">{{ __('See More') }}</span>
-                <div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-            </a>
-
-                                <a href="https://wa.me/60189116168?text=Hi%20ARKOD,%20I'm%20interested%20in%20your%20car%20shipping%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center gap-4 group py-2 w-full sm:w-auto cursor-pointer">
-                    <div class="w-11 h-11 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-yellow-400 group-hover:border-yellow-400 transition-all duration-500 shrink-0">
-                        <!-- Kept your clean media play/arrow icon styling configuration exactly as built -->
-                        <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-white group-hover:text-black fill-current ml-1" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="text-white text-[10px] md:text-[11px] font-black uppercase tracking-widest group-hover:text-yellow-400 transition-colors">
-                        {{ __('Contact Us') }}
-                    </span>
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="absolute bottom-0 right-20 z-20 hidden lg:flex flex-col items-center gap-6">
-        <span class="text-white/20 text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] rotate-180">{{ __('Scroll to dive') }}</span>
-        <div class="w-[1px] h-32 bg-gradient-to-t from-yellow-400 to-transparent"></div>
-    </div>
-</section>
-
-<!-- ==================== RESPONSIVE CAPABILITIES & METRICS SECTION ==================== -->
-<section id="capabilities" class="py-12 md:py-20 bg-white text-[#0a0a0a]">
-    <div class="max-w-[1600px] mx-auto px-6 md:px-8">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-            <!-- Text Content Intro Column -->
-            <div class="lg:col-span-5 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-5 py-2 border border-yellow-400/50 rounded-full bg-yellow-400/10 mb-6 mx-auto lg:mx-0">
-                    <span class="text-yellow-400 text-sm font-black uppercase tracking-widest">{{ __('OUR CAPABILITIES') }}</span>
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-amber-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 shadow-[0_4px_20px_rgba(217,119,6,0.1)]">
+                    {{ __('Real-Time Operations') }}
                 </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-tight tracking-tighter mb-6 md:mb-8 text-black">
-                    {{ __('HYPER-FAST') }} <span class="text-yellow-400">{{ __('DELIVERY') }}</span><br>
-                    {{ __('WITHOUT THE') }} <span class="text-yellow-400">{{ __('FRICTION') }}</span><br>
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight mb-4 md:mb-6 text-[#000000]">
+                    {{ __('Shipping Schedule') }}
                 </h2>
-                <div class="h-px w-24 bg-yellow-400 mb-6 md:mb-8 mx-auto lg:mx-0"></div>
-                <p class="text-gray-700 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    {{ __('“In a world that moves fast, your shipping should move faster. We leverage intelligent routing and automated sorting to ensure your packages clear customs, bypass delays, and reach your clients in record time”') }}
+                <p class="text-[#000000] text-xs sm:text-sm md:text-base font-bold leading-relaxed px-2">
+                    {{ __('Explore our comprehensive RORO and Container vessel timelines connecting Klang, Kota Kinabalu, Bintulu, and Kuching with elite precision and live tracking infrastructure.') }}
                 </p>
+                <!-- Non-translatable English Notice -->
+                <div class="mt-4 inline-block bg-amber-50 border border-amber-200 text-amber-900 text-[10px] sm:text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-md max-w-full">
+                    * Note: This official schedule data is strictly displayed in English and cannot be translated to Malay or Mandarin.
+                </div>
             </div>
 
-            <!-- Dashboard Style Metrics Container Column -->
-            <div class="lg:col-span-7 w-full">
-                <h3 class="text-black text-xl md:text-2xl font-bold uppercase tracking-wider mb-8 md:mb-10 text-center lg:text-left">{{ __('Our Excellence') }}</h3>
-                <!-- Grid seamlessly auto-stacks on mobile screen configurations -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-
-                    <!-- Metric 1 -->
-                    <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-6 sm:p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:rotate-12 transition-transform text-4xl sm:text-5xl">🚢</div>
-                        <div class="text-5xl sm:text-6xl font-black text-center tracking-tight">5</div>
-                        <div class="text-xl sm:text-2xl font-bold text-center mt-1">{{ __('Years Experience') }}</div>
+            <!-- Stats/Highlights Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+                <div class="bg-white/90 backdrop-blur-xl border border-gray-200 rounded-2xl p-5 md:p-6 relative group hover:border-yellow-500/50 transition duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-10 h-10 md:w-12 md:h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-amber-600 font-bold border border-yellow-500/20 group-hover:scale-110 transition text-sm md:text-base">
+                        01
                     </div>
-
-                    <!-- Metric 2 -->
-                    <div class="bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform text-4xl sm:text-5xl">⭐</div>
-                        <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-center tracking-tight">99.5%</div>
-                        <div class="text-xl sm:text-2xl font-bold text-center mt-1 text-yellow-400 sm:text-white">{{ __('Trusted by Clients') }}</div>
-                    </div>
-
-                    <!-- Metric 3 -->
-                    <div class="bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8 rounded-3xl text-white shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300 border border-yellow-400/30">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-yellow-400/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:rotate-6 transition-transform text-4xl sm:text-5xl">⏱️</div>
-                        <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-center tracking-tight whitespace-nowrap sm:whitespace-normal">{{ __('On Time') }}</div>
-                        <div class="text-xl sm:text-2xl font-bold text-center mt-1 text-yellow-400 sm:text-white">{{ __('Delivery') }}</div>
-                    </div>
-
-                    <!-- Metric 4 -->
-                    <div class="bg-gradient-to-br from-yellow-400 to-amber-500 p-6 sm:p-8 rounded-3xl text-black shadow-lg hover:shadow-2xl group hover:scale-105 transition-all duration-300">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-black/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform text-4xl sm:text-5xl">🚛</div>
-                        <div class="text-5xl sm:text-6xl font-black text-center tracking-tight">50+</div>
-                        <div class="text-xl sm:text-2xl font-bold text-center mt-1">{{ __('Deliveries') }}</div>
-                    </div>
-
+                    <div class="text-amber-600 text-[11px] md:text-xs font-bold uppercase tracking-widest mb-1">{{ __('Primary Fleet') }}</div>
+                    <div class="text-xl md:text-2xl font-black uppercase tracking-wider text-[#000000]">RORO & Container</div>
+                    <p class="text-[#000000] text-xs font-bold mt-2 md:mt-3">{{ __('Scheduled bi-weekly departures ensuring zero supply chain disruption across East & West Malaysia.') }}</p>
                 </div>
+
+                <div class="bg-white/90 backdrop-blur-xl border border-gray-200 rounded-2xl p-5 md:p-6 relative group hover:border-yellow-500/50 transition duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-10 h-10 md:w-12 md:h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-amber-600 font-bold border border-yellow-500/20 group-hover:scale-110 transition text-sm md:text-base">
+                        02
+                    </div>
+                    <div class="text-amber-600 text-[11px] md:text-xs font-bold uppercase tracking-widest mb-1">{{ __('Major Hubs') }}</div>
+                    <div class="text-xl md:text-2xl font-black uppercase tracking-wider text-[#000000]">Sabah & Sarawak</div>
+                    <p class="text-[#000000] text-xs font-bold mt-2 md:mt-3">{{ __('Direct pathways connecting Port Klang directly to Kuching, Bintulu, and Kota Kinabalu ports.') }}</p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-xl border border-gray-200 rounded-2xl p-5 md:p-6 relative group hover:border-yellow-500/50 transition duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.05)] sm:col-span-2 md:col-span-1">
+                    <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-10 h-10 md:w-12 md:h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-amber-600 font-bold border border-yellow-500/20 group-hover:scale-110 transition text-sm md:text-base">
+                        03
+                    </div>
+                    <div class="text-amber-600 text-[11px] md:text-xs font-bold uppercase tracking-widest mb-1">{{ __('Live Updates') }}</div>
+                    <div class="text-xl md:text-2xl font-black uppercase tracking-wider text-[#000000]">Verified ETA/ETD</div>
+                    <p class="text-[#000000] text-xs font-bold mt-2 md:mt-3">{{ __('Updated dynamically based on real-time berth availability and maritime weather protocols.') }}</p>
+                </div>
+            </div>
+
+            <!-- CONTAINER FOR THE SCHEDULE -->
+            <div class="bg-white border-2 border-yellow-400/50 rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-12 shadow-[0_20px_60px_rgba(217,119,6,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-400"></div>
+
+                <!-- UNTOUCHED SCHEDULE CONTENT WITH JET BLACK & BOLD STYLING -->
+                <div class="schedule-core-content text-[#000000] font-bold">
+                    <div class="text-center font-black text-xs sm:text-sm md:text-lg mb-6 text-amber-600 px-2 leading-relaxed">ARKOD SMART LOGITECH SDN BHD.<br class="hidden sm:inline">LOT 1451, SEC 66 KTLD, JALAN KELULI, BIE, 93450, KUCHING, SARAWAK<br>Phone 0189116168 | springlex@arkod.com.my | www.arkod.com.my</div>
+
+                    <h3 class="text-base sm:text-lg md:text-xl font-black uppercase text-center text-[#000000] mt-8 mb-4 border-b border-gray-300 pb-2">RORO SERVICE - TENTATIVE SCHEDULE 2026</h3>
+
+                    <!-- JUNE 2026 -->
+                    <div class="mb-8 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                        <h4 class="text-amber-600 font-black uppercase text-xs sm:text-sm mb-3">JUNE 2026</h4>
+                        <div class="min-w-[650px] sm:min-w-full">
+                            <table class="w-full text-left border-collapse text-[11px] sm:text-xs md:text-sm table-fixed">
+                            <colgroup>
+                                <col class="w-[25%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                            </colgroup>
+                            <thead>
+                                <tr class="border-b border-gray-300 text-[#000000] font-black">
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VESSEL NAME</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VOY NO.</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KLANG</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KOTA KINABALU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">BINTULU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KUCHING</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">280</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">04/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">09/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">08/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">281</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">13/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">16/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">17/06/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">282</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">20/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">25/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MALAYSIA PASSION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">71</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">19/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">25/06/2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+
+                    <!-- JULY 2026 -->
+                    <div class="mb-8 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                        <h4 class="text-amber-600 font-black uppercase text-xs sm:text-sm mb-3">JULY 2026</h4>
+                        <div class="min-w-[650px] sm:min-w-full">
+                            <table class="w-full text-left border-collapse text-[11px] sm:text-xs md:text-sm table-fixed">
+                            <colgroup>
+                                <col class="w-[25%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                            </colgroup>
+                            <thead>
+                                <tr class="border-b border-gray-300 text-[#000000] font-black">
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VESSEL NAME</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VOY NO.</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KLANG</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KOTA KINABALU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">BINTULU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KUCHING</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">283</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">02/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">05/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">06/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MALAYSIA GRACE</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">51</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">04/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">07/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">284</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">09/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">13/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">285</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">17/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">20/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">21/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">286</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">24/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">29/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+
+                    <!-- AUGUST 2026 -->
+                    <div class="mb-8 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                        <h4 class="text-amber-600 font-black uppercase text-xs sm:text-sm mb-3">AUGUST 2026</h4>
+                        <div class="min-w-[650px] sm:min-w-full">
+                            <table class="w-full text-left border-collapse text-[11px] sm:text-xs md:text-sm table-fixed">
+                            <colgroup>
+                                <col class="w-[25%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                                <col class="w-[15%]">
+                            </colgroup>
+                            <thead>
+                                <tr class="border-b border-gray-300 text-[#000000] font-black">
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VESSEL NAME</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VOY NO.</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KLANG</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KOTA KINABALU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">BINTULU</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KUCHING</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">287</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">02/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">05/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">06/08/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">288</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">09/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">13/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">GRAND VISION</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">289</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">18/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">-</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">21/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">22/08/2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+
+                    <!-- CONTAINER SERVICE -->
+                    <h3 class="text-base sm:text-lg md:text-xl font-black uppercase text-center text-[#000000] mt-12 mb-4 border-b border-gray-300 pb-2">CONTAINER SERVICE - TENTATIVE SCHEDULE 2026</h3>
+                    <div class="mb-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                        <div class="min-w-[500px] sm:min-w-full">
+                            <table class="w-full text-left border-collapse text-[11px] sm:text-xs md:text-sm table-fixed">
+                            <colgroup>
+                                <col class="w-[35%]">
+                                <col class="w-[25%]">
+                                <col class="w-[20%]">
+                                <col class="w-[20%]">
+                            </colgroup>
+                            <thead>
+                                <tr class="border-b border-gray-300 text-[#000000] font-black">
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VESSEL NAME</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">VOY NO.</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KLANG</th>
+                                    <th class="py-2.5 px-2 sm:px-3 text-left">KUCHING</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM083E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">29/06/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">02/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM084E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">06/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">09/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM085E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">13/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">16/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM086E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">20/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">23/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM087E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">27/07/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">30/07/2026</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50/50">
+                                    <td class="py-2.5 px-2 sm:px-3 font-black text-[#000000] truncate">MTT LUMUT</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">26LM088E</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">03/08/2026</td>
+                                    <td class="py-2.5 px-2 sm:px-3 font-bold text-[#000000] truncate">06/08/2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+
+                    <!-- REMARKS -->
+                    <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-[11px] md:text-xs text-amber-900 leading-relaxed font-black">
+                        *REMARKS: The above Sailing Schedule's ETA/ETD is Tentative and subject to changes depending on Berth Availability and weather condition.
+                    </div>
+                </div>
+                <!-- END OF SCHEDULE CONTENT -->
+
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
+    <!-- END: STRAIGHT ALIGNED WHITE & GOLD JET-BLACK BOLD SCHEDULE SECTION -->
 
-    <!-- ==================== RESPONSIVE CUSTOMER STORIES SECTION ==================== -->
-<section class="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50 text-[#0a0a0a]">
-    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8">
-
-        <div class="flex flex-col items-center text-center mb-10 md:mb-16">
-            <span class="text-yellow-400 text-xs md:text-sm font-black uppercase tracking-[0.2em] mb-3">{{ __('✦ CUSTOMER STORIES ✦') }}</span>
-            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8 text-black">{{ __('Reviews and Rating') }}</h2>
-
-            <div class="inline-flex items-center gap-4 sm:gap-6 bg-white shadow-xl border border-yellow-400/20 rounded-2xl sm:rounded-3xl px-6 py-4 sm:px-10 sm:py-6 max-w-xs sm:max-w-none">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
-                    <img src="{{ asset('images/reviewiconrating.png') }}"
-                         alt="{{ __('Rating Medal') }}"
-                         class="w-full h-full object-contain">
-                </div>
-
-                <div class="text-left">
-                    <div class="flex text-yellow-400 text-2xl sm:text-4xl leading-none mb-1">★★★★☆</div>
-                    <p class="text-xl sm:text-3xl font-black text-black tracking-tighter">{{ __('4.6 out of 5') }}</p>
-                    <p class="text-xs sm:text-sm text-gray-500 mt-0.5">{{ __('Based on Real Customer Reviews') }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="relative px-0 md:px-12" x-data="testimonialCarousel()">
-            <div class="overflow-hidden rounded-3xl">
-                <!-- Smooth viewport translation adjustment built-in for multi-device browsing -->
-                <div class="flex transition-transform duration-700 ease-out" :style="{ transform: window.innerWidth < 768 ? `translateX(-${current * 100}%)` : `translateX(-${current * (100 / 3)}%)` }">
-
-                    <template x-for="(review, index) in reviews" :key="index">
-                        <div class="w-full md:w-1/3 flex-shrink-0 px-2 sm:px-4">
-                            <div class="bg-white border border-yellow-400/10 rounded-3xl p-6 sm:p-9 shadow-xl h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col justify-between">
-                                <div>
-                                    <div class="flex items-start justify-between gap-2 mb-6 sm:mb-8">
-                                        <div class="flex items-center gap-3 sm:gap-4">
-                                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden ring-4 ring-yellow-400/20 flex-shrink-0">
-                                                <img :src="review.avatar" :alt="review.name" class="w-full h-full object-cover">
-                                            </div>
-                                            <div class="min-w-0">
-                                                <h4 class="font-bold text-base sm:text-xl truncate text-black" x-text="review.name"></h4>
-                                                <p class="text-xs sm:text-sm text-gray-500 truncate" x-text="review.date"></p>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('images/Company Logo.png') }}" alt="{{ __('Arkod') }}" class="h-8 w-8 sm:h-12 sm:w-12 object-contain flex-shrink-0">
-                                    </div>
-
-                                    <div class="text-yellow-400 text-2xl sm:text-4xl mb-4 sm:mb-6 tracking-wider">★★★★★</div>
-                                    <p class="text-gray-700 leading-relaxed text-sm sm:text-[15.8px] italic" x-text="review.text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-
-                </div>
-            </div>
-
-            <!-- Absolute Side Buttons (Kept for Desktop Viewports Only) -->
-            <button @click="prev()" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">←</button>
-            <button @click="next()" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-yellow-400 hover:text-white text-black w-16 h-16 rounded-3xl items-center justify-center transition-all duration-300 text-4xl shadow-2xl z-10 border border-yellow-400/20 hover:border-yellow-400">→</button>
-
-            <!-- Inline Slider Control Row (Rendered beautifully on Mobile Viewports) -->
-            <div class="flex md:hidden justify-center items-center gap-4 mt-6">
-                <button @click="prev()" class="bg-white active:bg-yellow-400 text-black w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-md border border-yellow-400/20">←</button>
-                <div class="flex gap-1.5">
-                    <template x-for="(review, index) in reviews" :key="index">
-                        <span class="h-2 rounded-full transition-all duration-300"
-                              :class="current === index ? 'w-5 bg-yellow-400' : 'w-2 bg-gray-300'"
-                              x-show="window.innerWidth < 768 || index <= reviews.length - 3"></span>
-                    </template>
-                </div>
-                <button @click="next()" class="bg-white active:bg-yellow-400 text-black w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-md border border-yellow-400/20">→</button>
-            </div>
-        </div>
-
-        <div class="text-center mt-12 md:mt-16">
-            <p class="text-sm sm:text-base text-gray-500 font-medium">{{ __('❤️ Trusted by hundreds of Malaysian customers ❤️') }}</p>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== RESPONSIVE MAP & COVERAGE SECTION ==================== -->
-<section class="py-12 md:py-24 bg-yellow-400 text-black relative overflow-hidden">
-    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8">
-
-        <div class="text-center mb-10 md:mb-16">
-            <span class="inline-block px-5 py-2 bg-black text-yellow-400 text-xs sm:text-sm font-black tracking-[0.3em] rounded-full mb-4">{{ __('NATIONWIDE COVERAGE') }}</span>
-            <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-black">
-                {{ __('WE ARE') }} <span class="text-black">{{ __('EVERYWHERE') }}</span>
-            </h2>
-            <p class="text-black/80 mt-4 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
-                {{ __('Connecting Peninsular Malaysia with Sabah & Sarawak through reliable car shipping') }}
-            </p>
-        </div>
-
-        <div class="bg-black rounded-3xl p-4 sm:p-8 md:p-12 shadow-2xl">
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-                <!-- Interactive Map Component Canvas -->
-                <div class="lg:col-span-8 relative flex justify-center items-center py-4 overflow-x-auto lg:overflow-x-visible">
-                    <div class="relative w-full min-w-[450px] max-w-[700px] lg:max-w-[950px] transition-all duration-500">
-
-                        <img src="{{ asset('images/map_route-removebg-preview.png') }}" alt="{{ __('Malaysia Map') }}" class="w-full h-auto drop-shadow-[0_10px_30px_rgba(250,204,21,0.15)] object-contain">
-
-                        <!-- Tooltip 1: Peninsular -->
-                        <div class="absolute top-[39%] left-[21%] group">
-                            <div class="w-6 h-6 sm:w-9 sm:h-9 bg-yellow-400 hover:bg-white border-2 sm:border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
-                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-black rounded-full"></div>
-                            </div>
-                            <div class="absolute -top-10 sm: -top-12 left-1/2 -translate-x-1/2 bg-black text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-5 sm:py-2 rounded-xl sm:rounded-2xl whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
-                                {{ __('Peninsular Malaysia') }}
-                                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 sm:w-3 h-2 sm:h-3 bg-black rotate-45"></div>
-                            </div>
-                        </div>
-
-                        <!-- Tooltip 2: Sarawak -->
-                        <div class="absolute top-[68%] right-[44%] group">
-                            <div class="w-6 h-6 sm:w-9 sm:h-9 bg-yellow-400 hover:bg-white border-2 sm:border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
-                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-black rounded-full"></div>
-                            </div>
-                            <div class="absolute -top-10 sm:-top-12 left-1/2 -translate-x-1/2 bg-black text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-5 sm:py-2 rounded-xl sm:rounded-2xl whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
-                                {{ __('Sarawak') }}
-                                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 sm:w-3 h-2 sm:h-3 bg-black rotate-45"></div>
-                            </div>
-                        </div>
-
-                        <!-- Tooltip 3: Sabah -->
-                        <div class="absolute top-[39%] right-[20%] group">
-                            <div class="w-6 h-6 sm:w-9 sm:h-9 bg-yellow-400 hover:bg-white border-2 sm:border-4 border-black rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 shadow-lg">
-                                <div class="w-2 h-2 sm:w-3 sm:h-3 bg-black rounded-full"></div>
-                            </div>
-                            <div class="absolute -top-10 sm:-top-12 left-1/2 -translate-x-1/2 bg-black text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-5 sm:py-2 rounded-xl sm:rounded-2xl whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 shadow-2xl border border-white/10">
-                                {{ __('Sabah') }}
-                                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 sm:w-3 h-2 sm:h-3 bg-black rotate-45"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Locations Sidebar Card List Stack -->
-                <div class="lg:col-span-4 space-y-4 sm:space-y-5 flex flex-col justify-center">
-
-                    <!-- Location 1 -->
-                    <div class="bg-zinc-900 rounded-2xl p-4 sm:p-5 flex items-center gap-4 sm:gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
-                            <img src="{{ asset('images/Kl.png') }}" alt="{{ __('Peninsular Malaysia') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-bold text-lg sm:text-xl text-white group-hover:text-black truncate">{{ __('Peninsular Malaysia') }}</h4>
-                            <p class="text-gray-400 group-hover:text-black/70 text-xs sm:text-sm mt-1 line-clamp-1 md:line-clamp-none">{{ __('Kuala Lumpur • Johor • Penang • All major cities') }}</p>
-                        </div>
-                    </div>
-
-                    <!-- Location 2 -->
-                    <div class="bg-zinc-900 rounded-2xl p-4 sm:p-5 flex items-center gap-4 sm:gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
-                            <img src="{{ asset('images/Sarawak.png') }}" alt="{{ __('Sarawak') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-bold text-lg sm:text-xl text-white group-hover:text-black truncate">{{ __('Sarawak') }}</h4>
-                            <p class="text-gray-400 group-hover:text-black/70 text-xs sm:text-sm mt-1 line-clamp-1 md:line-clamp-none">{{ __('Kuching • Sibu • Miri • Bintulu') }}</p>
-                        </div>
-                    </div>
-
-                    <!-- Location 3 -->
-                    <div class="bg-zinc-900 rounded-2xl p-4 sm:p-5 flex items-center gap-4 sm:gap-5 hover:bg-yellow-400 hover:text-black transition-all group">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 overflow-hidden rounded-xl border-2 border-yellow-400">
-                            <img src="{{ asset('images/Sabah.png') }}" alt="{{ __('Sabah') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-bold text-lg sm:text-xl text-white group-hover:text-black truncate">{{ __('Sabah') }}</h4>
-                            <p class="text-gray-400 group-hover:text-black/70 text-xs sm:text-sm mt-1 line-clamp-1 md:line-clamp-none">{{ __('Kota Kinabalu') }}</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Decorative Base Status Line Bar -->
-            <div class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 lg:border-t-0">
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-black font-semibold text-xs sm:text-sm tracking-wider text-center">
-                    <div class="w-2.5 h-2.5 bg-black rounded-full animate-pulse"></div>
-                    <span>{{ __('Reliable Shipping Across Malaysia') }}</span>
-                    <div class="w-2.5 h-2.5 bg-black rounded-full animate-pulse"></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('testimonialCarousel', () => ({
-            current: 0,
-            // Sample array structure—make sure your actual reviews look like this
-            reviews: [
-                { name: "Estanah Tun", date: "24 September 2025", avatar: "https://i.pravatar.cc/150?u=estanah", text: "Terbaiklah servis yang mereka bagi ini. Kereta sy memang selamat sampai. Boleh order lagi ini!" }, { name: "Alif Aiman", date: "2 March 2025", avatar: "https://i.pravatar.cc/150?u=alif", text: "Suka saya cara dorang buat kerja delivery ini. Kemas dan cepat. Friendly lagi tu!" }, { name: "Emmenuell", date: "24 September 2025", avatar: "https://i.pravatar.cc/150?u=emmanuel", text: "Package dorang ini juga terbaik dengan harga. Kereta sampai, sekali dengan servis. Lawa do!" }, { name: "Farah Amira", date: "15 April 2025", avatar: "https://i.pravatar.cc/150?u=farah", text: "My SUV arrived in perfect condition. Very professional team. Highly recommended!" }, { name: "Mohd Razak", date: "8 May 2025", avatar: "https://i.pravatar.cc/150?u=razak", text: "Fast response and transparent pricing. My Honda Civic reached safely. Will use again." }, { name: "Siti Nurhaliza", date: "10 October 2025", avatar: "https://i.pravatar.cc/150?u=siti", text: "Best car shipping service. My EV car was handled with extra care. Thank you Arkod!" }
-            ],
-
-            // DYNAMIC LIMIT CALCULATION
-            // Mobile allows swiping all the way to the last item; desktop leaves room for 3 visible cards
-            get maxSteps() {
-                return window.innerWidth < 768 ? this.reviews.length - 1 : this.reviews.length - 3;
-            },
-
-            next() {
-                if (this.current >= this.maxSteps) {
-                    this.current = 0; // Loops back to the start gracefully
-                } else {
-                    this.current++;
-                }
-            },
-
-            prev() {
-                if (this.current <= 0) {
-                    this.current = this.maxSteps; // Loops back to the end safely
-                } else {
-                    this.current--;
-                }
-            }
-        }));
-    });
-</script>
-
-<footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
+    <footer class="bg-black text-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-8 font-sans">
     <div class="max-w-[1400px] mx-auto">
         <div class="w-full h-[2px] bg-white mb-8 md:mb-12"></div>
 
@@ -714,7 +701,6 @@
         </div>
     </div>
 </footer>
-
 
 </body>
 </html>

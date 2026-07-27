@@ -59,6 +59,9 @@
                         <a href="/agentapp" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
                             {{ __('Agent Application') }}
                         </a>
+                        <a href="/shippingschedule" class="block px-6 py-3 text-xs text-yellow-400 hover:text-white hover:bg-white/5 transition uppercase tracking-widest">
+                            {{ __('Shipping Schedule') }}
+                        </a>
                     </div>
                 </div>
 
@@ -197,6 +200,7 @@
                     <div x-show="mOpen" x-transition class="pl-4 border-l border-white/10 space-y-2 mt-1">
                         <a href="/career" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Career') }}</a>
                         <a href="/agentapp" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Agent Application') }}</a>
+                        <a href="/shippingschedule" class="block py-2 text-sm text-yellow-400 hover:text-white">{{ __('Shipping Schedule') }}</a>
                     </div>
                 </div>
 

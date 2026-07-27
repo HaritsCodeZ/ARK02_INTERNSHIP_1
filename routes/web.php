@@ -74,6 +74,10 @@ Route::get('/Community', function () {
     return view('layouts.ARK02_Community');
 });
 
+Route::get('/shippingschedule', function () {
+    return view('layouts.ARK02_Shippingschedule');
+});
+
 Route::get('/partner1', function () {
     return view('layouts.ARK02_Partner1');
 })->name('partner.1');
@@ -85,6 +89,8 @@ Route::get('/partner2', function () {
 Route::get('/partner3', function () {
     return view('layouts.ARK02_Partner3');
 })->name('partner.3');
+
+
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
